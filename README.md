@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+# 🌸 Tech Bloom Agency
 
-## Project info
+![Remote Work](https://img.shields.io/badge/Remote-Yes-4CAF50?style=flat-square) ![Location](https://img.shields.io/badge/Madagascar-🌍-blueviolet?style=flat-square)
 
-**URL**: https://lovable.dev/projects/8ebadab5-6ad1-4f49-a941-45f51ea47dc2
+---
 
-## How can I edit this code?
+## Présentation
 
-There are several ways of editing your application.
+**Tech Bloom Agency** est une agence digitale basée à Madagascar, opérant à distance, dédiée à l’accompagnement des entreprises et entrepreneurs dans leur transformation numérique.  
+Notre mission : faire éclore votre potentiel digital grâce à des solutions sur-mesure, innovantes et humaines.
 
-**Use Lovable**
+> **Slogan :**  
+> _« De la stratégie à l’éclosion digitale. »_
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8ebadab5-6ad1-4f49-a941-45f51ea47dc2) and start prompting.
+Nos valeurs fondamentales : **Croissance**, **éclosion numérique**, **stratégie humaine** et **innovation**.  
+Nous croyons qu’une stratégie digitale réussie est avant tout une aventure humaine, portée par la créativité et l’expertise.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🚀 Services
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- 🖥️ **Création de sites web**  
+  Sites vitrines, portfolios, landing pages, e-commerce — optimisés pour ordinateur et mobile.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- 🎨 **Branding & Identité visuelle digitale**  
+  Création de logos, chartes graphiques, univers de marque pour une présence digitale unique.
 
-Follow these steps:
+- 📱 **Marketing digital & Community management**  
+  Gestion de vos réseaux sociaux, création de contenus engageants, campagnes publicitaires ciblées.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- 🤝 **Accompagnement tech & digital personnalisé**  
+  Conseils, audits, formations et support technique sur-mesure (non automatisé, 100% humain).
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🏆 Réalisations
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+> _À venir : découvrez bientôt nos plus belles collaborations et projets réalisés pour des clients inspirants !_
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 💬 Témoignages
 
-**Use GitHub Codespaces**
+> _« Tech Bloom Agency a su comprendre nos besoins et nous accompagner avec professionnalisme et créativité. »_  
+> — Client satisfait
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+> _« Une équipe à l’écoute, réactive et force de proposition. Notre présence digitale a vraiment éclos ! »_  
+> — Partenaire
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📬 Contact
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Email :** [sullivan.13.freelance@gmail.com](mailto:sullivan.13.freelance@gmail.com)
+- **WhatsApp :** [+261 34 10 608 02](https://wa.me/261341060802)
+- **Localisation :** Madagascar • Remote
 
-## How can I deploy this project?
+N’hésitez pas à nous contacter pour discuter de votre projet ou obtenir un devis personnalisé !  
+Nous sommes là pour faire éclore vos idées. 🌱
 
-Simply open [Lovable](https://lovable.dev/projects/8ebadab5-6ad1-4f49-a941-45f51ea47dc2) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## ⚖️ Licence
 
-Yes, you can!
+Tous droits réservés © 2025 Sullivan Joro RAKOTONIAINA
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
