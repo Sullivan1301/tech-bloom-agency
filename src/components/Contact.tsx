@@ -50,7 +50,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-tech-primary mb-12 md:mb-20 lg:mb-24">
+    <section id="contact" className="py-20 bg-tech-primary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-bitter font-bold text-3xl md:text-4xl text-white mb-4">
