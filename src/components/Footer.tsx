@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,8 +37,24 @@ const Footer = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <footer className="bg-tech-primary text-white">
+    <footer className="bg-tech-primary text-white relative">
+      {/* Back to top button */}
+      <button
+        onClick={scrollToTop}
+        className="absolute -top-6 right-8 bg-tech-accent hover:bg-tech-accent/90 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+        aria-label="Retour en haut"
+      >
+        <ArrowUp className="w-5 h-5 text-white" />
+      </button>
+
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
@@ -47,15 +63,18 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/474b2305-036f-4b7a-b879-3f1a8bd98f47.png" 
                 alt="Tech Bloom Agency Logo" 
-                className="w-10 h-10"
+                className="w-10 h-10 brightness-0 invert"
               />
               <div className="flex flex-col">
                 <span className="font-bitter font-bold text-lg">Tech Bloom</span>
                 <span className="font-montserrat text-sm text-white/80 -mt-1">Agency</span>
               </div>
             </div>
-            <p className="font-montserrat text-white/80 mb-6 leading-relaxed">
-              De la stratégie à l'éclosion digitale. Nous accompagnons votre transformation numérique avec passion et expertise.
+            <p className="font-montserrat text-white/80 mb-2 leading-relaxed italic text-lg">
+              De la stratégie à l'éclosion digitale.
+            </p>
+            <p className="font-montserrat text-white/70 mb-6 text-sm leading-relaxed">
+              Nous accompagnons votre transformation numérique avec passion et expertise.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -107,25 +126,25 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-tech-accent" />
                 <a 
-                  href="mailto:contact@techbloom.agency"
+                  href="mailto:sullivan.13.freelance@gmail.com"
                   className="font-montserrat text-white/80 hover:text-white transition-colors duration-300 text-sm"
                 >
-                  contact@techbloom.agency
+                  sullivan.13.freelance@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-tech-accent" />
                 <a 
-                  href="https://wa.me/33612345678"
+                  href="https://wa.me/261341060802"
                   className="font-montserrat text-white/80 hover:text-white transition-colors duration-300 text-sm"
                 >
-                  +33 6 12 34 56 78
+                  +261 34 10 608 02
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-tech-accent" />
                 <span className="font-montserrat text-white/80 text-sm">
-                  France • Remote
+                  Madagascar • Remote
                 </span>
               </div>
             </div>
@@ -140,10 +159,13 @@ const Footer = () => {
             </p>
             <div className="flex gap-6">
               <a href="#" className="font-montserrat text-white/60 hover:text-white text-sm transition-colors duration-300">
+                Politique de confidentialité
+              </a>
+              <a href="#" className="font-montserrat text-white/60 hover:text-white text-sm transition-colors duration-300">
                 Mentions légales
               </a>
               <a href="#" className="font-montserrat text-white/60 hover:text-white text-sm transition-colors duration-300">
-                Politique de confidentialité
+                Conditions d'utilisation
               </a>
             </div>
           </div>

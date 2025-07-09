@@ -3,9 +3,9 @@ import { Quote, Award, Users, Clock } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { icon: Award, number: "50+", label: "Projets réalisés" },
-    { icon: Users, number: "30+", label: "Clients satisfaits" },
-    { icon: Clock, number: "3", label: "Années d'expérience" }
+    { icon: Award, number: "10+", label: "Projets réalisés" },
+    { icon: Users, number: "10+", label: "Clients satisfaits" },
+    { icon: Clock, number: "1+", label: "Année d'expérience" }
   ];
 
   return (
@@ -19,13 +19,24 @@ const About = () => {
             </h2>
             
             <p className="font-montserrat text-lg text-gray-600 mb-6 leading-relaxed">
-              Née de la passion pour l'innovation digitale, Tech Bloom Agency accompagne les entreprises 
-              dans leur transformation numérique avec une approche humaine et personnalisée.
+              Sullivan Joro RAKOTONIAINA, fondateur de Tech Bloom Agency, est un passionné de technologie 
+              et de communication digitale.
             </p>
             
+            <p className="font-montserrat text-gray-600 mb-6 leading-relaxed">
+              Avec plus d'1 an d'expérience et déjà 10 projets menés à bien, Sullivan a accompagné plus de 
+              10 clients satisfaits dans la création de leur univers digital, du branding au site web jusqu'à 
+              leur présence sur les réseaux sociaux.
+            </p>
+
             <p className="font-montserrat text-gray-600 mb-8 leading-relaxed">
-              Notre mission est simple : faire éclore votre potentiel digital en créant des solutions 
-              sur-mesure qui reflètent votre identité et répondent à vos objectifs business.
+              Sa vision : rendre le digital accessible, humain et rentable, en aidant chaque marque ou 
+              entreprise à éclore et à se développer grâce à des solutions modernes et personnalisées.
+            </p>
+
+            <p className="font-montserrat text-gray-600 mb-8 leading-relaxed">
+              Basé à Madagascar, Sullivan collabore à distance avec des clients de tous horizons pour 
+              cultiver leur potentiel numérique.
             </p>
 
             {/* Quote */}
@@ -39,7 +50,7 @@ const About = () => {
                   <span className="font-bitter font-bold text-white text-lg">SJ</span>
                 </div>
                 <div>
-                  <p className="font-montserrat font-semibold text-tech-primary">Sullivan Joro</p>
+                  <p className="font-montserrat font-semibold text-tech-primary">Sullivan Joro RAKOTONIAINA</p>
                   <p className="font-montserrat text-sm text-tech-secondary">Fondateur & Directeur Créatif</p>
                 </div>
               </div>
@@ -69,10 +80,11 @@ const About = () => {
                     <span className="font-bitter font-bold text-white text-3xl">SJ</span>
                   </div>
                   <h3 className="font-bitter font-bold text-xl text-tech-primary mb-2">Sullivan Joro</h3>
-                  <p className="font-montserrat text-tech-secondary mb-4">Fondateur</p>
+                  <p className="font-montserrat text-tech-secondary mb-1">RAKOTONIAINA</p>
+                  <p className="font-montserrat text-sm text-tech-secondary mb-4">Fondateur</p>
                   <p className="font-montserrat text-sm text-gray-600 leading-relaxed">
                     Passionné par l'innovation digitale et l'accompagnement entrepreneurial, 
-                    je mets mon expertise au service de votre réussite.
+                    basé à Madagascar avec une vision globale.
                   </p>
                 </div>
               </div>

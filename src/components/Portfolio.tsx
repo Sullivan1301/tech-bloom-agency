@@ -5,27 +5,27 @@ import { Button } from '@/components/ui/button';
 const Portfolio = () => {
   const projects = [
     {
-      title: "E-commerce Mode",
-      category: "Site Web + Branding",
-      description: "Boutique en ligne moderne avec identité visuelle complète pour une marque de mode éthique.",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["E-commerce", "Branding", "SEO"],
+      title: "RunRobe",
+      category: "E-commerce + Branding",
+      description: "Boutique physique et e-commerce spécialisée dans les robes de mariée et chaussures de sport. Site fluide avec branding moderne.",
+      image: "https://images.unsplash.com/photo-1594736797933-d0f04c6d60bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      tags: ["E-commerce", "Branding", "Mariage"],
       icon: Code
     },
     {
-      title: "Restaurant Gastronomique",
-      category: "Site Vitrine + Marketing",
-      description: "Site vitrine élégant avec système de réservation et stratégie de présence digitale.",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["Vitrine", "Réservation", "Social Media"],
+      title: "Girl's Touch Erica",
+      category: "Concept Store + Branding",
+      description: "Concept store féminin alliant mode et identité de marque affirmée. Image de marque forte et cohérente.",
+      image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      tags: ["Mode", "Branding", "Féminin"],
       icon: Palette
     },
     {
-      title: "Startup Tech",
-      category: "Application Web + Growth",
-      description: "Plateforme SaaS complète avec stratégie de croissance et acquisition client.",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["SaaS", "Growth Hacking", "Analytics"],
+      title: "L'Homme Imparfait",
+      category: "Communauté + Coaching",
+      description: "Page et communauté axées sur le bien-être, le coaching et la motivation masculine. Présence en ligne structurée.",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      tags: ["Coaching", "Bien-être", "Communauté"],
       icon: TrendingUp
     }
   ];
@@ -37,8 +37,11 @@ const Portfolio = () => {
           <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-4">
             Nos Réalisations
           </h2>
-          <p className="font-montserrat text-lg text-gray-600 max-w-2xl mx-auto">
-            Découvrez quelques-uns de nos projets qui illustrent notre expertise et notre approche créative.
+          <p className="font-montserrat text-lg text-gray-600 max-w-2xl mx-auto mb-4">
+            Quelques projets que nous avons fait fleurir avec nos clients.
+          </p>
+          <p className="font-montserrat text-sm text-gray-500 italic">
+            D'autres projets viendront bientôt compléter ce portfolio.
           </p>
         </div>
 

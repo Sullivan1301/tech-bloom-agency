@@ -4,28 +4,28 @@ import { Star, Quote } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Marie Dubois",
-      company: "Boutique Éthique",
+      name: "Responsable RunRobe",
+      company: "RunRobe",
+      role: "Responsable",
+      content: "Grâce à Tech Bloom Agency, notre projet RunRobe a pris vie sur le web et nous avons touché nos premiers clients grâce à un branding moderne et un site fluide.",
+      rating: 5,
+      avatar: "RR"
+    },
+    {
+      name: "Fondatrice Girl's Touch Erica",
+      company: "Girl's Touch Erica",
       role: "Fondatrice",
-      content: "L'équipe de Tech Bloom a complètement transformé notre présence en ligne. Notre site e-commerce est magnifique et nos ventes ont augmenté de 150% !",
+      content: "Sullivan et son équipe ont su comprendre l'essence de Girl's Touch Erica et la traduire en une image de marque forte et cohérente.",
       rating: 5,
-      avatar: "MD"
+      avatar: "GE"
     },
     {
-      name: "Thomas Martin",
-      company: "Restaurant Le Gourmet",
-      role: "Gérant",
-      content: "Un accompagnement exceptionnel du début à la fin. Notre nouveau site attire beaucoup plus de clients et le système de réservation fonctionne parfaitement.",
+      name: "Administrateur L'Homme Imparfait",
+      company: "L'Homme Imparfait",
+      role: "Administrateur",
+      content: "Nous avions besoin de structurer notre présence en ligne. Avec Tech Bloom, tout a été simplifié et notre communauté a grandi.",
       rating: 5,
-      avatar: "TM"
-    },
-    {
-      name: "Sophie Laurent",
-      company: "Startup InnoTech",
-      role: "CEO",
-      content: "Grâce à leur expertise en growth marketing, nous avons multiplié par 3 notre nombre d'utilisateurs en 6 mois. Une collaboration remarquable !",
-      rating: 5,
-      avatar: "SL"
+      avatar: "HI"
     }
   ];
 

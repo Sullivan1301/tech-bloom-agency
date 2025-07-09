@@ -11,7 +11,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    service: '',
+    subject: '',
     message: ''
   });
 
@@ -25,26 +25,26 @@ const Contact = () => {
     });
     
     // Reset form
-    setFormData({ name: '', email: '', service: '', message: '' });
+    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
-      content: "contact@techbloom.agency",
-      link: "mailto:contact@techbloom.agency"
+      content: "sullivan.13.freelance@gmail.com",
+      link: "mailto:sullivan.13.freelance@gmail.com"
     },
     {
       icon: MessageSquare,
       title: "WhatsApp",
-      content: "+33 6 12 34 56 78",
-      link: "https://wa.me/33612345678"
+      content: "+261 34 10 608 02",
+      link: "https://wa.me/261341060802"
     },
     {
       icon: MapPin,
       title: "Localisation",
-      content: "France • Remote",
+      content: "Madagascar • Remote",
       link: null
     }
   ];
@@ -136,21 +136,16 @@ const Contact = () => {
 
               <div>
                 <label className="block font-montserrat font-medium text-tech-primary mb-2">
-                  Service souhaité
+                  Sujet
                 </label>
-                <Select value={formData.service} onValueChange={(value) => setFormData({...formData, service: value})}>
-                  <SelectTrigger className="border-gray-300 focus:border-tech-accent">
-                    <SelectValue placeholder="Sélectionnez un service" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="site-web">Création de site web</SelectItem>
-                    <SelectItem value="branding">Branding & identité visuelle</SelectItem>
-                    <SelectItem value="marketing">Marketing digital</SelectItem>
-                    <SelectItem value="community">Community management</SelectItem>
-                    <SelectItem value="accompagnement">Accompagnement tech</SelectItem>
-                    <SelectItem value="autre">Autre</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Input
+                  type="text"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                  placeholder="Sujet de votre message"
+                  required
+                  className="border-gray-300 focus:border-tech-accent"
+                />
               </div>
 
               <div>
