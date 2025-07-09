@@ -17,13 +17,13 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Simulate form submission
     toast({
       title: "Message envoyé !",
       description: "Nous vous recontacterons dans les plus brefs délais.",
     });
-    
+
     // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -50,7 +50,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-tech-primary">
+    <section id="contact" className="py-20 bg-tech-primary mb-12 md:mb-20 lg:mb-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-bitter font-bold text-3xl md:text-4xl text-white mb-4">
@@ -67,7 +67,7 @@ const Contact = () => {
             <h3 className="font-bitter font-semibold text-2xl text-white mb-8">
               Restons en contact
             </h3>
-            
+
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-center gap-4">
@@ -77,7 +77,7 @@ const Contact = () => {
                   <div>
                     <p className="font-montserrat font-medium text-white">{info.title}</p>
                     {info.link ? (
-                      <a 
+                      <a
                         href={info.link}
                         className="font-montserrat text-white/80 hover:text-white transition-colors duration-300"
                       >
@@ -96,7 +96,7 @@ const Contact = () => {
                 Réponse garantie sous 24h
               </h4>
               <p className="font-montserrat text-white/90 text-sm leading-relaxed">
-                Nous nous engageons à vous répondre rapidement pour discuter de votre projet 
+                Nous nous engageons à vous répondre rapidement pour discuter de votre projet
                 et vous proposer des solutions adaptées à vos besoins et votre budget.
               </p>
             </div>
@@ -113,7 +113,7 @@ const Contact = () => {
                   <Input
                     type="text"
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Votre nom"
                     required
                     className="border-gray-300 focus:border-tech-accent"
@@ -126,7 +126,7 @@ const Contact = () => {
                   <Input
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="votre@email.com"
                     required
                     className="border-gray-300 focus:border-tech-accent"
@@ -141,7 +141,7 @@ const Contact = () => {
                 <Input
                   type="text"
                   value={formData.subject}
-                  onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   placeholder="Sujet de votre message"
                   required
                   className="border-gray-300 focus:border-tech-accent"
@@ -154,7 +154,7 @@ const Contact = () => {
                 </label>
                 <Textarea
                   value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Décrivez votre projet..."
                   rows={5}
                   required
@@ -162,7 +162,7 @@ const Contact = () => {
                 />
               </div>
 
-              <Button 
+              <Button
                 type="submit"
                 className="w-full bg-tech-accent hover:bg-tech-accent/90 text-white font-montserrat font-semibold py-3 rounded-full transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
               >
