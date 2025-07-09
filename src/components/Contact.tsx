@@ -7,6 +7,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from '@/hooks/use-toast';
 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxTxC_N4Uj7CHZYGL6yrxOwrk8YPimG6pyTMBrBggwWkM4bE_xOPw4lQn1hUWF9P2wM/exec";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -15,16 +17,23 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simulate form submission
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
     toast({
       title: "Message envoyé !",
       description: "Nous vous recontacterons dans les plus brefs délais.",
     });
 
-    // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
