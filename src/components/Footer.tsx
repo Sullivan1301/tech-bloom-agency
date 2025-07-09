@@ -55,14 +55,14 @@ const Footer = () => {
         <ArrowUp className="w-5 h-5 text-white" />
       </button>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1">
-            <div className="flex items-center space-x-3 mb-6">
-              <img 
-                src="/lovable-uploads/474b2305-036f-4b7a-b879-3f1a8bd98f47.png" 
-                alt="Tech Bloom Agency Logo" 
+            <div className="flex items-center space-x-3 mb-4">
+              <img
+                src="/lovable-uploads/474b2305-036f-4b7a-b879-3f1a8bd98f47.png"
+                alt="Tech Bloom Agency Logo"
                 className="w-10 h-10 brightness-0 invert"
               />
               <div className="flex flex-col">
@@ -73,20 +73,32 @@ const Footer = () => {
             <p className="font-montserrat text-white/80 mb-2 leading-relaxed italic text-lg">
               De la stratégie à l'éclosion digitale.
             </p>
-            <p className="font-montserrat text-white/70 mb-6 text-sm leading-relaxed">
+            <p className="font-montserrat text-white/70 mb-4 text-sm leading-relaxed">
               Nous accompagnons votre transformation numérique avec passion et expertise.
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="bg-white/10 hover:bg-tech-accent p-3 rounded-xl transition-all duration-300 hover:scale-110"
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a
+                href="https://web.facebook.com/profile.php?id=61578188340191"
+                aria-label="Facebook"
+                className="bg-white/10 hover:bg-tech-accent p-3 rounded-xl transition-all duration-300 hover:scale-110"
+                target="_blank" rel="noopener noreferrer"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/tech.bloom.agency?igsh=MWh5cjdvajFlZmEwcQ=="
+                aria-label="Instagram"
+                className="bg-white/10 hover:bg-tech-accent p-3 rounded-xl transition-all duration-300 hover:scale-110"
+                target="_blank" rel="noopener noreferrer"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <span
+                className="bg-white/10 p-3 rounded-xl text-xs flex items-center justify-center min-w-[40px] h-[40px]"
+                title="LinkedIn bientôt disponible"
+              >
+                LinkedIn<br />Bientôt
+              </span>
             </div>
           </div>
 
@@ -125,7 +137,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-tech-accent" />
-                <a 
+                <a
                   href="mailto:sullivan.13.freelance@gmail.com"
                   className="font-montserrat text-white/80 hover:text-white transition-colors duration-300 text-sm"
                 >
@@ -134,7 +146,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-tech-accent" />
-                <a 
+                <a
                   href="https://wa.me/261341060802"
                   className="font-montserrat text-white/80 hover:text-white transition-colors duration-300 text-sm"
                 >
