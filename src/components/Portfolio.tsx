@@ -14,10 +14,10 @@ const Portfolio = () => {
     },
     {
       title: "Girl's Touch Erica",
-      category: "Concept Store + Branding",
-      description: "Concept store féminin alliant mode et identité de marque affirmée. Image de marque forte et cohérente.",
-      image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["Mode", "Branding", "Féminin"],
+      category: "Soins Bio + Branding",
+      description: "Entreprise spécialisée dans les soins et traitements du visage avec des produits bio et naturels. Image de marque authentique et naturelle.",
+      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      tags: ["Soins Bio", "Beauté", "Naturel"],
       icon: Palette
     },
     {

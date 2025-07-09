@@ -15,7 +15,7 @@ const Testimonials = () => {
       name: "Fondatrice Girl's Touch Erica",
       company: "Girl's Touch Erica",
       role: "Fondatrice",
-      content: "Sullivan et son équipe ont su comprendre l'essence de Girl's Touch Erica et la traduire en une image de marque forte et cohérente.",
+      content: "Sullivan et son équipe ont su comprendre l'essence de notre entreprise de soins bio et la traduire en une image de marque authentique et naturelle.",
       rating: 5,
       avatar: "GE"
     },
