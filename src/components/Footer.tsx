@@ -1,21 +1,24 @@
 
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import FlowerParticles from '@/components/FlowerParticles';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Facebook, href: "https://web.facebook.com/profile.php?id=61578188340191", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/tech.bloom.agency?igsh=MWh5cjdvajFlZmEwcQ==", label: "Instagram" },
     { icon: Linkedin, href: "#", label: "LinkedIn" }
   ];
 
   const quickLinks = [
-    { name: "Accueil", href: "#hero" },
-    { name: "Services", href: "#services" },
-    { name: "À propos", href: "#about" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Contact", href: "#contact" }
+    { name: "Accueil", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "À propos", path: "/a-propos" },
+    { name: "Portfolio", path: "/realisations" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" }
   ];
 
   const services = [
@@ -25,18 +28,6 @@ const Footer = () => {
     "Community management"
   ];
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace('#', ''));
-    if (element) {
-      const headerHeight = 80;
-      const elementPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -45,11 +36,14 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-tech-primary text-white relative">
+    <footer className="bg-tech-primary text-white relative overflow-hidden">
+      {/* Fleur stylisée en filigrane avec effet de particules */}
+      <FlowerParticles count={10} className="opacity-10" />
+      
       {/* Back to top button */}
       <button
         onClick={scrollToTop}
-        className="absolute -top-6 right-8 bg-tech-accent hover:bg-tech-accent/90 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+        className="absolute -top-6 right-8 bg-tech-accent hover:bg-tech-accent/90 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-20"
         aria-label="Retour en haut"
       >
         <ArrowUp className="w-5 h-5 text-white" />
@@ -59,7 +53,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1">
-            <div className="flex items-center space-x-3 mb-4">
+            <Link to="/" className="flex items-center space-x-3 mb-4">
               <img
                 src="/lovable-uploads/474b2305-036f-4b7a-b879-3f1a8bd98f47.png"
                 alt="Tech Bloom Agency Logo"
@@ -69,7 +63,7 @@ const Footer = () => {
                 <span className="font-bitter font-bold text-lg">Tech Bloom</span>
                 <span className="font-montserrat text-sm text-white/80 -mt-1">Agency</span>
               </div>
-            </div>
+            </Link>
             <p className="font-montserrat text-white/80 mb-2 leading-relaxed italic text-lg">
               De la stratégie à l'éclosion digitale.
             </p>
@@ -77,28 +71,18 @@ const Footer = () => {
               Nous accompagnons votre transformation numérique avec passion et expertise.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="https://web.facebook.com/profile.php?id=61578188340191"
-                aria-label="Facebook"
-                className="bg-white/10 hover:bg-tech-accent p-3 rounded-xl transition-all duration-300 hover:scale-110"
-                target="_blank" rel="noopener noreferrer"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/tech.bloom.agency?igsh=MWh5cjdvajFlZmEwcQ=="
-                aria-label="Instagram"
-                className="bg-white/10 hover:bg-tech-accent p-3 rounded-xl transition-all duration-300 hover:scale-110"
-                target="_blank" rel="noopener noreferrer"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <span
-                className="bg-white/10 p-3 rounded-xl text-xs flex items-center justify-center min-w-[40px] h-[40px]"
-                title="LinkedIn bientôt disponible"
-              >
-                LinkedIn<br />Bientôt
-              </span>
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="bg-white/10 hover:bg-tech-accent p-3 rounded-xl transition-all duration-300 hover:scale-110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -108,12 +92,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
+                  <Link
+                    to={link.path}
                     className="font-montserrat text-white/80 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block"
                   >
                     {link.name}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -138,16 +122,25 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-tech-accent" />
                 <a
-                  href="mailto:sullivan.13.freelance@gmail.com"
+                  href="mailto:sullivanjoro3@gmail.com"
                   className="font-montserrat text-white/80 hover:text-white transition-colors duration-300 text-sm"
                 >
-                  sullivan.13.freelance@gmail.com
+                  sullivanjoro3@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-tech-accent" />
                 <a
-                  href="https://wa.me/261341060802"
+                  href="https://wa.me/261378717959"
+                  className="font-montserrat text-white/80 hover:text-white transition-colors duration-300 text-sm"
+                >
+                  +261 37 87 17 959 (WhatsApp)
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-tech-accent" />
+                <a
+                  href="tel:+261341060802"
                   className="font-montserrat text-white/80 hover:text-white transition-colors duration-300 text-sm"
                 >
                   +261 34 10 608 02
@@ -156,7 +149,7 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-tech-accent" />
                 <span className="font-montserrat text-white/80 text-sm">
-                  Madagascar • Remote
+                  Toamasina, Madagascar
                 </span>
               </div>
             </div>
@@ -170,15 +163,9 @@ const Footer = () => {
               © {currentYear} Tech Bloom Agency. Tous droits réservés.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="font-montserrat text-white/60 hover:text-white text-sm transition-colors duration-300">
-                Politique de confidentialité
-              </a>
-              <a href="#" className="font-montserrat text-white/60 hover:text-white text-sm transition-colors duration-300">
+              <Link to="/mentions-legales" className="font-montserrat text-white/60 hover:text-white text-sm transition-colors duration-300">
                 Mentions légales
-              </a>
-              <a href="#" className="font-montserrat text-white/60 hover:text-white text-sm transition-colors duration-300">
-                Conditions d'utilisation
-              </a>
+              </Link>
             </div>
           </div>
         </div>

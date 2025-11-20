@@ -1,5 +1,7 @@
 
 import { Star, Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
+import FlowerParticles from '@/components/FlowerParticles';
 
 const Testimonials = () => {
   const testimonials = [
@@ -30,8 +32,11 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-tech-light to-white">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-tech-light to-white relative overflow-hidden">
+      {/* Pétales qui tombent en arrière-plan */}
+      <FlowerParticles count={15} className="opacity-20" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-4">
             Ce que disent nos clients
@@ -43,10 +48,14 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              whileHover={{ scale: 1.05 }}
             >
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -70,7 +79,7 @@ const Testimonials = () => {
                   <p className="font-montserrat text-xs text-gray-500">{testimonial.company}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

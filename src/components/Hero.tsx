@@ -1,8 +1,26 @@
 
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import Flower3D from '@/components/Flower3D';
+import FlowerParticles from '@/components/FlowerParticles';
+import FlowerButton from '@/components/FlowerButton';
 
 const Hero = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = Math.min(scrollTop / docHeight, 1);
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -16,8 +34,11 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen bg-gradient-to-br from-tech-light via-white to-tech-light/50 pt-20 flex items-center">
-      <div className="container mx-auto px-4">
+    <section id="hero" className="min-h-screen bg-gradient-to-br from-tech-light via-white to-tech-light/50 pt-20 flex items-center relative overflow-hidden">
+      {/* Particules en arrière-plan */}
+      <FlowerParticles count={30} className="opacity-30" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left animate-fade-in">
@@ -41,40 +62,31 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
+              <FlowerButton 
                 onClick={scrollToContact}
-                className="bg-tech-accent hover:bg-tech-accent/90 text-white font-montserrat font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                variant="primary"
+                className="flex items-center gap-2"
               >
                 Demander un devis gratuit
                 <ArrowRight size={18} />
-              </Button>
+              </FlowerButton>
               
-              <Button 
-                variant="outline"
+              <FlowerButton 
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-tech-primary text-tech-primary hover:bg-tech-primary hover:text-white font-montserrat font-semibold px-8 py-3 rounded-full transition-all duration-300"
+                variant="outline"
               >
                 Découvrir nos services
-              </Button>
+              </FlowerButton>
             </div>
           </div>
 
-          {/* Visual Element */}
+          {/* Fleur 3D */}
           <div className="flex justify-center lg:justify-end animate-slide-in-right">
-            <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-tech-primary via-tech-secondary to-tech-accent rounded-3xl transform rotate-6 shadow-2xl"></div>
-              <div className="absolute inset-0 w-80 h-80 md:w-96 md:h-96 bg-white rounded-3xl shadow-xl flex items-center justify-center transform -rotate-3">
-                <img 
-                  src="/lovable-uploads/474b2305-036f-4b7a-b879-3f1a8bd98f47.png" 
-                  alt="Tech Bloom Agency" 
-                  className="w-32 h-32 md:w-40 md:h-40"
-                />
-              </div>
+            <div className="relative w-full h-[500px] md:h-[600px]">
+              <Flower3D scrollProgress={scrollProgress} className="w-full h-full" />
               
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-tech-accent rounded-full animate-bounce delay-1000"></div>
-              <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-tech-secondary rounded-full animate-bounce delay-2000"></div>
-              <div className="absolute top-1/2 -left-8 w-4 h-4 bg-tech-primary rounded-full animate-bounce"></div>
+              {/* Effet glow autour */}
+              <div className="absolute inset-0 bg-gradient-radial from-tech-accent/20 via-transparent to-transparent blur-3xl pointer-events-none"></div>
             </div>
           </div>
         </div>

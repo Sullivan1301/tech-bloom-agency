@@ -1,6 +1,9 @@
 
-import { Monitor, Palette, TrendingUp, Users } from 'lucide-react';
+import { Monitor, Palette, TrendingUp, Users, Sparkles, Wrench } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import FlowerIcon from '@/components/FlowerIcon';
 
 const Services = () => {
   const services = [
@@ -27,6 +30,18 @@ const Services = () => {
       title: "Community Management",
       description: "Gestion professionnelle de vos réseaux sociaux pour créer une communauté engagée autour de votre marque.",
       features: ["Stratégie de contenu", "Animation communautaire", "Veille concurrentielle", "Reporting détaillé"]
+    },
+    {
+      icon: Sparkles,
+      title: "Accompagnement Digital",
+      description: "Un accompagnement sur-mesure pour transformer votre présence digitale et atteindre vos objectifs business.",
+      features: ["Audit digital", "Stratégie personnalisée", "Formation équipe", "Suivi continu"]
+    },
+    {
+      icon: Wrench,
+      title: "Maintenance & Support",
+      description: "Assurez la pérennité de votre site web avec notre service de maintenance et support technique réactif.",
+      features: ["Mises à jour", "Sauvegardes", "Support réactif", "Optimisation"]
     }
   ];
 
@@ -42,14 +57,28 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="group bg-tech-light rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group bg-tech-light rounded-2xl p-6 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
             >
-              <div className="bg-gradient-to-br from-tech-primary to-tech-secondary rounded-xl p-4 w-fit mb-6 group-hover:scale-110 transition-transform duration-300">
+              {/* Petite fleur qui fleurit au survol */}
+              <motion.div
+                className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ scale: 0, rotate: 0 }}
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
+                <FlowerIcon size={24} animated={true} className="text-tech-accent" />
+              </motion.div>
+              
+              <div className="bg-gradient-to-br from-tech-primary to-tech-secondary rounded-xl p-4 w-fit mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
                 <service.icon className="w-8 h-8 text-white" />
               </div>
               
@@ -69,17 +98,18 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className="text-center">
-          <Button 
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-tech-accent hover:bg-tech-accent/90 text-white font-montserrat font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
-          >
-            Voir nos offres détaillées
-          </Button>
+          <Link to="/services">
+            <Button 
+              className="bg-tech-accent hover:bg-tech-accent/90 text-white font-montserrat font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+            >
+              Voir nos offres détaillées
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

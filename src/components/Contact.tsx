@@ -41,14 +41,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "sullivan.13.freelance@gmail.com",
-      link: "mailto:sullivan.13.freelance@gmail.com"
+      content: "sullivanjoro3@gmail.com",
+      link: "mailto:sullivanjoro3@gmail.com"
     },
     {
       icon: MessageSquare,
-      title: "WhatsApp",
-      content: "+261 34 10 608 02",
-      link: "https://wa.me/261341060802"
+      title: "WhatsApp Business",
+      content: "+261 37 87 17 959",
+      link: "https://wa.me/261378717959"
     },
     {
       icon: MapPin,
