@@ -59,13 +59,13 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-tech-primary">
+    <section id="contact" className="py-20 bg-tech-primary dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-white mb-4">
+          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-white dark:text-tech-light mb-4">
             Contactez-nous
           </h2>
-          <p className="font-montserrat text-lg text-white/90 max-w-2xl mx-auto">
+          <p className="font-montserrat text-lg text-white/90 dark:text-gray-300 max-w-2xl mx-auto">
             Prêt à faire éclore votre projet digital ? Parlons-en ensemble et créons quelque chose d'exceptionnel.
           </p>
         </div>
@@ -112,7 +112,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-8 animate-slide-in-right">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 animate-slide-in-right border border-gray-200 dark:border-gray-700">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>

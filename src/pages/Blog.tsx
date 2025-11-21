@@ -79,10 +79,10 @@ const Blog = () => {
         <section className="pt-32 pb-20 bg-gradient-to-br from-tech-light via-white to-tech-light/50">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto animate-fade-in">
-              <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary mb-6">
+              <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary dark:text-tech-light mb-6">
                 Blog
               </h1>
-              <p className="font-montserrat text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="font-montserrat text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                 Découvrez nos articles sur le digital, le marketing, la création web et les tendances 
                 qui façonnent l'avenir de votre entreprise.
               </p>

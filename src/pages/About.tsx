@@ -56,10 +56,10 @@ const About = () => {
       <Header />
       <div className="flex-1">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-gradient-to-br from-tech-light via-white to-tech-light/50">
+        <section className="pt-32 pb-20 bg-gradient-to-br from-tech-light dark:from-gray-900 via-white dark:via-gray-800 to-tech-light/50 dark:to-gray-900/50">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto animate-fade-in">
-              <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary mb-6">
+              <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary dark:text-tech-light mb-6">
                 À Propos de Tech Bloom Agency
               </h1>
               <p className="font-montserrat text-xl text-gray-600 mb-8 leading-relaxed">
@@ -71,13 +71,13 @@ const About = () => {
         </section>
 
         {/* Notre Histoire */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-8 text-center">
                 Notre Histoire
               </h2>
-              <div className="space-y-6 font-montserrat text-lg text-gray-600 leading-relaxed">
+              <div className="space-y-6 font-montserrat text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 <p>
                   Tech Bloom Agency est née d'une passion pour la technologie et l'entrepreneuriat. 
                   Fondée en février 2025 comme job étudiant, l'agence a rapidement évolué pour devenir 
@@ -183,7 +183,7 @@ const About = () => {
         </section>
 
         {/* Notre Équipe */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-4">
@@ -249,7 +249,7 @@ const About = () => {
         </section>
 
         {/* Stats */}
-        <section className="py-20 bg-tech-light">
+        <section className="py-20 bg-tech-light dark:bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
@@ -257,8 +257,8 @@ const About = () => {
                   <div className="bg-tech-accent/10 rounded-xl p-3 w-fit mx-auto mb-2">
                     <stat.icon className="w-6 h-6 text-tech-accent" />
                   </div>
-                  <div className="font-bitter font-bold text-4xl text-tech-primary mb-2">{stat.number}</div>
-                  <div className="font-montserrat text-gray-600">{stat.label}</div>
+                  <div className="font-bitter font-bold text-4xl text-tech-primary dark:text-tech-light mb-2">{stat.number}</div>
+                  <div className="font-montserrat text-gray-600 dark:text-gray-400">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -266,13 +266,13 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-6">
+              <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary dark:text-tech-light mb-6">
                 Prêt à travailler avec nous ?
               </h2>
-              <p className="font-montserrat text-lg text-gray-600 mb-8">
+              <p className="font-montserrat text-lg text-gray-600 dark:text-gray-400 mb-8">
                 Discutons de votre projet et découvrons comment nous pouvons faire fleurir vos idées digitales.
               </p>
               <Link to="/contact">

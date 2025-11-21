@@ -39,13 +39,13 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-4">
+          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary dark:text-tech-light mb-4">
             Questions Fréquentes
           </h2>
-          <p className="font-montserrat text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="font-montserrat text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Vous avez des questions ? Nous avons les réponses. Consultez notre FAQ ou contactez-nous directement.
           </p>
         </div>
@@ -53,11 +53,11 @@ const FAQ = () => {
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
-                <AccordionTrigger className="font-montserrat font-semibold text-tech-primary hover:text-tech-accent text-left">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200 dark:border-gray-700">
+                <AccordionTrigger className="font-montserrat font-semibold text-tech-primary dark:text-tech-light hover:text-tech-accent dark:hover:text-tech-accent text-left">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="font-montserrat text-gray-600 leading-relaxed pt-2">
+                <AccordionContent className="font-montserrat text-gray-600 dark:text-gray-400 leading-relaxed pt-2">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

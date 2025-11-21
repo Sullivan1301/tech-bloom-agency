@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-tech-primary to-tech-secondary">
+    <section className="py-20 bg-gradient-to-br from-tech-primary dark:from-gray-900 to-tech-secondary dark:to-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-bitter font-bold text-3xl md:text-4xl text-white mb-4">

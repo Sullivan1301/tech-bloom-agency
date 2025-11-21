@@ -31,10 +31,10 @@ const Tarifs = () => {
                 <FlowerIcon size={80} animated={true} className="mx-auto text-tech-accent" />
               </motion.div>
               
-              <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary mb-6">
+              <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary dark:text-tech-light mb-6">
                 Nos Tarifs
               </h1>
-              <p className="font-montserrat text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="font-montserrat text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                 Nos tarifs sont actuellement en cours d'analyse et de finalisation.
               </p>
             </div>
@@ -42,7 +42,7 @@ const Tarifs = () => {
         </section>
 
         {/* Message Bientôt Disponible */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -50,18 +50,18 @@ const Tarifs = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="max-w-2xl mx-auto text-center"
             >
-              <div className="bg-gradient-to-br from-tech-light to-white rounded-3xl p-12 shadow-xl border-2 border-tech-accent/20">
+              <div className="bg-gradient-to-br from-tech-light dark:from-gray-800 to-white dark:to-gray-700 rounded-3xl p-12 shadow-xl border-2 border-tech-accent/20 dark:border-tech-accent/40">
                 <div className="flex justify-center mb-6">
                   <div className="bg-tech-accent/10 rounded-full p-6">
                     <Clock className="w-12 h-12 text-tech-accent" />
                   </div>
                 </div>
                 
-                <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-4">
+                <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary dark:text-tech-light mb-4">
                   Bientôt Disponible
                 </h2>
                 
-                <p className="font-montserrat text-lg text-gray-600 mb-6 leading-relaxed">
+                <p className="font-montserrat text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                   Nous sommes actuellement en train d'analyser et de finaliser nos grilles tarifaires 
                   pour vous proposer des offres transparentes et adaptées à chaque besoin.
                 </p>
@@ -74,8 +74,8 @@ const Tarifs = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <p className="font-montserrat text-gray-600">
-                    En attendant, n'hésitez pas à nous contacter pour obtenir un <strong className="text-tech-primary">devis personnalisé</strong> 
+                  <p className="font-montserrat text-gray-600 dark:text-gray-400">
+                    En attendant, n'hésitez pas à nous contacter pour obtenir un <strong className="text-tech-primary dark:text-tech-accent">devis personnalisé</strong> 
                     adapté à votre projet et votre budget.
                   </p>
                   
@@ -92,29 +92,29 @@ const Tarifs = () => {
         </section>
 
         {/* Info Section */}
-        <section className="py-20 bg-tech-light">
+        <section className="py-20 bg-tech-light dark:bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h3 className="font-bitter font-bold text-2xl md:text-3xl text-tech-primary mb-8 text-center">
+              <h3 className="font-bitter font-bold text-2xl md:text-3xl text-tech-primary dark:text-tech-light mb-8 text-center">
                 Pourquoi un devis personnalisé ?
               </h3>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-2xl p-6 shadow-md">
-                  <h4 className="font-bitter font-semibold text-xl text-tech-primary mb-3">
+                <div className="bg-white dark:bg-gray-700 rounded-2xl p-6 shadow-md border border-gray-200 dark:border-gray-600">
+                  <h4 className="font-bitter font-semibold text-xl text-tech-primary dark:text-tech-light mb-3">
                     Projets Sur-Mesure
                   </h4>
-                  <p className="font-montserrat text-gray-600">
+                  <p className="font-montserrat text-gray-600 dark:text-gray-400">
                     Chaque projet est unique. Nous adaptons nos tarifs selon vos besoins spécifiques, 
                     votre budget et les fonctionnalités requises.
                   </p>
                 </div>
                 
-                <div className="bg-white rounded-2xl p-6 shadow-md">
-                  <h4 className="font-bitter font-semibold text-xl text-tech-primary mb-3">
+                <div className="bg-white dark:bg-gray-700 rounded-2xl p-6 shadow-md border border-gray-200 dark:border-gray-600">
+                  <h4 className="font-bitter font-semibold text-xl text-tech-primary dark:text-tech-light mb-3">
                     Transparence Totale
                   </h4>
-                  <p className="font-montserrat text-gray-600">
+                  <p className="font-montserrat text-gray-600 dark:text-gray-400">
                     Nous vous fournissons un devis détaillé et transparent, sans frais cachés, 
                     pour que vous puissiez prendre une décision en toute sérénité.
                   </p>

@@ -9,16 +9,16 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-tech-light">
+    <section id="about" className="py-20 bg-tech-light dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="animate-fade-in">
-            <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-6">
+            <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary dark:text-tech-light mb-6">
               À propos de Tech Bloom Agency
             </h2>
             
-            <p className="font-montserrat text-lg text-gray-600 mb-6 leading-relaxed">
+            <p className="font-montserrat text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
               Sullivan Joro RAKOTONIAINA, fondateur de Tech Bloom Agency, est un passionné de technologie 
               et de communication digitale.
             </p>
@@ -40,9 +40,9 @@ const About = () => {
             </p>
 
             {/* Quote */}
-            <div className="bg-white rounded-2xl p-6 border-l-4 border-tech-accent mb-8 shadow-md">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 border-l-4 border-tech-accent mb-8 shadow-md border border-gray-200 dark:border-gray-700">
               <Quote className="w-8 h-8 text-tech-accent mb-4" />
-              <p className="font-montserrat italic text-lg text-tech-primary mb-4">
+              <p className="font-montserrat italic text-lg text-tech-primary dark:text-tech-light mb-4">
                 "Chaque idée mérite d'éclore dans le digital."
               </p>
               <div className="flex items-center gap-4">
@@ -50,7 +50,7 @@ const About = () => {
                   <span className="font-bitter font-bold text-white text-lg">SJ</span>
                 </div>
                 <div>
-                  <p className="font-montserrat font-semibold text-tech-primary">Sullivan Joro RAKOTONIAINA</p>
+                  <p className="font-montserrat font-semibold text-tech-primary dark:text-tech-light">Sullivan Joro RAKOTONIAINA</p>
                   <p className="font-montserrat text-sm text-tech-secondary">Fondateur & Directeur Créatif</p>
                 </div>
               </div>

@@ -34,7 +34,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen bg-gradient-to-br from-tech-light via-white to-tech-light/50 pt-20 flex items-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen bg-gradient-to-br from-tech-light dark:from-gray-900 via-white dark:via-gray-800 to-tech-light/50 dark:to-gray-900/50 pt-20 flex items-center relative overflow-hidden">
       {/* Particules en arrière-plan */}
       <FlowerParticles count={30} className="opacity-30" />
       
@@ -47,16 +47,16 @@ const Hero = () => {
               Agence digitale innovante
             </div>
             
-            <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary leading-tight mb-6">
+            <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary dark:text-tech-light leading-tight mb-6">
               Tech Bloom
-              <span className="block text-tech-secondary">Agency</span>
+              <span className="block text-tech-secondary dark:text-tech-accent">Agency</span>
             </h1>
             
-            <p className="font-bitter font-medium text-xl md:text-2xl text-tech-secondary mb-8 leading-relaxed">
+            <p className="font-bitter font-medium text-xl md:text-2xl text-tech-secondary dark:text-gray-300 mb-8 leading-relaxed">
               De la stratégie à l'éclosion digitale.
             </p>
             
-            <p className="font-montserrat text-lg text-gray-600 mb-8 max-w-lg">
+            <p className="font-montserrat text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
               Nous accompagnons votre entreprise dans sa transformation digitale avec des solutions sur-mesure : 
               création de sites web, branding, marketing digital et stratégie tech personnalisée.
             </p>

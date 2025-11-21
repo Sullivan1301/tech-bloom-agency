@@ -52,7 +52,7 @@ const CustomCursor: React.FC = () => {
         }}
         transition={{ type: 'spring', stiffness: 500, damping: 28 }}
       >
-        <div className="w-4 h-4 bg-tech-accent rounded-full blur-sm"></div>
+        <div className="w-4 h-4 bg-tech-accent dark:bg-tech-accent rounded-full blur-sm"></div>
       </motion.div>
 
       {/* Traînée lumineuse */}
@@ -68,7 +68,7 @@ const CustomCursor: React.FC = () => {
         }}
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
       >
-        <div className="w-2 h-2 bg-tech-primary rounded-full opacity-50"></div>
+        <div className="w-2 h-2 bg-tech-primary dark:bg-tech-light rounded-full opacity-50"></div>
       </motion.div>
 
       {/* Particules de traînée */}

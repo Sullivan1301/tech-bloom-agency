@@ -46,7 +46,9 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled 
+        ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg' 
+        : 'bg-transparent dark:bg-transparent'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -84,8 +86,8 @@ const Header = () => {
                 }}
                 className={`font-montserrat font-medium transition-colors duration-300 relative group ${
                   location.pathname === item.path 
-                    ? 'text-tech-accent' 
-                    : 'text-tech-primary hover:text-tech-accent'
+                    ? 'text-tech-accent dark:text-tech-accent' 
+                    : 'text-tech-primary dark:text-tech-light hover:text-tech-accent dark:hover:text-tech-accent'
                 }`}
               >
                 {item.label}

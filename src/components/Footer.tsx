@@ -36,7 +36,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-tech-primary text-white relative overflow-hidden">
+    <footer className="bg-tech-primary dark:bg-gray-900 text-white relative overflow-hidden border-t border-gray-800 dark:border-gray-700">
       {/* Fleur stylisée en filigrane avec effet de particules */}
       <FlowerParticles count={10} className="opacity-10" />
       

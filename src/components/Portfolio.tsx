@@ -34,13 +34,13 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-4">
+          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary dark:text-tech-light mb-4">
             Nos Réalisations
           </h2>
-          <p className="font-montserrat text-lg text-gray-600 max-w-2xl mx-auto mb-4">
+          <p className="font-montserrat text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4">
             Quelques projets que nous avons fait fleurir avec nos clients.
           </p>
           <p className="font-montserrat text-sm text-gray-500 italic">

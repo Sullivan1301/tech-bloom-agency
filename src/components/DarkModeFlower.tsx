@@ -1,39 +1,18 @@
-import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTheme } from '@/hooks/useTheme';
 
 const DarkModeFlower: React.FC = () => {
-  const [mounted, setMounted] = useState(false);
-  // Note: next-themes n'est pas installé, on va utiliser un système simple
-  const [isDark, setIsDark] = useState(false);
+  const { theme, mounted, toggleTheme, isDark } = useTheme();
 
-  useEffect(() => {
-    setMounted(true);
-    // Vérifier la préférence système
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDark(prefersDark);
-    
-    if (prefersDark) {
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newMode = !isDark;
-    setIsDark(newMode);
-    
-    if (newMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
-
-  if (!mounted) return null;
+  if (!mounted) {
+    return (
+      <div className="fixed bottom-24 right-8 z-50 w-14 h-14">
+        <div className="w-full h-full rounded-full bg-tech-primary animate-pulse"></div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -43,8 +22,9 @@ const DarkModeFlower: React.FC = () => {
       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
     >
       <Button
-        onClick={toggleDarkMode}
-        className="w-14 h-14 rounded-full bg-tech-primary hover:bg-tech-secondary transition-all duration-300 relative overflow-hidden group"
+        onClick={toggleTheme}
+        className="w-14 h-14 rounded-full bg-tech-primary dark:bg-tech-secondary hover:bg-tech-secondary dark:hover:bg-tech-primary transition-all duration-300 relative overflow-hidden group shadow-lg"
+        aria-label={isDark ? 'Activer le mode clair' : 'Activer le mode sombre'}
       >
         {/* Fleur bioluminescente en dark mode */}
         {isDark && (

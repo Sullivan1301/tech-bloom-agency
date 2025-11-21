@@ -17,9 +17,9 @@ const ScrollProgressBar: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-1 bg-tech-light/20 z-50">
+    <div className="fixed top-0 left-0 right-0 h-1 bg-tech-light/20 dark:bg-gray-800/20 z-50">
       <motion.div
-        className="h-full bg-gradient-to-r from-tech-primary via-tech-accent to-tech-secondary relative overflow-hidden"
+        className="h-full bg-gradient-to-r from-tech-primary dark:from-tech-accent via-tech-accent dark:via-tech-primary to-tech-secondary dark:to-tech-accent relative overflow-hidden"
         style={{ scaleX, transformOrigin: 'left' }}
       >
         {/* Fleur qui pousse avec la barre */}

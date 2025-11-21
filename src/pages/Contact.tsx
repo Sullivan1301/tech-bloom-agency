@@ -96,13 +96,13 @@ const Contact = () => {
       <Header />
       <div className="flex-1">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-gradient-to-br from-tech-light via-white to-tech-light/50">
+        <section className="pt-32 pb-20 bg-gradient-to-br from-tech-light dark:from-gray-900 via-white dark:via-gray-800 to-tech-light/50 dark:to-gray-900/50">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto animate-fade-in">
-              <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary mb-6">
+              <h1 className="font-bitter font-bold text-4xl md:text-5xl lg:text-6xl text-tech-primary dark:text-tech-light mb-6">
                 Contactez-nous
               </h1>
-              <p className="font-montserrat text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="font-montserrat text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                 Prêt à faire éclore votre projet digital ? Parlons-en ensemble et créons quelque chose d'exceptionnel.
               </p>
             </div>
@@ -110,12 +110,12 @@ const Contact = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Info */}
               <div className="animate-fade-in">
-                <h2 className="font-bitter font-semibold text-3xl text-tech-primary mb-8">
+                <h2 className="font-bitter font-semibold text-3xl text-tech-primary dark:text-tech-light mb-8">
                   Restons en contact
                 </h2>
 
@@ -126,17 +126,17 @@ const Contact = () => {
                         <info.icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="font-montserrat font-medium text-tech-primary">{info.title}</p>
-                        {info.link ? (
-                          <a
-                            href={info.link}
-                            className="font-montserrat text-gray-600 hover:text-tech-accent transition-colors duration-300"
-                          >
-                            {info.content}
-                          </a>
-                        ) : (
-                          <p className="font-montserrat text-gray-600">{info.content}</p>
-                        )}
+                    <p className="font-montserrat font-medium text-tech-primary dark:text-tech-light">{info.title}</p>
+                    {info.link ? (
+                      <a
+                        href={info.link}
+                        className="font-montserrat text-gray-600 dark:text-gray-400 hover:text-tech-accent transition-colors duration-300"
+                      >
+                        {info.content}
+                      </a>
+                    ) : (
+                      <p className="font-montserrat text-gray-600 dark:text-gray-400">{info.content}</p>
+                    )}
                       </div>
                     </div>
                   ))}
@@ -162,12 +162,12 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <Card className="bg-tech-primary text-white border-0">
+                <Card className="bg-tech-primary dark:bg-gray-800 text-white border-0">
                   <CardContent className="p-6">
                     <h4 className="font-bitter font-semibold text-xl mb-4">
                       Réponse garantie sous 24h
                     </h4>
-                    <p className="font-montserrat text-white/90 text-sm leading-relaxed">
+                    <p className="font-montserrat text-white/90 dark:text-gray-300 text-sm leading-relaxed">
                       Nous nous engageons à vous répondre rapidement pour discuter de votre projet
                       et vous proposer des solutions adaptées à vos besoins et votre budget.
                     </p>
@@ -176,14 +176,14 @@ const Contact = () => {
               </div>
 
               {/* Contact Form */}
-              <div className="bg-tech-light rounded-2xl p-8 animate-slide-in-right">
-                <h2 className="font-bitter font-semibold text-2xl text-tech-primary mb-6">
+              <div className="bg-tech-light dark:bg-gray-800 rounded-2xl p-8 animate-slide-in-right border border-gray-200 dark:border-gray-700">
+                <h2 className="font-bitter font-semibold text-2xl text-tech-primary dark:text-tech-light mb-6">
                   Envoyez-nous un message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block font-montserrat font-medium text-tech-primary mb-2">
+                      <label className="block font-montserrat font-medium text-tech-primary dark:text-tech-light mb-2">
                         Nom complet *
                       </label>
                       <Input
@@ -196,7 +196,7 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label className="block font-montserrat font-medium text-tech-primary mb-2">
+                      <label className="block font-montserrat font-medium text-tech-primary dark:text-tech-light mb-2">
                         Email *
                       </label>
                       <Input
@@ -212,7 +212,7 @@ const Contact = () => {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block font-montserrat font-medium text-tech-primary mb-2">
+                      <label className="block font-montserrat font-medium text-tech-primary dark:text-tech-light mb-2">
                         Téléphone
                       </label>
                       <Input
@@ -224,7 +224,7 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label className="block font-montserrat font-medium text-tech-primary mb-2">
+                      <label className="block font-montserrat font-medium text-tech-primary dark:text-tech-light mb-2">
                         Type de projet *
                       </label>
                       <Select

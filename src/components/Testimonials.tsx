@@ -32,16 +32,16 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-tech-light to-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-tech-light dark:from-gray-900 to-white dark:to-gray-800 relative overflow-hidden">
       {/* Pétales qui tombent en arrière-plan */}
       <FlowerParticles count={15} className="opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-4">
+          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary dark:text-tech-light mb-4">
             Ce que disent nos clients
           </h2>
-          <p className="font-montserrat text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="font-montserrat text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             La satisfaction de nos clients est notre plus belle récompense. Découvrez leurs témoignages.
           </p>
         </div>
@@ -50,7 +50,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden border border-gray-200 dark:border-gray-700"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

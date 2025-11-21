@@ -46,13 +46,13 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary mb-4">
+          <h2 className="font-bitter font-bold text-3xl md:text-4xl text-tech-primary dark:text-tech-light mb-4">
             Nos Services
           </h2>
-          <p className="font-montserrat text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="font-montserrat text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Des solutions complètes pour accompagner votre transformation digitale et faire éclore votre potentiel en ligne.
           </p>
         </div>
@@ -61,7 +61,7 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div 
               key={index}
-              className="group bg-tech-light rounded-2xl p-6 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              className="group bg-tech-light dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 relative overflow-hidden border border-gray-200 dark:border-gray-700"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
