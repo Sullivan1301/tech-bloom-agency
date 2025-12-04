@@ -19,83 +19,29 @@ Nos valeurs fondamentales : **Innovation** 🚀, **Humanisme** 🤝, **Performan
 
 ## 🚀 Services
 
-- 🖥️ **Création de sites web** (À partir de 385€)  
+- 🖥️ **Création de sites web**
   Sites vitrines, portfolios, landing pages, e-commerce — optimisés pour ordinateur et mobile.
 
-- 🎨 **Branding & Identité visuelle** (À partir de 220€)  
+- 🎨 **Branding & Identité visuelle**
   Création de logos, chartes graphiques, univers de marque pour une présence digitale unique.
 
-- 📱 **Marketing digital** (À partir de 275€)  
+- 📱 **Marketing digital**
   SEO/SEA, stratégies réseaux sociaux, email marketing, campagnes publicitaires ciblées.
 
-- 👥 **Community Management** (À partir de 165€/mois)  
+- 👥 **Community Management**  
   Gestion professionnelle de vos réseaux sociaux, création de contenus engageants.
 
-- ✨ **Accompagnement digital personnalisé** (À partir de 440€)  
+- ✨ **Accompagnement digital personnalisé** 
   Audit, stratégie, formation et support technique sur-mesure (6 mois).
 
-- 🔧 **Maintenance & Support technique** (À partir de 132€/mois)  
+- 🔧 **Maintenance & Support technique**  
   Mises à jour, sauvegardes, support réactif et optimisation continue.
 
-- 🔄 **Optimisation & Refonte de sites** (À partir de 300€)  
+- 🔄 **Optimisation & Refonte de sites** 
   Audit complet, refonte design, optimisation SEO et performance.
 
 ---
 
-## 🛠️ Stack Technique
-
-- **Frontend :** React 18 + TypeScript
-- **Framework :** Vite
-- **Styling :** Tailwind CSS
-- **UI Components :** shadcn/ui (Radix UI)
-- **Icons :** Lucide React
-- **Routing :** React Router v6
-- **State Management :** TanStack Query
-- **Fonts :** Google Fonts (Bitter + Montserrat)
-
----
-
-## 📦 Installation
-
-```bash
-# Cloner le repository
-git clone https://github.com/techbloomagency/tech-bloom-agency.git
-
-# Installer les dépendances
-npm install
-# ou
-bun install
-
-# Lancer le serveur de développement
-npm run dev
-# ou
-bun dev
-
-# Build pour la production
-npm run build
-# ou
-bun build
-```
-
----
-
-## ⚙️ Configuration
-
-### Variables d'environnement
-
-Créez un fichier `.env` à la racine du projet avec les variables suivantes :
-
-```env
-# Google Analytics 4
-VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
-
-# Facebook Pixel
-VITE_FB_PIXEL_ID=XXXXXXXXXXXXXXX
-```
-
-Voir `.env.example` pour un exemple.
-
----
 
 ## 📁 Structure du Projet
 
@@ -159,9 +105,9 @@ tech-bloom-agency/
 
 - **Email :** sullivanjoro3@gmail.com
 - **Téléphone :** +261 34 10 608 02
-- **WhatsApp Business :** [+261 37 87 17 959](https://wa.me/261378717959)
+- **WhatsApp Business :** [+261 37 87 17959](https://wa.me/261378717959)
 - **Localisation :** Toamasina, Madagascar
-- **Horaires :** Lundi - Vendredi, 8h - 17h (UTC+3)
+- **Horaires :** Lundi - Vendredi, 8h - 20(UTC+3)
 
 ### Réseaux sociaux
 - **Facebook :** [Tech Bloom Agency](https://web.facebook.com/profile.php?id=61578188340191)
