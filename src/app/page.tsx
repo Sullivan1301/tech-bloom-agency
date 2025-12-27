@@ -9,13 +9,13 @@ import FaqQuestion from "@/components/Home/faq";
 
 /* =========================
    METADATA SEO - Homepage
-   Optimized for conversion and clarity
+   Clear, benefit-focused, conversion-optimized
    ========================= */
 
 export const metadata: Metadata = {
-  title: "Tech Bloom Agency – Solutions digitales premium | Performance, Branding & IA",
+  title: "Tech Bloom Agency – Agence digitale premium | Performance, Branding & IA",
   description:
-    "Transformez vos idées en solutions digitales scalables. Tech Bloom Agency combine stratégie, design premium et intelligence artificielle pour accélérer votre croissance. Agence digitale spécialisée en performance, branding et IA.",
+    "Agence digitale pour PME et startups. Nous créons des sites web performants, des identités de marque premium et intégrons l'IA pour accélérer votre croissance. Résultats mesurables, approche professionnelle.",
   keywords: [
     "agence digitale",
     "développement web premium",
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     "design premium",
     "stratégie digitale",
     "Tech Bloom Agency",
-    "Madagascar",
-    "agence tech",
+    "agence web PME",
+    "agence web startup",
     "transformation digitale",
   ],
   openGraph: {
-    title: "Tech Bloom Agency – Votre partenaire digital pour la croissance",
+    title: "Tech Bloom Agency – Solutions digitales pour PME et startups",
     description:
-      "Agence digitale spécialisée en performance, branding et IA. Nous transformons vos idées en solutions digitales qui génèrent des résultats mesurables.",
+      "Agence digitale premium spécialisée en performance, branding et IA. Nous transformons vos idées en solutions qui génèrent des résultats mesurables pour votre croissance.",
     type: "website",
     url: "https://techbloom.agency",
     siteName: "Tech Bloom Agency",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tech Bloom Agency – Solutions digitales premium",
     description:
-      "Transformez vos idées en solutions digitales scalables. Performance, Branding & Intelligence Artificielle.",
+      "Agence digitale pour PME et startups. Performance, Branding & Intelligence Artificielle pour accélérer votre croissance.",
     images: ["https://techbloom.agency/og-image.jpg"],
     creator: "@techbloomagency",
   },
@@ -82,9 +82,9 @@ const pageJsonLd = {
   "@type": "WebPage",
   "@id": "https://techbloom.agency/#webpage",
   url: "https://techbloom.agency",
-  name: "Tech Bloom Agency – Solutions digitales premium | Performance, Branding & IA",
+  name: "Tech Bloom Agency – Agence digitale premium | Performance, Branding & IA",
   description:
-    "Transformez vos idées en solutions digitales scalables. Tech Bloom Agency combine stratégie, design premium et intelligence artificielle pour accélérer votre croissance digitale.",
+    "Agence digitale pour PME et startups. Nous créons des sites web performants, des identités de marque premium et intégrons l'IA pour accélérer votre croissance.",
   isPartOf: {
     "@id": "https://techbloom.agency/#website",
   },
@@ -113,7 +113,7 @@ const organizationJsonLd = {
   url: "https://techbloom.agency",
   logo: "https://techbloom.agency/logo.png",
   description:
-    "Agence digitale premium spécialisée en performance, branding et intelligence artificielle. Nous transformons les idées en solutions digitales scalables qui génèrent de la croissance.",
+    "Agence digitale premium spécialisée en performance, branding et intelligence artificielle. Nous transformons les idées en solutions digitales scalables qui génèrent de la croissance pour PME et startups.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "MG",
@@ -198,8 +198,20 @@ const serviceJsonLd = {
 
 /* =========================
    HOMEPAGE - Tech Bloom Agency
-   Optimized for conversion and clarity
-   Structure: Hero → Process → Services → Social Proof → Stats → FAQ
+   
+   Conversion Strategy (5-second rule):
+   1. Hero: What we do + Who it's for + Why premium (immediate clarity)
+   2. Process: How we work (build trust through methodology)
+   3. Services: What we offer (show value and capabilities)
+   4. Testimonials: Social proof (reduce friction, build credibility)
+   5. Stats: Scale and success (reinforce premium positioning)
+   6. FAQ: Address objections (remove barriers to conversion)
+   
+   Design Philosophy:
+   - Clean, airy, confident (Webflow 2025)
+   - Clear visual hierarchy
+   - Subtle animations only
+   - Mobile-first responsive
    ========================= */
 
 export default function Home() {
@@ -223,21 +235,26 @@ export default function Home() {
 
       {/* 
         HERO SECTION
-        First impression: Clear value proposition + CTAs
-        Goal: Immediate understanding + conversion
+        Objective: Immediate clarity in <5 seconds
+        - What: Digital agency (web, branding, marketing, AI)
+        - Who: PME, startups, entrepreneurs
+        - Why: Premium results, proven methodology, measurable outcomes
+        - CTA: Primary (Get quote) + Secondary (View work)
       */}
       <section
         id="hero"
         className="relative overflow-hidden"
-        aria-label="Introduction Tech Bloom Agency - Transformez vos idées en solutions digitales"
+        aria-label="Tech Bloom Agency - Agence digitale premium pour PME et startups"
       >
         <Hero />
       </section>
 
       {/* 
         PROCESS / APPROACH SECTION
-        Build trust: Show methodology and expertise
-        Goal: Demonstrate professionalism and structured approach
+        Objective: Build trust through transparency
+        - Show structured methodology
+        - Demonstrate professionalism
+        - Reduce perceived risk
       */}
       <section
         id="processus"
@@ -249,8 +266,10 @@ export default function Home() {
 
       {/* 
         SERVICES SECTION
-        Core offerings: What we do
-        Goal: Show value and capabilities clearly
+        Objective: Show clear value proposition
+        - What we offer (4 core services)
+        - Benefits and outcomes
+        - Clear differentiation
       */}
       <section
         id="services"
@@ -262,8 +281,10 @@ export default function Home() {
 
       {/* 
         TESTIMONIALS / SOCIAL PROOF SECTION
-        Build credibility: Client success stories
-        Goal: Reduce friction and build trust
+        Objective: Build credibility and reduce friction
+        - Client success stories with results
+        - Real outcomes and metrics
+        - Trust signals
       */}
       <section
         id="temoignages"
@@ -275,8 +296,11 @@ export default function Home() {
 
       {/* 
         STATISTICS SECTION
-        Reinforce credibility: Key metrics and achievements
-        Goal: Show scale and success
+        Objective: Reinforce premium positioning
+        - Scale indicators (50+ projects)
+        - Success metrics (+250% growth)
+        - Credibility (4.9/5 rating)
+        - Reach (15+ countries)
       */}
       <section
         id="statistiques"
@@ -288,8 +312,10 @@ export default function Home() {
 
       {/* 
         FAQ SECTION
-        Address objections: Common questions
-        Goal: Remove barriers and provide clarity
+        Objective: Remove barriers and objections
+        - Address common concerns
+        - Provide clarity on process
+        - Reduce decision friction
       */}
       <section
         id="faq"
