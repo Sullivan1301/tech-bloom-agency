@@ -8,22 +8,28 @@ import Counter from "@/components/Home/Counter";
 import FaqQuestion from "@/components/Home/faq";
 
 /* =========================
-   METADATA SEO - Tech Bloom Agency
+   METADATA SEO - Homepage
+   Optimized for conversion and clarity
    ========================= */
 
 export const metadata: Metadata = {
-  title: "Tech Bloom Agency – Agence digitale | Performance, Branding & IA",
+  title: "Tech Bloom Agency – Solutions digitales premium | Performance, Branding & IA",
   description:
-    "Transformez vos idées en solutions digitales scalables. Tech Bloom Agency combine stratégie, design premium et intelligence artificielle pour accélérer votre croissance digitale.",
+    "Transformez vos idées en solutions digitales scalables. Tech Bloom Agency combine stratégie, design premium et intelligence artificielle pour accélérer votre croissance. Agence digitale spécialisée en performance, branding et IA.",
   keywords: [
     "agence digitale",
-    "développement web",
-    "branding",
-    "marketing digital",
+    "développement web premium",
+    "branding stratégique",
+    "marketing digital performance",
     "intelligence artificielle",
+    "solutions digitales scalables",
     "e-commerce",
-    "Madagascar",
+    "design premium",
+    "stratégie digitale",
     "Tech Bloom Agency",
+    "Madagascar",
+    "agence tech",
+    "transformation digitale",
   ],
   openGraph: {
     title: "Tech Bloom Agency – Votre partenaire digital pour la croissance",
@@ -37,16 +43,18 @@ export const metadata: Metadata = {
         url: "https://techbloom.agency/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Tech Bloom Agency",
+        alt: "Tech Bloom Agency – Agence digitale premium",
       },
     ],
+    locale: "fr_FR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tech Bloom Agency – Agence digitale | Performance, Branding & IA",
+    title: "Tech Bloom Agency – Solutions digitales premium",
     description:
-      "Transformez vos idées en solutions digitales scalables avec Tech Bloom Agency.",
+      "Transformez vos idées en solutions digitales scalables. Performance, Branding & Intelligence Artificielle.",
     images: ["https://techbloom.agency/og-image.jpg"],
+    creator: "@techbloomagency",
   },
   alternates: {
     canonical: "https://techbloom.agency",
@@ -54,11 +62,19 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
 /* =========================
-   JSON-LD - PAGE D'ACCUEIL
+   JSON-LD STRUCTURED DATA
+   Enhanced for SEO and rich snippets
    ========================= */
 
 const pageJsonLd = {
@@ -66,7 +82,7 @@ const pageJsonLd = {
   "@type": "WebPage",
   "@id": "https://techbloom.agency/#webpage",
   url: "https://techbloom.agency",
-  name: "Tech Bloom Agency – Agence digitale | Performance, Branding & IA",
+  name: "Tech Bloom Agency – Solutions digitales premium | Performance, Branding & IA",
   description:
     "Transformez vos idées en solutions digitales scalables. Tech Bloom Agency combine stratégie, design premium et intelligence artificielle pour accélérer votre croissance digitale.",
   isPartOf: {
@@ -78,9 +94,14 @@ const pageJsonLd = {
   primaryImageOfPage: {
     "@type": "ImageObject",
     url: "https://techbloom.agency/og-image.jpg",
+    width: 1200,
+    height: 630,
   },
   breadcrumb: {
     "@id": "https://techbloom.agency/#breadcrumb",
+  },
+  mainEntity: {
+    "@id": "https://techbloom.agency/#organization",
   },
 };
 
@@ -92,7 +113,7 @@ const organizationJsonLd = {
   url: "https://techbloom.agency",
   logo: "https://techbloom.agency/logo.png",
   description:
-    "Agence digitale spécialisée en performance, branding et intelligence artificielle. Nous transformons les idées en solutions digitales scalables.",
+    "Agence digitale premium spécialisée en performance, branding et intelligence artificielle. Nous transformons les idées en solutions digitales scalables qui génèrent de la croissance.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "MG",
@@ -103,11 +124,14 @@ const organizationJsonLd = {
     "@type": "ContactPoint",
     contactType: "Customer Service",
     email: "contact@techbloom.agency",
+    telephone: "+261341060802",
+    availableLanguage: ["French", "English"],
   },
   sameAs: [
     "https://www.linkedin.com/company/tech-bloom-agency",
     "https://twitter.com/techbloomagency",
     "https://www.facebook.com/techbloomagency",
+    "https://www.instagram.com/tech.bloom.agency",
   ],
 };
 
@@ -118,10 +142,16 @@ const serviceJsonLd = {
   provider: {
     "@id": "https://techbloom.agency/#organization",
   },
-  areaServed: {
-    "@type": "Country",
-    name: ["Madagascar", "International"],
-  },
+  areaServed: [
+    {
+      "@type": "Country",
+      name: "Madagascar",
+    },
+    {
+      "@type": "Place",
+      name: "International",
+    },
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Services digitaux Tech Bloom Agency",
@@ -167,13 +197,15 @@ const serviceJsonLd = {
 };
 
 /* =========================
-   HOME PAGE
+   HOMEPAGE - Tech Bloom Agency
+   Optimized for conversion and clarity
+   Structure: Hero → Process → Services → Social Proof → Stats → FAQ
    ========================= */
 
 export default function Home() {
   return (
     <>
-      {/* JSON-LD Structured Data */}
+      {/* JSON-LD Structured Data for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
@@ -189,50 +221,79 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
 
-      {/* HERO SECTION */}
+      {/* 
+        HERO SECTION
+        First impression: Clear value proposition + CTAs
+        Goal: Immediate understanding + conversion
+      */}
       <section
         id="hero"
         className="relative overflow-hidden"
-        aria-label="Introduction Tech Bloom Agency"
+        aria-label="Introduction Tech Bloom Agency - Transformez vos idées en solutions digitales"
       >
         <Hero />
       </section>
 
-      {/* PROCESS / APPROACH SECTION */}
+      {/* 
+        PROCESS / APPROACH SECTION
+        Build trust: Show methodology and expertise
+        Goal: Demonstrate professionalism and structured approach
+      */}
       <section
         id="processus"
+        className="scroll-mt-20"
         aria-labelledby="processus-heading"
       >
         <BuildAmazing isSpace />
       </section>
 
-      {/* SERVICES SECTION */}
+      {/* 
+        SERVICES SECTION
+        Core offerings: What we do
+        Goal: Show value and capabilities clearly
+      */}
       <section
         id="services"
+        className="scroll-mt-20"
         aria-labelledby="services-heading"
       >
         <WorkGrow />
       </section>
 
-      {/* TESTIMONIALS SECTION */}
+      {/* 
+        TESTIMONIALS / SOCIAL PROOF SECTION
+        Build credibility: Client success stories
+        Goal: Reduce friction and build trust
+      */}
       <section
         id="temoignages"
+        className="scroll-mt-20"
         aria-labelledby="temoignages-heading"
       >
         <Preferred />
       </section>
 
-      {/* STATISTICS SECTION */}
+      {/* 
+        STATISTICS SECTION
+        Reinforce credibility: Key metrics and achievements
+        Goal: Show scale and success
+      */}
       <section
         id="statistiques"
+        className="scroll-mt-20"
         aria-labelledby="stats-heading"
       >
         <Counter />
       </section>
 
-      {/* FAQ SECTION */}
+      {/* 
+        FAQ SECTION
+        Address objections: Common questions
+        Goal: Remove barriers and provide clarity
+      */}
       <section
         id="faq"
+        className="scroll-mt-20"
         aria-labelledby="faq-heading"
       >
         <FaqQuestion />
