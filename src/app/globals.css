@@ -1,26 +1,400 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+Tech Bloom Agency – Global Styles
+Version optimisée et future-proof (Tailwind CSS-first)
+*/
+
+/* ========================================
+DESIGN TOKENS (CSS FIRST)
+======================================== */
+
+@theme {
+  /* Couleurs principales */
+  --color-primary: #384B70;
+  --color-darkprimary: #0D2A40;
+  --color-lightPrimary: #507687;
+
+  --color-accent: #B8001F;
+  --color-accent-light: #C94A6B;
+
+  --color-beige: #FCFAEE;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  --color-gray: #6B7280;
+  --color-gray-light: #9CA3AF;
+
+  --color-border: #E5E7EB;
+  --color-dark_border: #374151;
+
+  /* Dark mode */
+  --color-darkmode: #111827;
+  --color-darklight: #1F2937;
+  --color-darktext: #9CA3AF;
+
+  /* Spacing scale */
+  --spacing-container: 75rem;
+  
+  /* Transitions */
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ========================================
+BASE
+======================================== */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-darkmode);
+    color: var(--color-beige);
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bitter', Georgia, serif;
+    color: var(--color-beige);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ========================================
+LAYOUT
+======================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--spacing-container);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-inline: 1rem;
+  }
+}
+
+section {
+  padding-block: 2.5rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-block: 5rem;
+  }
+}
+
+/* ========================================
+TYPOGRAPHY
+======================================== */
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+BUTTONS
+======================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-beige);
+  box-shadow: 0 4px 15px rgba(184, 0, 31, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 0, 31, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: var(--color-primary);
+  color: var(--color-beige);
+}
+
+.btn-secondary {
+  background-color: var(--color-primary);
+  color: var(--color-beige);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-lightPrimary);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+CARDS
+======================================== */
+
+.glass-card {
+  background: rgba(56, 75, 112, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(252, 250, 238, 0.15);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+  border-color: rgba(252, 250, 238, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(56, 75, 112, 0.3);
+}
+
+.card {
+  background-color: var(--color-darklight);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-dark_border);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 30px rgba(56, 75, 112, 0.2);
+}
+
+/* ========================================
+ANIMATIONS
+======================================== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ========================================
+UTILITIES
+======================================== */
+
+.backdrop-blur-custom {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(184, 0, 31, 0.3);
+}
+
+.shadow-glow-primary {
+  box-shadow: 0 0 30px rgba(56, 75, 112, 0.3);
+}
+
+/* ========================================
+SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-darkprimary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-lightPrimary);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-darkprimary);
+}
+
+/* ========================================
+SELECTION
+======================================== */
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-beige);
+}
+
+::-moz-selection {
+  background-color: var(--color-accent);
+  color: var(--color-beige);
+}
+
+/* ========================================
+FOCUS STYLES (Accessibilité)
+======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ========================================
+PRINT
+======================================== */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+  
+  .glass-card,
+  .card {
+    border: 1px solid #ccc;
+    background: white;
+  }
 }
