@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Code, Palette, TrendingUp, Users, Shield, Search, ArrowRight } from "lucide-react";
+import { Code, Palette, TrendingUp, Users, Shield, Search, Check, LucideIcon } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const iconMap: Record<string, LucideIcon> = {
     Code,
     Palette,
     TrendingUp,
