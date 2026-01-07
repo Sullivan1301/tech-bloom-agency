@@ -106,9 +106,9 @@ npm start
 
 ## Contact
 
-- **Email**: contact@techbloomagency.com
+- **Email**: sullivanjoro3@gmail.com
 - **Téléphone**: +261 34 10 608 02
-- **Adresse**: Toamasina, Madagascar
+- **Adresse**:  Madagascar
 - **Fondateur**: Joro Sullivan RAKOTONIAINA
 
 ## Licence
