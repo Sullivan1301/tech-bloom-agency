@@ -2,13 +2,12 @@
 
 :root {
     --background: #FCFAEE;
-    --foreground: #0D2A40;
+    --foreground: #0D2440;
     --brand-blue-dark: #0D2A40;
     --brand-blue: #384B70;
     --brand-blue-petrol: #507687;
     --brand-beige: #FCFAEE;
     --brand-red-cherry: #B8001F;
-    --brand-red-rose: #C94A6B;
 }
 
 @theme inline {
