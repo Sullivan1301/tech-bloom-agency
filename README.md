@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tech Bloom Agency - Site Web Officiel
 
-## Getting Started
+Site web premium de l'agence digitale **Tech Bloom Agency**, basée à Madagascar.
 
-First, run the development server:
+**Tagline**: De la stratégie à l'éclosion digitale | From Strategy to Digital Growth
+
+## Technologies utilisées
+
+- **Next.js 15** (App Router)
+- **TypeScript**
+- **Tailwind CSS 4**
+- **Lucide React** (icônes)
+- **React 19**
+
+## Pages disponibles
+
+1. **Accueil** (`/`) - Page d'accueil avec hero, services, valeurs, stats, portfolio preview
+2. **Services** (`/services`) - Liste détaillée de tous les services
+3. **À propos** (`/a-propos`) - Histoire, mission, vision et valeurs de l'agence
+4. **Portfolio** (`/portfolio`) - Projets réalisés (data-driven)
+5. **Blog** (`/blog`) - Articles et conseils (data-driven)
+6. **Contact** (`/contact`) - Formulaire de contact et informations
+7. **Mentions légales** (`/mentions-legales`) - Informations légales
+
+## Installation & Développement
 
 ```bash
+# Installation des dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Ouvrir http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build & Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Créer un build de production
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Démarrer le serveur de production
+npm start
+```
 
-## Learn More
+## Charte graphique
 
-To learn more about Next.js, take a look at the following resources:
+### Couleurs principales
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Bleu Marine**: `#0D2A40` (Logo V1, corporate)
+- **Bleu Profond**: `#384B70` (Titres, structure)
+- **Bleu Pétrole**: `#507687` (Accents, éléments secondaires)
+- **Beige Clair**: `#FCFAEE` (Arrière-plans clairs)
+- **Rouge Cerise**: `#B8001F` (CTA, accents)
+- **Rouge Rosé**: `#C94A6B` (Dégradés modernes)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Typographie
 
-## Deploy on Vercel
+- **Headings**: Montserrat (sans-serif)
+- **Body**: Bitter (serif)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Ajouter du contenu
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Ajouter un projet au portfolio
+
+Éditez `src/data/projects.ts` :
+
+```typescript
+{
+  id: "nouveau-projet",
+  title: "Titre du projet",
+  description: "Description courte",
+  category: "Catégorie",
+  image: "URL de l'image",
+  tags: ["tag1", "tag2"],
+}
+```
+
+### Ajouter un article de blog
+
+Éditez `src/data/blog.ts` :
+
+```typescript
+{
+  id: "nouvel-article",
+  title: "Titre de l'article",
+  excerpt: "Résumé de l'article",
+  author: "Tech Bloom Agency",
+  date: "2025-01-07",
+  readTime: "5 min",
+  image: "URL de l'image",
+  category: "Catégorie",
+  tags: ["tag1", "tag2"],
+}
+```
+
+## Services proposés
+
+1. **Création de sites web** - Sites vitrine, e-commerce, applications web, landing pages
+2. **Branding & Identité visuelle** - Logo, charte graphique, identité de marque
+3. **Marketing digital** - SEO, publicité en ligne, stratégie de contenu
+4. **Community management** - Gestion des réseaux sociaux, création de contenu
+5. **Maintenance & Support** - Maintenance technique, mises à jour, support
+6. **Audit & Accompagnement** - Audit digital, conseil stratégique, formation
+
+## Contact
+
+- **Email**: contact@techbloomagency.com
+- **Téléphone**: +261 34 10 608 02
+- **Adresse**: Toamasina, Madagascar
+- **Fondateur**: Joro Sullivan RAKOTONIAINA
+
+## Licence
+
+© 2025 Tech Bloom Agency. Tous droits réservés.
