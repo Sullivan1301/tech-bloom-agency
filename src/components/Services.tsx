@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Code, Palette, TrendingUp, Users, Shield, Search, ArrowRight, LucideIcon } from "lucide-react";
+import { Code, Palette, TrendingUp, Users, Shield, ArrowRight, LucideIcon } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 
 const iconMap: Record<string, LucideIcon> = {

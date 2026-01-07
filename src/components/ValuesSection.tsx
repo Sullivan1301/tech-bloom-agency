@@ -1,7 +1,7 @@
-import { Lightbulb, Target, Heart } from "lucide-react";
+import {Lightbulb, Target, Heart, LucideIcon} from "lucide-react";
 import { VALUES } from "@/lib/constants";
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const iconMap: Record<string, LucideIcon> = {
     Lightbulb,
     Target,
     Heart,
