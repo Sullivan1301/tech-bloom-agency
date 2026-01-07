@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Code, Palette, TrendingUp, Users, Shield, Search, Check } from "lucide-react";
+import { Code, Palette, TrendingUp, Users, Shield, Search, Check, LucideIcon } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: "Découvrez nos services : création de sites web, branding, marketing digital, community management et accompagnement tech personnalisé.",
 };
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const iconMap: Record<string, LucideIcon> = {
     Code,
     Palette,
     TrendingUp,
