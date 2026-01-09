@@ -46,20 +46,19 @@ export default function RootLayout({
     "address": {
       "@type": "PostalAddress",
       streetAddress: "Rue de Madagascar",
-      addressLocality: "Toamasina",
-      postalCode: "1000",
+      addressLocality: "Antananarivo",
+      postalCode: "261",
       addressCountry: "MG",
     },
     "openingHours": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "08:00",
-      "closes": "20:00",
+      "opens": "09:00",
+      "closes": "21:00",
     },
     "sameAs": [
       "https://www.facebook.com/profile.php?id=61578188340191",
       "https://www.instagram.com/tech.bloom.agency",
-      "https://twitter.com/tech_bloom_agency",
       "https://www.linkedin.com/company/tech-bloom-agency",
     ],
     "founder":{

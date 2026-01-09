@@ -71,13 +71,13 @@ export default function Hero() {
 
                                     <div className="grid grid-cols-3 gap-4 pt-4">
                                         <div className="bg-beige p-4 rounded-xl text-center">
-                                            <p className="font-bitter font-bold text-primary text-lg">Web</p>
+                                            <p className="font-bitter font-bold text-accent text-lg">Web</p>
                                         </div>
                                         <div className="bg-beige p-4 rounded-xl text-center">
-                                            <p className="font-bitter font-bold text-primary text-lg">Brand</p>
+                                            <p className="font-bitter font-bold text-accent text-lg">Brand</p>
                                         </div>
                                         <div className="bg-beige p-4 rounded-xl text-center">
-                                            <p className="font-bitter font-bold text-primary text-lg">Tech</p>
+                                            <p className="font-bitter font-bold text-accent text-lg">Tech</p>
                                         </div>
                                     </div>
                                 </div>
