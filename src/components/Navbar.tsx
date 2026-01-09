@@ -13,7 +13,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <Link href="/" className="flex items-center space-x-3 group">
-                        <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent-light rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                        <div className="w-10 h-10 bg-linear-to-br from-primary to-accent-light rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform">
                             <span className="text-white text-xl font-bold">TBA</span>
                         </div>
 
