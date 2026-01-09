@@ -6,6 +6,7 @@ import ValuesSection from "@/components/ValuesSection";
 import StatsSection from "@/components/StatsSection";
 import PortfolioPreview from "@/components/PortfolioPreview";
 import CTASection from "@/components/CTASection";
+import "./globals.css";
 
 export default function Home() {
   return (
