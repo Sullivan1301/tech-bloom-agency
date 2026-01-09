@@ -1,91 +1,91 @@
 @import "tailwindcss";
 
-/* =========================
-   🎨 DESIGN SYSTEM - TECH BLOOM AGENCY
-   ========================= */
+/* =================================================
+   🎨 DESIGN SYSTEM — TECH BLOOM AGENCY
+   Source de vérité pour Tailwind + UI
+   ================================================= */
 
 :root {
-    /* Couleurs principales */
+    /* =========================
+       🌈 BRAND COLORS (Charte)
+       ========================= */
     --brand-blue-dark: #0D2A40;
     --brand-blue: #384B70;
     --brand-blue-petrol: #507687;
-
-    /* Couleurs secondaires */
     --brand-beige: #FCFAEE;
     --brand-red-cherry: #B8001F;
     --brand-rose: #C94A6B;
 
-    /* Couleurs neutres */
+    /* =========================
+       ⚪ NEUTRALS
+       ========================= */
     --white: #FFFFFF;
     --black: #000000;
     --gray: #6B7280;
 
-    /* Sémantique */
-    --background: var(--brand-beige);
-    --foreground: var(--brand-blue-dark);
-}
-
-/* =========================
-   🌗 Mapping Tailwind Theme
-   ========================= */
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-
+    /* =========================
+       🧠 SEMANTIC TOKENS
+       (utilisés par tailwind.config.ts)
+       ========================= */
     --color-primary: var(--brand-blue);
     --color-secondary: var(--brand-blue-petrol);
     --color-accent: var(--brand-red-cherry);
+    --color-accent-light: var(--brand-rose);
+    --color-beige: var(--brand-beige);
+
+    --color-darkprimary: var(--brand-blue-dark);
+    --color-lightPrimary: #6B7CB5;
+
+    /* =========================
+       🌗 DARK MODE TOKENS
+       ========================= */
+    --color-darkmode: #0B1220;
+    --color-darklight: #111827;
+    --color-darktext: #E5E7EB;
+    --color-dark_border: #1F2933;
+
+    /* =========================
+       🧱 LEGACY TEMPLATE TOKENS
+       (pour compatibilité Tailwind)
+       ========================= */
+    --color-SlateBlue: #6B7CB5;
+    --color-BorderLine: #E5E7EB;
+    --color-AliceBlue: #F1F5F9;
+    --color-LightApricot: #FAD7A0;
 }
 
-/* =========================
-   🌍 Base globale
-   ========================= */
+/* =================================================
+   🌍 BASE GLOBALE
+   ================================================= */
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
+    background: var(--color-beige);
+    color: var(--color-darkprimary);
     font-family: var(--font-montserrat), sans-serif;
     line-height: 1.6;
 }
 
-/* Titres = Bitter (selon charte) */
+/* =========================
+   🏷️ TYPOGRAPHIE (Charte)
+   ========================= */
+
+/* Titres principaux */
 h1, h2 {
     font-family: var(--font-bitter), serif;
-    color: var(--brand-blue);
+    color: var(--color-primary);
 }
 
+/* Titres secondaires */
 h3, h4, h5, h6 {
     font-family: var(--font-montserrat), sans-serif;
-    color: var(--brand-blue);
+    color: var(--color-primary);
 }
 
-/* =========================
-   🧱 Styles sémantiques utiles
-   ========================= */
-.container-site {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
+/* Textes secondaires */
 .text-muted {
     color: var(--gray);
-}
-
-.bg-primary {
-    background-color: var(--brand-blue);
-    color: white;
-}
-
-.bg-accent {
-    background-color: var(--brand-red-cherry);
-    color: white;
-}
-
-.text-accent {
-    color: var(--brand-red-cherry);
 }
