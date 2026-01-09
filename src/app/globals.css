@@ -2,90 +2,128 @@
 
 /* =================================================
    🎨 DESIGN SYSTEM — TECH BLOOM AGENCY
-   Source de vérité pour Tailwind + UI
    ================================================= */
 
-:root {
-    /* =========================
-       🌈 BRAND COLORS (Charte)
-       ========================= */
-    --brand-blue-dark: #0D2A40;
-    --brand-blue: #384B70;
-    --brand-blue-petrol: #507687;
-    --brand-beige: #FCFAEE;
-    --brand-red-cherry: #B8001F;
-    --brand-rose: #C94A6B;
+@theme {
+    /* Brand Colors */
+    --color-brand-blue-dark: #0D2A40;
+    --color-brand-blue: #384B70;
+    --color-brand-blue-petrol: #507687;
+    --color-brand-beige: #FCFAEE;
+    --color-brand-red-cherry: #B8001F;
+    --color-brand-red-rose: #C94A6B;
 
-    /* =========================
-       ⚪ NEUTRALS
-       ========================= */
-    --white: #FFFFFF;
-    --black: #000000;
-    --gray: #6B7280;
+    /* Semantic Tokens */
+    --color-primary: var(--color-brand-blue);
+    --color-secondary: var(--color-brand-blue-petrol);
+    --color-accent: var(--color-brand-red-cherry);
+    --color-accent-light: var(--color-brand-red-rose);
+    --color-beige: var(--color-brand-beige);
+    --color-darkprimary: var(--color-brand-blue-dark);
 
-    /* =========================
-       🧠 SEMANTIC TOKENS
-       (utilisés par tailwind.config.ts)
-       ========================= */
-    --color-primary: var(--brand-blue);
-    --color-secondary: var(--brand-blue-petrol);
-    --color-accent: var(--brand-red-cherry);
-    --color-accent-light: var(--brand-rose);
-    --color-beige: var(--brand-beige);
-
-    --color-darkprimary: var(--brand-blue-dark);
-    --color-lightPrimary: #6B7CB5;
-
-    /* =========================
-       🌗 DARK MODE TOKENS
-       ========================= */
+    /* Dark Mode */
     --color-darkmode: #0B1220;
     --color-darklight: #111827;
     --color-darktext: #E5E7EB;
     --color-dark_border: #1F2933;
 
-    /* =========================
-       🧱 LEGACY TEMPLATE TOKENS
-       (pour compatibilité Tailwind)
-       ========================= */
+    /* Legacy */
     --color-SlateBlue: #6B7CB5;
     --color-BorderLine: #E5E7EB;
-    --color-AliceBlue: #F1F5F9;
-    --color-LightApricot: #FAD7A0;
 }
 
 /* =================================================
-   🌍 BASE GLOBALE
+   🌍 BASE STYLES
    ================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background: var(--color-beige);
-    color: var(--color-darkprimary);
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-montserrat, sans-serif);
+    background-color: #FCFAEE;
+    color: #0D2A40;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* =========================
-   🏷️ TYPOGRAPHIE (Charte)
-   ========================= */
-
-/* Titres principaux */
-h1, h2 {
-    font-family: var(--font-bitter), serif;
-    color: var(--color-primary);
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-bitter, serif);
+    color: #384B70;
+    font-weight: 700;
 }
 
-/* Titres secondaires */
-h3, h4, h5, h6 {
-    font-family: var(--font-montserrat), sans-serif;
-    color: var(--color-primary);
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Textes secondaires */
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Buttons - Base Styles */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Utilities */
 .text-muted {
-    color: var(--gray);
+    color: #6B7280;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Gradient Backgrounds */
+.bg-linear-to-br {
+    background: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+/* Font Families (for Tailwind) */
+.font-bitter {
+    font-family: var(--font-bitter, serif);
+}
+
+.font-sans {
+    font-family: var(--font-montserrat, sans-serif);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #384B70;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0D2A40;
 }
