@@ -47,15 +47,6 @@ export default function Footer() {
                             >
                                 <Linkedin size={20} />
                             </a>
-                            <a
-                                href={SITE_CONFIG.social.twitter}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-brand-red-cherry transition-colors"
-                                aria-label="Twitter"
-                            >
-                                <Twitter size={20} />
-                            </a>
                         </div>
                     </div>
 
