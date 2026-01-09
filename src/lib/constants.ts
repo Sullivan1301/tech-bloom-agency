@@ -3,14 +3,13 @@ export const SITE_CONFIG = {
     taglineFr: "De la stratégie à l'éclosion digitale",
     taglineEn: "From Strategy to Digital Growth",
     description: "Agence digitale basée à Madagascar. Spécialisée dans la création de sites web, le branding, le marketing digital et l'accompagnement tech personnalisé.",
-    email: "contact@techbloomagency.com",
+    email: "sullivanjoro3@gmail.com",
     phone: "+261 34 10 608 02",
     address: "Toamasina, Madagascar",
     founder: "Joro Sullivan RAKOTONIAINA",
     social: {
         facebook: "https://www.facebook.com/profile.php?id=61578188340191",
         instagram: "https://www.instagram.com/tech.bloom.agency",
-        twitter: "https://twitter.com/tech_bloom_agency",
         linkedin: "https://www.linkedin.com/company/tech-bloom-agency",
     }
 };
