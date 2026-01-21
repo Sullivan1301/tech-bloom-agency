@@ -56,7 +56,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="bg-accent text-white px-6 py-3 rounded-full font-sans font-medium hover:opacity-90 transition-opacity duration-300"
+              className="bg-accent text-white px-6 py-3 rounded-full font-sans font-medium hover:opacity-90 hover:text-accent hover:bg-white transition-colors duration-500"
             >
               Devis gratuit
             </Link>
