@@ -98,32 +98,32 @@ export const SERVICES = [
 export const VALUES = [
     {
         title: "Innovation",
-        description: "Utilisation des technologies modernes et de l'IA pour créer des solutions performantes.",
-        icon: "Lightbulb"
+        description: "Utilisation des technologies modernes et de l'IA comme leviers de croissance pour propulser vos projets digitaux.",
+        icon: "Chart-no-axes-combined"
+    },
+    {
+        title: "Humanisme",
+        description: "Accompagnement personnalisé et à l'écoute, car chaque projet mérite une attention humaine et bienveillante.",
+        icon: "Heart-handshake"
     },
     {
         title: "Performance",
-        description: "Orientation résultats et croissance tangible pour tous nos projets.",
+        description: "Orientation résultats et croissance tangible. Nous mesurons notre succès à travers le vôtre.",
         icon: "Target"
-    },
-    {
-        title: "Accompagnement",
-        description: "Support personnalisé et à l'écoute pour réussir votre transformation digitale.",
-        icon: "Heart"
     }
 ];
 
 export const STATS = [
     {
-        value: "100%",
+        value: "90%",
         label: "Satisfaction client"
     },
     {
-        value: "50+",
+        value: "20+",
         label: "Projets livrés"
     },
     {
-        value: "2+",
+        value: "1+",
         label: "Ans d'expérience"
     }
 ];

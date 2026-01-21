@@ -37,7 +37,7 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link
                                 href="/contact"
-                                className="group inline-flex items-center justify-center space-x-2 bg-accent text-white px-8 py-4 rounded-full font-sans font-semibold hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl"
+                                className="group inline-flex items-center justify-center space-x-2 bg-accent text-white px-8 py-4 rounded-full font-sans font-semibold hover:opacity-90 hover:text-accent hover:bg-white transition-colors duration-500 shadow-lg hover:shadow-xl"
                             >
                                 <span>Demander un devis gratuit</span>
                                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />
@@ -45,7 +45,7 @@ export default function Hero() {
 
                             <Link
                                 href="/services"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-sans font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-sans font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-500"
                             >
                                 Découvrir nos services
                             </Link>
