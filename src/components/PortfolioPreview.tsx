@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { projects } from "@/data/projects";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function PortfolioPreview() {
     const featuredProjects = projects.slice(0, 3);
@@ -39,6 +39,7 @@ export default function PortfolioPreview() {
                                     alt={project.title}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
                             </div>
                             <div className="p-6">

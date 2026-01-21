@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { Code, Palette, TrendingUp, Users, Shield, ArrowRight, LucideIcon } from "lucide-react";
+import { Code, Palette, TrendingUp, Users, Shield, Search, Check, LucideIcon } from "lucide-react";
+import CTASection from "@/components/CTASection";
 import { SERVICES } from "@/lib/constants";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -8,74 +8,68 @@ const iconMap: Record<string, LucideIcon> = {
     TrendingUp,
     Users,
     Shield,
-    ArrowRight,
+    Search,
 };
 
 export default function Services() {
     return (
-        <section className="py-20 lg:py-32 bg-white">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-heading font-bold text-brand-blue mb-6">
-                        Nos Services
-                    </h2>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                        Des solutions digitales complètes pour accompagner votre croissance et
-                        développer votre présence en ligne.
-                    </p>
-                </div>
+        <>
+                <section className="pt-32 pb-20 bg-gradient-to-br from-brand-beige to-white">
+                    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                        <h1 className="text-5xl lg:text-6xl font-heading font-bold text-brand-blue mb-6">
+                            Nos Services
+                        </h1>
+                        <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                            Des solutions digitales complètes et sur mesure pour accompagner votre croissance.
+                            De la stratégie à la réalisation, nous sommes votre partenaire de confiance.
+                        </p>
+                    </div>
+                </section>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {SERVICES.map((service) => {
-                        const Icon = iconMap[service.icon];
-                        return (
-                            <div
-                                key={service.id}
-                                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:border-brand-red-cherry hover:shadow-xl transition-all duration-300"
-                            >
-                                <div className="w-14 h-14 bg-gradient-to-br from-brand-blue to-brand-blue-petrol rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                    {Icon && <Icon size={28} className="text-white" />}
-                                </div>
+                <section className="py-20 bg-white">
+                    <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                        <div className="space-y-24">
+                            {SERVICES.map((service, index) => {
+                                const Icon = iconMap[service.icon];
+                                const isEven = index % 2 === 0;
 
-                                <h3 className="font-heading font-bold text-xl text-brand-blue mb-3">
-                                    {service.title}
-                                </h3>
+                                return (
+                                    <div
+                                        key={service.id}
+                                        className={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? "lg:flex-row-reverse" : ""}`}
+                                    >
+                                        <div className={isEven ? "" : "lg:order-2"}>
+                                            <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-blue-petrol rounded-2xl flex items-center justify-center mb-6">
+                                                {Icon && <Icon size={32} className="text-white" />}
+                                            </div>
+                                            <h2 className="text-3xl lg:text-4xl font-heading font-bold text-brand-blue mb-4">
+                                                {service.title}
+                                            </h2>
+                                            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                                                {service.description}
+                                            </p>
+                                            <ul className="space-y-3">
+                                                {service.features.map((feature, idx) => (
+                                                    <li key={idx} className="flex items-start space-x-3">
+                                                        <Check size={20} className="text-brand-red-cherry mt-1 flex-shrink-0" />
+                                                        <span className="text-gray-700">{feature}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className={isEven ? "" : "lg:order-1"}>
+                                            <div className="bg-gradient-to-br from-brand-beige to-brand-blue-petrol/10 rounded-3xl p-12 aspect-square flex items-center justify-center">
+                                                {Icon && <Icon size={120} className="text-brand-blue/20" />}
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </section>
 
-                                <p className="text-gray-600 mb-6 leading-relaxed">
-                                    {service.description}
-                                </p>
-
-                                <ul className="space-y-2 mb-6">
-                                    {service.features.slice(0, 3).map((feature, index) => (
-                                        <li key={index} className="flex items-center text-sm text-gray-600">
-                                            <span className="w-1.5 h-1.5 bg-brand-red-cherry rounded-full mr-2" />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <Link
-                                    href="/services"
-                                    className="inline-flex items-center space-x-2 text-brand-red-cherry font-heading font-medium group-hover:underline"
-                                >
-                                    <span>En savoir plus</span>
-                                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                                </Link>
-                            </div>
-                        );
-                    })}
-                </div>
-
-                <div className="text-center mt-12">
-                    <Link
-                        href="/services"
-                        className="inline-flex items-center justify-center space-x-2 bg-brand-blue text-white px-8 py-4 rounded-full font-heading font-semibold hover:bg-brand-blue-dark transition-colors duration-300"
-                    >
-                        <span>Voir tous les services</span>
-                        <ArrowRight size={20} />
-                    </Link>
-                </div>
-            </div>
-        </section>
+                <CTASection />
+                </>
     );
 }

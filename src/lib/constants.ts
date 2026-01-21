@@ -119,8 +119,8 @@ export const STATS = [
         label: "Satisfaction client"
     },
     {
-        value: "Solutions",
-        label: "Sur mesure"
+        value: "50+",
+        label: "Projets livrés"
     },
     {
         value: "2+",

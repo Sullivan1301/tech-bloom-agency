@@ -1,129 +1,99 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* =================================================
-   🎨 DESIGN SYSTEM — TECH BLOOM AGENCY
-   ================================================= */
+:root {
+ 
+  --brand-blue-dark: #0D2A40;
+  --brand-blue: #384B70;
+  --brand-blue-petrol: #507687;
+  --brand-beige: #FCFAEE;
+  --brand-red-cherry: #B8001F;
+  --brand-red-rose: #C94A6B;
 
-@theme {
-    /* Brand Colors */
-    --color-brand-blue-dark: #0D2A40;
-    --color-brand-blue: #384B70;
-    --color-brand-blue-petrol: #507687;
-    --color-brand-beige: #FCFAEE;
-    --color-brand-red-cherry: #B8001F;
-    --color-brand-red-rose: #C94A6B;
+  --spacing-container: 1280px;
+  --spacing-section: 5rem;
+  --spacing-section-lg: 7.5rem;
 
-    /* Semantic Tokens */
-    --color-primary: var(--color-brand-blue);
-    --color-secondary: var(--color-brand-blue-petrol);
-    --color-accent: var(--color-brand-red-cherry);
-    --color-accent-light: var(--color-brand-red-rose);
-    --color-beige: var(--color-brand-beige);
-    --color-darkprimary: var(--color-brand-blue-dark);
-
-    /* Dark Mode */
-    --color-darkmode: #0B1220;
-    --color-darklight: #111827;
-    --color-darktext: #E5E7EB;
-    --color-dark_border: #1F2933;
-
-    /* Legacy */
-    --color-SlateBlue: #6B7CB5;
-    --color-BorderLine: #E5E7EB;
+ 
+  --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* =================================================
-   🌍 BASE STYLES
-   ================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--font-montserrat, sans-serif);
-    background-color: #FCFAEE;
-    color: #0D2A40;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  background-color: var(--brand-beige);
+  color: var(--brand-blue-dark);
+  font-family: var(--font-inter, system-ui, sans-serif);
+  line-height: 1.6;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-bitter, serif);
-    color: #384B70;
-    font-weight: 700;
+h1, h2 {
+  font-family: var(--font-bitter, Georgia, serif);
+  line-height: 1.15;
 }
 
-/* Links */
+h3, h4, h5, h6 {
+  font-family: var(--font-inter, system-ui, sans-serif);
+  font-weight: 700;
+}
+
+
 a {
-    text-decoration: none;
-    color: inherit;
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
 }
 
-/* Images */
+a:hover {
+  color: var(--brand-red-cherry);
+}
+
+
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Buttons - Base Styles */
-button {
-    font-family: inherit;
-    cursor: pointer;
-    border: none;
-    background: none;
+svg {
+  flex-shrink: 0; /* Fix pour icônes Lucide */
 }
 
-/* Utilities */
-.text-muted {
-    color: #6B7280;
+img[loading="lazy"] {
+  object-fit: cover; /* Fix Next.js Image */
 }
 
-/* Container */
 .container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+  width: 100%;
+  max-width: var(--spacing-container);
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
-/* Gradient Backgrounds */
-.bg-linear-to-br {
-    background: linear-gradient(to bottom right, var(--tw-gradient-stops));
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 1.5rem;
+  }
 }
 
-/* Font Families (for Tailwind) */
-.font-bitter {
-    font-family: var(--font-bitter, serif);
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 2rem;
+  }
 }
 
-.font-sans {
-    font-family: var(--font-montserrat, sans-serif);
+section {
+  padding-block: var(--spacing-section);
+  position: relative;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #384B70;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #0D2A40;
+@media (min-width: 768px) {
+  section {
+    padding-block: var(--spacing-section-lg);
+  }
 }
