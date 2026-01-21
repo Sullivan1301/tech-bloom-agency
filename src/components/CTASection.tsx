@@ -11,7 +11,7 @@ export default function CTASection() {
 
             {/* Contenu */}
             <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <h2 className="text-4xl lg:text-5xl font-bold text-[#507687] mb-6">
                     Prêt à faire éclore votre projet digital ?
                 </h2>
                 <p className="text-xl text-[#384B70] mb-10 leading-relaxed">
@@ -24,7 +24,7 @@ export default function CTASection() {
                     <Link
                         href="/contact"
                         className="group inline-flex items-center justify-center space-x-2 bg-[#B8001F] text-white px-8 py-4 rounded-full font-semibold shadow-lg
-                       hover:bg-[#C94A6B] hover:shadow-xl transition-all duration-300"
+                       hover:bg-white hover:text-[#C94A6B] transition-all duration-300"
                     >
                         <Mail size={20} />
                         <span>Demander un devis</span>
@@ -37,8 +37,8 @@ export default function CTASection() {
                     {/* Bouton secondaire */}
                     <Link
                         href="/a-propos"
-                        className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border-2 border-white text-white
-                       hover:bg-white hover:text-[#0D2A40] transition-all duration-300"
+                        className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border-2 border-[#0D2A40] text-[#0D2A40]
+                       hover:text-white hover:bg-[#0D2A40] transition-all duration-300"
                     >
                         En savoir plus sur nous
                     </Link>
