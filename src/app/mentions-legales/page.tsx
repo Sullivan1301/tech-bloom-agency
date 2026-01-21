@@ -1,10 +1,7 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/layout/Footer";
 
 export default function MentionsLegalesPage() {
     return (
         <div className="bg-beige min-h-screen">
-            <Navbar />
             <main className="py-32 bg-white">
                 <div className="max-w-5xl mx-auto px-6 lg:px-8 space-y-10">
                     <div className="space-y-4 text-brand-blue">
@@ -49,7 +46,6 @@ export default function MentionsLegalesPage() {
                     </section>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }
