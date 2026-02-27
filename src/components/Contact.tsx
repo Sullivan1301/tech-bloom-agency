@@ -13,10 +13,45 @@ export default function Contact() {
         message: "",
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
-        alert("Merci ! Votre message a été envoyé.");
+        
+        // Validation basique
+        if (!formData.name || !formData.email || !formData.message) {
+            alert("Veuillez remplir tous les champs obligatoires.");
+            return;
+        }
+        
+        try {
+            // Simulation d'envoi (à remplacer par votre API)
+            console.log("Données du formulaire:", formData);
+            
+            // Envoi par email
+            window.location.href = `mailto:${SITE_CONFIG.email}?subject=Message depuis le site&body=${encodeURIComponent(
+                `Nom: ${formData.name}
+Email: ${formData.email}
+Téléphone: ${formData.phone}
+Entreprise: ${formData.company}
+Service: ${formData.service}
+
+Message: ${formData.message}`
+            )}`;
+            
+            // Reset du formulaire
+            setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                company: "",
+                service: "",
+                message: "",
+            });
+            
+            alert("Message envoyé avec succès !");
+        } catch (error) {
+            console.error("Erreur lors de l'envoi:", error);
+            alert("Une erreur est survenue lors de l'envoi du message.");
+        }
     };
 
     const handleChange = (

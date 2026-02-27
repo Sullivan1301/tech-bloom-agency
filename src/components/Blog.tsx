@@ -53,11 +53,11 @@ export default function Blog() {
                                         </span>
                                     </div>
 
-                                    <span className="inline-block text-xs font-heading font-semibold text-brand-red-cherry bg-brand-red-cherry/10 px-3 py-1 rounded-full mb-3">
+                                    <span className="inline-block text-xs font-heading font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full mb-3">
                                         {post.category}
                                     </span>
 
-                                    <h3 className="font-heading font-bold text-xl text-brand-blue mb-3 line-clamp-2">
+                                    <h3 className="font-heading font-bold text-xl text-primary mb-3 line-clamp-2">
                                         {post.title}
                                     </h3>
 
@@ -65,7 +65,7 @@ export default function Blog() {
                                         {post.excerpt}
                                     </p>
 
-                                    <div className="inline-flex items-center space-x-2 text-brand-red-cherry font-heading font-medium group-hover:underline">
+                                    <div className="inline-flex items-center space-x-2 text-accent font-heading font-medium group-hover:underline">
                                         <span>Lire l'article</span>
                                         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />
                                     </div>

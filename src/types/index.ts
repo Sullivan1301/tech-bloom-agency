@@ -14,6 +14,10 @@ export interface Project {
     image: string;
     tags: string[];
     link?: string;
+    results?: string[];
+    technologies?: string[];
+    client?: string;
+    date?: string;
 }
 
 export interface BlogPost {
@@ -27,6 +31,8 @@ export interface BlogPost {
     image: string;
     category: string;
     tags: string[];
+    slug?: string;
+    featured?: boolean;
 }
 
 export interface Testimonial {
@@ -37,6 +43,8 @@ export interface Testimonial {
     content: string;
     rating: number;
     image?: string;
+    date?: string;
+    project?: string;
 }
 
 export interface Value {
@@ -53,4 +61,28 @@ export interface Stat {
 export interface NavLink {
     href: string;
     label: string;
+    external?: boolean;
+    highlight?: boolean;
+}
+
+export interface B2BProject {
+    id: string;
+    title: string;
+    client: string;
+    description: string;
+    results: string[];
+    technologies: string[];
+    image: string;
+    category: string;
+}
+
+export interface PricingPlan {
+    id: string;
+    title: string;
+    price: string;
+    period: string;
+    description: string;
+    features: string[];
+    highlight?: boolean;
+    cta: string;
 }

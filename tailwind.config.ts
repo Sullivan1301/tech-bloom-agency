@@ -9,23 +9,33 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
+                // Couleurs de marque principales
                 'brand-blue-dark': '#0D2A40',
                 'brand-blue': '#384B70',
                 'brand-blue-petrol': '#507687',
                 'brand-beige': '#FCFAEE',
                 'brand-red-cherry': '#B8001F',
                 'brand-red-rose': '#C94A6B',
-
-                primary: '#384B70',
-                secondary: '#507687',
-                accent: '#B8001F',
+                
+                // Alias sémantiques (recommandés pour une meilleure lisibilité)
+                'primary': '#384B70',
+                'secondary': '#507687',
+                'accent': '#B8001F',
                 'accent-light': '#C94A6B',
-                beige: '#FCFAEE',
+                'beige': '#FCFAEE',
+                'background': '#FCFAEE',
+                'text-primary': '#0D2A40',
+                'text-secondary': '#384B70',
             },
             fontFamily: {
-                sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-                bitter: ['var(--font-bitter)', 'Georgia', 'serif'],
-                heading: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+                // Polices principales
+                'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
+                'serif': ['var(--font-bitter)', 'Georgia', 'serif'],
+                
+                // Alias sémantiques
+                'body': ['var(--font-inter)', 'system-ui', 'sans-serif'],
+                'heading': ['var(--font-bitter)', 'Georgia', 'serif'],
+                'display': ['var(--font-bitter)', 'Georgia', 'serif'],
             },
             container: {
                 center: true,

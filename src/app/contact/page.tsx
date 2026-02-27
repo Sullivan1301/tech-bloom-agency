@@ -1,12 +1,11 @@
 import Contact from "@/components/Contact";
+import PageWrapper from "@/components/layout/PageWrapper";
 
 export default function ContactPage() {
     return (
-        <div className="bg-beige min-h-screen">
-            <main>
-                <Contact />
-            </main>
-        </div>
+        <PageWrapper>
+            <Contact />
+        </PageWrapper>
     );
 }
 
