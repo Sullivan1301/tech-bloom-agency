@@ -5,12 +5,12 @@ import { SITE_CONFIG } from "@/lib/constants";
 export default function About() {
     return (
         <>
-            <section className="pt-32 pb-20 bg-gradient-to-br from-brand-beige to-white">
+            <section className="pt-32 pb-20 bg-gradient-to-br from-brand-light to-white">
                     <div className="max-w-4xl mx-auto px-6 lg:px-8">
-                        <h1 className="text-5xl lg:text-6xl font-heading font-bold text-primary mb-8 text-center">
+                        <h1 className="text-5xl lg:text-6xl font-sans font-bold text-brand-dark mb-8 text-center">
                             À propos de Tech Bloom Agency
                         </h1>
-                        <p className="text-2xl text-secondary font-medium text-center mb-8">
+                        <p className="text-2xl text-brand-gray font-medium text-center mb-8">
                             {SITE_CONFIG.taglineFr}
                         </p>
                     </div>
@@ -19,7 +19,7 @@ export default function About() {
                 <section className="py-20 bg-white">
                     <div className="max-w-4xl mx-auto px-6 lg:px-8">
                         <div className="prose prose-lg max-w-none">
-                            <h2 className="text-3xl font-heading font-bold text-primary mb-6">
+                            <h2 className="text-3xl font-sans font-bold text-brand-dark mb-6">
                                 Notre Histoire
                             </h2>
                             <p className="text-gray-700 leading-relaxed mb-6">
@@ -35,7 +35,7 @@ export default function About() {
                                 et performante, adaptée à ses besoins réels.
                             </p>
 
-                            <h2 className="text-3xl font-heading font-bold text-primary mb-6">
+                            <h2 className="text-3xl font-sans font-bold text-brand-dark mb-6">
                                 Notre Mission
                             </h2>
                             <p className="text-gray-700 leading-relaxed mb-12">
@@ -45,7 +45,7 @@ export default function About() {
                                 mesurables.
                             </p>
 
-                            <h2 className="text-3xl font-heading font-bold text-primary mb-6">
+                            <h2 className="text-3xl font-sans font-bold text-brand-dark mb-6">
                                 Notre Vision
                             </h2>
                             <p className="text-gray-700 leading-relaxed mb-12">
@@ -60,15 +60,15 @@ export default function About() {
 
                 <section className="py-20 bg-background">
                     <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                        <h2 className="text-4xl font-heading font-bold text-primary mb-12 text-center">
+                        <h2 className="text-4xl font-sans font-bold text-brand-dark mb-12 text-center">
                             Nos Valeurs
                         </h2>
                         <div className="grid md:grid-cols-3 gap-8">
-                            <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-                                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <div className="bg-white rounded-agency p-8 shadow-lg text-center">
+                                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-agency flex items-center justify-center mx-auto mb-6">
                                     <Lightbulb size={32} className="text-white" />
                                 </div>
-                                <h3 className="font-heading font-bold text-xl text-primary mb-4">
+                                <h3 className="font-sans font-bold text-xl text-brand-dark mb-4">
                                     Innovation
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed">
@@ -77,11 +77,11 @@ export default function About() {
                                 </p>
                             </div>
 
-                            <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-                                <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent-light rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <div className="bg-white rounded-agency p-8 shadow-lg text-center">
+                                <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent-light rounded-agency flex items-center justify-center mx-auto mb-6">
                                     <Target size={32} className="text-white" />
                                 </div>
-                                <h3 className="font-heading font-bold text-xl text-primary mb-4">
+                                <h3 className="font-sans font-bold text-xl text-brand-dark mb-4">
                                     Performance
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed">
@@ -90,11 +90,11 @@ export default function About() {
                                 </p>
                             </div>
 
-                            <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-                                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <div className="bg-white rounded-agency p-8 shadow-lg text-center">
+                                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-agency flex items-center justify-center mx-auto mb-6">
                                     <Users size={32} className="text-white" />
                                 </div>
-                                <h3 className="font-heading font-bold text-xl text-primary mb-4">
+                                <h3 className="font-sans font-bold text-xl text-brand-dark mb-4">
                                     Accompagnement
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed">
@@ -104,7 +104,7 @@ export default function About() {
                             </div>
                         </div>
                     </div>
-                </section>
+            </section>/
                 <CTASection />
         </>
     );
