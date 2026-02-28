@@ -1,4 +1,6 @@
-import { Quote, Star } from "lucide-react";
+"use client";
+import { Quote } from "lucide-react";
+import { motion } from "framer-motion";
 
 const TESTIMONIALS = [
     {
@@ -28,17 +30,29 @@ export default function Testimonials() {
     return (
         <section id="clients" className="py-32 bg-brand-bg-soft">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-                <div className="mb-20 space-y-6">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-20 space-y-6"
+                >
                     <span className="text-xs font-bold tracking-[0.2em] uppercase text-brand-red-rose">Confiance</span>
                     <h2 className="text-4xl lg:text-6xl font-serif font-bold text-brand-primary leading-[0.9]">
                         Ils nous font <br />
                         <span className="text-brand-dark-blue opacity-50">évoluer.</span>
                     </h2>
-                </div>
+                </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {TESTIMONIALS.map((testimonial, index) => (
-                        <div key={index} className="space-y-8 group">
+                        <motion.div 
+                            key={index} 
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1, duration: 0.8 }}
+                            className="space-y-8 group"
+                        >
                             <Quote className="text-brand-red-rose opacity-20 w-12 h-12 transition-opacity group-hover:opacity-40" />
                             <p className="text-brand-dark-blue text-lg leading-relaxed font-serif italic">
                                 "{testimonial.content}"
@@ -47,7 +61,7 @@ export default function Testimonials() {
                                 <p className="font-bold text-brand-primary uppercase tracking-widest text-sm">{testimonial.name}</p>
                                 <p className="text-[10px] font-bold text-brand-gray uppercase tracking-[0.2em]">{testimonial.role}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

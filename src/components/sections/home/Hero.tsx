@@ -2,47 +2,65 @@
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const HeroCanvas = dynamic(() => import("@/components/ui/HeroCanvas"), { ssr: false });
 
 export default function Hero() {
-    return (
-        <section className="relative min-h-[90vh] bg-white flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden text-brand-dark-blue">
-            {/* Background pattern inspired by Feel and Clic: Minimalist grids/dots */}
-            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 -z-10" />
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.3
+            }
+        }
+    };
 
-            <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center space-y-12">
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="space-y-8"
-                >
-                    <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-brand-red-rose mb-4">
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { 
+            opacity: 1, 
+            y: 0, 
+            transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } 
+        }
+    };
+
+    return (
+        <section className="relative min-h-[95vh] bg-white flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden text-brand-dark-blue">
+            <HeroCanvas />
+
+            <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center space-y-12 relative z-10"
+            >
+                <motion.div variants={itemVariants} className="space-y-8">
+                    <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-brand-red-rose mb-4 bg-brand-red-rose/5 px-4 py-2 rounded-full">
                         Agence digitale à Madagascar • Stratégie & Développement
                     </span>
-                    <h1 className="text-[clamp(3rem,10vw,6.5rem)] font-serif font-bold leading-[0.9] tracking-tight text-brand-primary mb-8">
+                    <h1 className="text-[clamp(3rem,10vw,6.5rem)] font-serif font-bold leading-[0.9] tracking-tighter text-brand-primary mb-8">
                         Agilité techno—<br className="hidden md:block" />
                         <span className="text-brand-dark-blue">logique.</span>
                     </h1>
                 </motion.div>
 
                 <motion.p 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                    variants={itemVariants}
                     className="text-lg lg:text-xl text-brand-gray max-w-3xl mx-auto font-medium leading-relaxed uppercase tracking-wide"
                 >
                     Partenaire digital des entrepreneurs et bras droit technique des agences. Nous concevons des solutions sur-mesure pour propulser votre croissance, en direct ou en sous-traitance.
                 </motion.p>
 
                 <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                    variants={itemVariants}
                     className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8"
                 >
                     <Link
                         href="/portfolio"
-                        className="btn-primary group py-5 px-10 text-sm uppercase tracking-widest"
+                        className="btn-primary group py-5 px-10 text-sm uppercase tracking-widest shadow-2xl shadow-brand-primary/20"
                     >
                         <span>Voir nos projets</span>
                         <ArrowRight size={18} className="ml-3 group-hover:translate-x-1 transition-transform" />
@@ -56,13 +74,14 @@ export default function Hero() {
                         <ChevronRight size={18} className="ml-1 group-hover:translate-x-1 transition-transform text-brand-red-rose" />
                     </Link>
                 </motion.div>
-            </div>
+            </motion.div>
 
             {/* Stats/Social Proof inspired by agency layouts */}
             <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.6 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 1 }}
                 className="mt-24 w-full max-w-[1200px] px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-brand-light-gray pt-16"
             >
                {[ 
