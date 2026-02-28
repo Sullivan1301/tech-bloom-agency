@@ -1,5 +1,6 @@
 export const SITE_CONFIG = {
     name: "Tech Bloom Agency",
+    url: "https://techbloomagency.com",
     taglineFr: "De la stratégie à l'éclosion digitale",
     taglineEn: "From Strategy to Digital Growth",
     description: "Agence digitale basée à Madagascar. Spécialisée dans la création de sites web, le branding, le marketing digital et l'accompagnement tech personnalisé.",

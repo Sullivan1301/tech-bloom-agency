@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Inter, Bitter } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { SITE_CONFIG } from "@/lib/constants";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -19,9 +21,19 @@ const bitter = Bitter({
 });
 
 export const metadata: Metadata = {
-    title: "Tech Bloom Agency – Agence digitale premium",
+    title: {
+        default: "Tech Bloom Agency – Agence digitale premium",
+        template: `%s | ${SITE_CONFIG.name}`,
+    },
     description:
         "Concevoir des produits digitaux performants. Agence experte en UX/UI, développement Next.js et stratégie SEO.",
+    metadataBase: new URL(SITE_CONFIG.url),
+    alternates: {
+        canonical: '/',
+    },
+    verification: {
+        google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+    },
     icons: {
         icon: "/favicon.ico",
     },
@@ -34,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Header />
                 <main>{children}</main>
                 <Footer />
+                <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
             </body>
         </html>
     );
