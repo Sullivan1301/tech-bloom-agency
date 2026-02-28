@@ -1,73 +1,74 @@
-import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 import Image from "next/image";
+import Link from "next/link";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
+import CTASection from "@/components/CTASection";
 
 export default function Blog() {
     return (
-        <>
-            <section className="pt-32 pb-20 bg-gradient-to-br from-brand-beige to-white">
+        <div className="bg-brand-light">
+            {/* Section En-tête de Liste de Blogs en Vedette */}
+            <section className="pt-32 pb-20 bg-gradient-to-br from-brand-light to-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                    <h1 className="text-5xl lg:text-6xl font-heading font-bold text-brand-blue mb-6">
-                        Blog
+                    <h1 className="text-5xl lg:text-7xl font-sans font-bold text-brand-dark mb-8 leading-tight">
+                        Le Blog Tech Bloom
                     </h1>
-                    <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                        Conseils pratiques, actualités et tendances du digital pour faire évoluer
-                        votre entreprise.
+                    <p className="text-xl lg:text-2xl text-brand-gray max-w-4xl mx-auto leading-relaxed">
+                        Conseils d'experts, tendances et guides pratiques pour accompagner la croissance des 
+                        PME et entrepreneurs. Explorez l'univers du digital, du branding, du community management et du marketing.
                     </p>
                 </div>
             </section>
 
-            <section className="py-20 bg-white">
+            {/* Section Liste de Blogs */}
+            <section className="py-24">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                         {blogPosts.map((post) => (
-                            <article
-                                key={post.id}
-                                className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-brand-red-cherry hover:shadow-xl transition-all duration-300"
+                            <article 
+                                key={post.id} 
+                                className="group bg-white rounded-agency overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
                             >
-                                <div className="relative h-48 overflow-hidden bg-gray-100">
+                                <div className="relative h-64 overflow-hidden">
                                     <Image
                                         src={post.image}
                                         alt={post.title}
                                         fill
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                        priority={false}
+                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
+                                    <div className="absolute top-4 left-4 bg-brand-blue text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">
+                                        {post.category}
+                                    </div>
                                 </div>
-                                <div className="p-6">
-                                    <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
-                                        <span className="inline-flex items-center space-x-1">
-                                            <Calendar size={14} className="flex-shrink-0" />
-                                            <time dateTime={post.date}>
-                                                {new Date(post.date).toLocaleDateString('fr-FR', {
-                                                    year: 'numeric',
-                                                    month: 'long',
-                                                    day: 'numeric'
-                                                })}
-                                            </time>
-                                        </span>
-                                        <span className="inline-flex items-center space-x-1">
-                                            <Clock size={14} className="flex-shrink-0" />
+
+                                <div className="p-8 flex flex-col flex-grow">
+                                    <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
+                                        <div className="flex items-center gap-1.5">
+                                            <Calendar size={16} className="text-brand-blue" />
+                                            <span>{new Date(post.date).toLocaleDateString('fr-FR', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1.5">
+                                            <Clock size={16} className="text-brand-blue" />
                                             <span>{post.readTime}</span>
-                                        </span>
+                                        </div>
                                     </div>
 
-                                    <span className="inline-block text-xs font-heading font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full mb-3">
-                                        {post.category}
-                                    </span>
-
-                                    <h3 className="font-heading font-bold text-xl text-primary mb-3 line-clamp-2">
+                                    <h3 className="text-2xl font-sans font-bold text-brand-dark mb-4 group-hover:text-brand-blue transition-colors">
                                         {post.title}
                                     </h3>
 
-                                    <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">
+                                    <p className="text-gray-600 leading-relaxed mb-8 line-clamp-3">
                                         {post.excerpt}
                                     </p>
 
-                                    <div className="inline-flex items-center space-x-2 text-accent font-heading font-medium group-hover:underline">
-                                        <span>Lire l'article</span>
-                                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                                    <div className="mt-auto">
+                                        <Link 
+                                            href={`/blog/${post.id}`} 
+                                            className="inline-flex items-center gap-2 text-brand-blue font-bold group-hover:gap-4 transition-all uppercase text-sm tracking-widest"
+                                        >
+                                            Lire l'article
+                                            <ArrowRight size={18} />
+                                        </Link>
                                     </div>
                                 </div>
                             </article>
@@ -75,6 +76,8 @@ export default function Blog() {
                     </div>
                 </div>
             </section>
-        </>
+
+            <CTASection />
+        </div>
     );
 }
