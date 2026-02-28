@@ -1,20 +1,21 @@
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import ValuesSection from "@/components/ValuesSection";
+import HomeServices from "@/components/HomeServices";
+import HowItWorks from "@/components/HowItWorks";
 import PortfolioPreview from "@/components/PortfolioPreview";
-import StatsSection from "@/components/StatsSection";
+import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
+import ToolsSection from "@/components/ToolsSection";
 import PageWrapper from "@/components/layout/PageWrapper";
 
 export default function Page() {
     return (
         <PageWrapper>
             <Hero />
-            <ValuesSection />
-            <Services />
+            <HomeServices />
+            <HowItWorks />
             <PortfolioPreview />
-            <StatsSection />
-            <CTASection />
+            <Testimonials />
+            <ToolsSection />
         </PageWrapper>
     );
 }

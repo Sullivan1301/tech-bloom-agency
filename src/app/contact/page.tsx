@@ -8,4 +8,3 @@ export default function ContactPage() {
         </PageWrapper>
     );
 }
-

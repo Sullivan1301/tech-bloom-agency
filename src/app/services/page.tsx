@@ -1,12 +1,14 @@
 import Services from "@/components/Services";
+import ServicesAdvantages from "@/components/ServicesAdvantages";
+import ServicesFAQ from "@/components/ServicesFAQ";
+import PageWrapper from "@/components/layout/PageWrapper";
 
 export default function ServicesPage() {
     return (
-        <div className="bg-beige min-h-screen">
-            <main>
-                <Services />
-            </main>
-        </div>
+        <PageWrapper>
+            <Services />
+            <ServicesAdvantages />
+            <ServicesFAQ />
+        </PageWrapper>
     );
 }
-

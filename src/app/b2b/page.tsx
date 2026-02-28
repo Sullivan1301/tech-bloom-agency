@@ -10,7 +10,7 @@ import B2BContactForm from "@/components/B2B/B2BContactForm";
 
 export default function B2BPage() {
     return (
-        <div className="bg-beige min-h-screen pt-20">
+        <div className="bg-brand-light min-h-screen pt-20">
             <main>
                 <B2BHero />
                 <B2BChallenges />
