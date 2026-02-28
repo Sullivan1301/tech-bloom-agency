@@ -1,4 +1,4 @@
-import Contact from "@/components/Contact";
+import Contact from "@/components/sections/contact/Contact";
 import PageWrapper from "@/components/layout/PageWrapper";
 
 export default function ContactPage() {

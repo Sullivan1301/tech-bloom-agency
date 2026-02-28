@@ -1,8 +1,8 @@
-import About from "@/components/About";
-import StatsSection from "@/components/StatsSection";
-import TeamSection from "@/components/TeamSection";
-import Testimonials from "@/components/Testimonials";
-import CTASection from "@/components/CTASection";
+import About from "@/components/sections/about/About";
+import StatsSection from "@/components/sections/home/StatsSection";
+import TeamSection from "@/components/sections/about/TeamSection";
+import Testimonials from "@/components/sections/home/Testimonials";
+import CTASection from "@/components/sections/shared/CTASection";
 import PageWrapper from "@/components/layout/PageWrapper";
 
 export default function AboutPage() {

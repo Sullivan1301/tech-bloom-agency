@@ -1,4 +1,4 @@
-import LegalMentions from "@/components/LegalMentions";
+import LegalMentions from "@/components/sections/legal/LegalMentions";
 import PageWrapper from "@/components/layout/PageWrapper";
 
 export default function LegalPage() {
