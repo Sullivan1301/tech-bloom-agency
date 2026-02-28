@@ -1,75 +1,77 @@
-import { Code, Palette, TrendingUp, Users, Shield, Search, Check, LucideIcon } from "lucide-react";
+import { Search, Palette, Code, Check } from "lucide-react";
 import CTASection from "@/components/CTASection";
-import { SERVICES } from "@/lib/constants";
 
-const iconMap: Record<string, LucideIcon> = {
-    Code,
-    Palette,
-    TrendingUp,
-    Users,
-    Shield,
-    Search,
-};
+const PILLARS = [
+    {
+        title: "Stratégie Digitale",
+        description: "Nous définissons votre positionnement, analysons votre marché et concevons la roadmap de votre succès numérique.",
+        icon: Search,
+        features: ["Audit & Conseil", "Social Media Strategy", "SEO & Visibilité", "Data & Analytics"]
+    },
+    {
+        title: "Conception UX/UI",
+        description: "Nous créons des interfaces intuitives et esthétiques, centrées sur l'utilisateur pour maximiser l'engagement.",
+        icon: Palette,
+        features: ["User Research", "Wireframing", "Design System", "Micro-interactions"]
+    },
+    {
+        title: "Développement",
+        description: "Nous développons des solutions techniques robustes et évolutives avec les meilleures technologies actuelles.",
+        icon: Code,
+        features: ["Next.js & React", "E-commerce", "APIs & Headless CMS", "Performance Web"]
+    }
+];
 
 export default function Services() {
     return (
-        <>
-                <section className="pt-32 pb-20 bg-gradient-to-br from-brand-beige to-white">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                        <h1 className="text-5xl lg:text-6xl font-heading font-bold text-brand-blue mb-6">
-                            Nos Services
-                        </h1>
-                        <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                            Des solutions digitales complètes et sur mesure pour accompagner votre croissance.
-                            De la stratégie à la réalisation, nous sommes votre partenaire de confiance.
-                        </p>
+        <div className="bg-white">
+            <section className="pt-40 pb-24 border-b border-brand-light-gray">
+                <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase text-brand-red-rose mb-6 block">
+                        Expertises
+                    </span>
+                    <h1 className="text-5xl lg:text-8xl font-serif font-bold text-brand-primary leading-[0.9] tracking-tighter mb-12">
+                        Nos piliers <br />
+                        <span className="text-brand-dark-blue opacity-50">d'excellence.</span>
+                    </h1>
+                    <p className="text-xl text-brand-gray max-w-3xl font-medium leading-relaxed uppercase tracking-wide">
+                        De la vision à l'exécution technique, nous activons les leviers 
+                        digitaux pour transformer vos idées en produits performants.
+                    </p>
+                </div>
+            </section>
+
+            <section className="py-32">
+                <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+                    <div className="grid lg:grid-cols-3 gap-16">
+                        {PILLARS.map((pillar, index) => (
+                            <div key={index} className="space-y-10 group">
+                                <div className="w-20 h-20 bg-brand-bg-soft rounded-agency-md flex items-center justify-center transition-colors group-hover:bg-brand-pale-pink">
+                                    <pillar.icon size={36} className="text-brand-primary" />
+                                </div>
+                                <div className="space-y-6">
+                                    <h2 className="text-3xl font-serif font-bold text-brand-primary">
+                                        {pillar.title}
+                                    </h2>
+                                    <p className="text-brand-gray font-medium leading-relaxed text-sm uppercase tracking-wide">
+                                        {pillar.description}
+                                    </p>
+                                    <ul className="space-y-4 pt-4">
+                                        {pillar.features.map((feature, idx) => (
+                                            <li key={idx} className="flex items-center space-x-3 text-xs font-bold uppercase tracking-widest text-brand-dark-blue">
+                                                <div className="w-1.5 h-1.5 bg-brand-red-rose rounded-full" />
+                                                <span>{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="py-20 bg-white">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                        <div className="space-y-24">
-                            {SERVICES.map((service, index) => {
-                                const Icon = iconMap[service.icon];
-                                const isEven = index % 2 === 0;
-
-                                return (
-                                    <div
-                                        key={service.id}
-                                        className={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? "lg:flex-row-reverse" : ""}`}
-                                    >
-                                        <div className={isEven ? "" : "lg:order-2"}>
-                                            <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-blue-petrol rounded-2xl flex items-center justify-center mb-6">
-                                                {Icon && <Icon size={32} className="text-white" />}
-                                            </div>
-                                            <h2 className="text-3xl lg:text-4xl font-heading font-bold text-brand-blue mb-4">
-                                                {service.title}
-                                            </h2>
-                                            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                                                {service.description}
-                                            </p>
-                                            <ul className="space-y-3">
-                                                {service.features.map((feature, idx) => (
-                                                    <li key={idx} className="flex items-start space-x-3">
-                                                        <Check size={20} className="text-brand-red-cherry mt-1 flex-shrink-0" />
-                                                        <span className="text-gray-700">{feature}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className={isEven ? "" : "lg:order-1"}>
-                                            <div className="bg-gradient-to-br from-brand-beige to-brand-blue-petrol/10 rounded-3xl p-12 aspect-square flex items-center justify-center">
-                                                {Icon && <Icon size={120} className="text-brand-blue/20" />}
-                                            </div>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-
-                <CTASection />
-                </>
+            <CTASection />
+        </div>
     );
 }

@@ -9,10 +9,10 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function ValuesSection() {
     return (
-        <section className="py-20 lg:py-32 bg-gradient-to-br from-brand-beige to-white">
+        <section className="py-20 lg:py-32 bg-gradient-to-br from-brand-light to-white">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-heading font-bold text-brand-blue mb-6">
+                    <h2 className="text-4xl lg:text-5xl font-sans font-bold text-brand-blue mb-6">
                         Pourquoi Tech Bloom Agency ?
                     </h2>
                     <p className="text-lg text-gray-700 leading-relaxed">
@@ -27,12 +27,12 @@ export default function ValuesSection() {
                         return (
                             <div
                                 key={index}
-                                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
+                                className="bg-white rounded-agency p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
                             >
-                                <div className="w-16 h-16 bg-gradient-to-br from-brand-red-cherry to-brand-red-rose rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-accent rounded-agency flex items-center justify-center mx-auto mb-6">
                                     {Icon && <Icon size={32} className="text-white" />}
                                 </div>
-                                <h3 className="font-heading font-bold text-xl text-brand-blue mb-4">
+                                <h3 className="font-sans font-bold text-xl text-brand-blue mb-4">
                                     {value.title}
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed">
