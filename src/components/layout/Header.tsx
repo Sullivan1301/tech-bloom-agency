@@ -23,8 +23,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full">
       {/* Top bar promo / contact */}
       {showTopBar && (
-        <div className="bg-brand-dark text-white text-sm flex justify-center items-center h-8">
-          Bienvenue chez Tech Bloom Agency ! Contactez-nous au 📞 +261 34 10 608 02
+        <div className="bg-brand-dark text-white text-[10px] font-bold uppercase tracking-widest flex justify-center items-center h-8">
+          Expertise digitale à Madagascar — Contact : +261 34 10 608 02
         </div>
       )}
 
