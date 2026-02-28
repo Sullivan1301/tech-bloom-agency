@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
+import CTASection from "@/components/CTASection";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -9,191 +10,149 @@ export default function Contact() {
         email: "",
         phone: "",
         company: "",
-        service: "",
+        service: "Web",
         message: "",
     });
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        
-        // Validation basique
-        if (!formData.name || !formData.email || !formData.message) {
-            alert("Veuillez remplir tous les champs obligatoires.");
-            return;
-        }
-        
-        try {
-            // Simulation d'envoi (à remplacer par votre API)
-            console.log("Données du formulaire:", formData);
-            
-            // Envoi par email
-            window.location.href = `mailto:${SITE_CONFIG.email}?subject=Message depuis le site&body=${encodeURIComponent(
-                `Nom: ${formData.name}
-Email: ${formData.email}
-Téléphone: ${formData.phone}
-Entreprise: ${formData.company}
-Service: ${formData.service}
-
-Message: ${formData.message}`
-            )}`;
-            
-            // Reset du formulaire
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                company: "",
-                service: "",
-                message: "",
-            });
-            
-            alert("Message envoyé avec succès !");
-        } catch (error) {
-            console.error("Erreur lors de l'envoi:", error);
-            alert("Une erreur est survenue lors de l'envoi du message.");
-        }
+        const mailtoUrl = `mailto:${SITE_CONFIG.email}?subject=Contact Tech Bloom Agency - ${formData.service}&body=${encodeURIComponent(
+            `Nom: ${formData.name}\nEmail: ${formData.email}\nTéléphone: ${formData.phone}\nEntreprise: ${formData.company}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
+        )}`;
+        window.location.href = mailtoUrl;
     };
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-    ) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
+    const handleChange = (e: any) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     return (
-        <>
-            {/* HERO */}
-            <section className="pt-32 pb-20 bg-gradient-to-br from-brand-beige to-white">
+        <div className="bg-brand-light">
+            {/* Section En-tête */}
+            <section className="pt-32 pb-20 bg-gradient-to-br from-brand-light to-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                    <h1 className="text-5xl lg:text-6xl font-heading font-bold text-brand-blue mb-6">
-                        Contactez-nous
+                    <h1 className="text-5xl lg:text-7xl font-sans font-bold text-brand-dark mb-8 leading-tight">
+                        Parlons de votre projet
                     </h1>
-                    <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                        Prêt à lancer votre projet digital ? Parlons-en ensemble. Nous répondons sous 24h.
+                    <p className="text-xl lg:text-2xl text-brand-gray max-w-4xl mx-auto leading-relaxed">
+                        Faites le premier pas vers une présence digitale premium. Que vous soyez une PME 
+                        ou un entrepreneur, nous sommes là pour transformer vos idées en réalité.
                     </p>
                 </div>
             </section>
 
-            {/* CONTENT */}
-            <section className="py-20 bg-white">
+            <section className="py-24">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-16">
-
-                        {/* FORM */}
-                        <div>
-                            <h2 className="text-3xl font-heading font-bold text-brand-blue mb-6">
-                                Envoyez-nous un message
-                            </h2>
-
+                        
+                        {/* Section Formulaire de Contact */}
+                        <div className="bg-white p-8 lg:p-12 rounded-agency shadow-xl border border-gray-100">
+                            <h2 className="text-3xl font-sans font-bold text-brand-dark mb-8">Envoyez-nous un message</h2>
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label className="block text-sm font-heading font-medium text-gray-700 mb-2">
-                                            Nom complet *
-                                        </label>
-                                        <input
-                                            name="name"
-                                            required
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl"
-                                        />
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Nom complet</label>
+                                        <input name="name" required onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all" placeholder="Jean Dupont" />
                                     </div>
-
-                                    <div>
-                                        <label className="block text-sm font-heading font-medium text-gray-700 mb-2">
-                                            Email *
-                                        </label>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            required
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl"
-                                        />
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Email</label>
+                                        <input name="email" type="email" required onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all" placeholder="jean@exemple.com" />
                                     </div>
                                 </div>
-
-                                <div>
-                                    <label className="block text-sm font-heading font-medium text-gray-700 mb-2">
-                                        Votre message *
-                                    </label>
-                                    <textarea
-                                        name="message"
-                                        required
-                                        rows={6}
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-xl resize-none"
-                                    />
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Téléphone</label>
+                                        <input name="phone" onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all" placeholder="+261 -- -- --- --" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Service souhaité</label>
+                                        <select name="service" onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all">
+                                            <option value="Web">Création de site web</option>
+                                            <option value="Branding">Branding & Design</option>
+                                            <option value="Marketing">Marketing Digital</option>
+                                            <option value="Community">Community Management</option>
+                                            <option value="IA">Solutions IA</option>
+                                        </select>
+                                    </div>
                                 </div>
-
-                                <button
-                                    type="submit"
-                                    className="inline-flex items-center gap-2 bg-brand-red-cherry text-white px-8 py-4 rounded-full font-heading font-semibold"
-                                >
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Message</label>
+                                    <textarea name="message" required rows={5} onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all resize-none" placeholder="Décrivez votre projet en quelques mots..." />
+                                </div>
+                                <button type="submit" className="w-full bg-brand-blue text-white py-5 rounded-agency font-sans font-bold text-lg hover:shadow-2xl hover:opacity-90 transition-all flex items-center justify-center gap-3">
                                     <Send size={20} />
-                                    Envoyer le message
+                                    Démarrer la collaboration
                                 </button>
                             </form>
                         </div>
 
-                        {/* INFOS */}
-                        <div className="space-y-8">
-                            <h2 className="text-3xl font-heading font-bold text-brand-blue">
-                                Informations de contact
-                            </h2>
-
-                            {/* EMAIL */}
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center">
-                                    <Mail className="text-white" />
-                                </div>
-                                <div>
-                                    <p className="font-heading font-semibold text-brand-blue">Email</p>
-                                    <a
-                                        href={`mailto:${SITE_CONFIG.email}`}
-                                        className="text-gray-700 hover:text-brand-red-cherry"
-                                    >
-                                        {SITE_CONFIG.email}
-                                    </a>
-                                </div>
-                            </div>
-
-                            {/* PHONE */}
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center">
-                                    <Phone className="text-white" />
-                                </div>
-                                <div>
-                                    <p className="font-heading font-semibold text-brand-blue">Téléphone</p>
-                                    <a
-                                        href={`tel:${SITE_CONFIG.phone}`}
-                                        className="text-gray-700 hover:text-brand-red-cherry"
-                                    >
-                                        {SITE_CONFIG.phone}
-                                    </a>
+                        {/* Section Infos de Contact */}
+                        <div className="space-y-12">
+                            <div>
+                                <h2 className="text-3xl font-sans font-bold text-brand-dark mb-8">Coordonnées</h2>
+                                <div className="space-y-6">
+                                    <div className="flex items-start gap-6 group">
+                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-all">
+                                            <Mail size={24} />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-bold text-brand-gray uppercase tracking-wider mb-1">Email</p>
+                                            <a href={`mailto:${SITE_CONFIG.email}`} className="text-xl font-sans font-bold text-brand-dark hover:text-brand-blue transition-colors">{SITE_CONFIG.email}</a>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-6 group">
+                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-all">
+                                            <Phone size={24} />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-bold text-brand-gray uppercase tracking-wider mb-1">Téléphone</p>
+                                            <a href={`tel:${SITE_CONFIG.phone}`} className="text-xl font-sans font-bold text-brand-dark hover:text-brand-blue transition-colors">{SITE_CONFIG.phone}</a>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-6 group">
+                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-all">
+                                            <MapPin size={24} />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-bold text-brand-gray uppercase tracking-wider mb-1">Localisation</p>
+                                            <p className="text-xl font-sans font-bold text-brand-dark">{SITE_CONFIG.address}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* ADDRESS */}
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center">
-                                    <MapPin className="text-white" />
-                                </div>
-                                <div>
-                                    <p className="font-heading font-semibold text-brand-blue">Adresse</p>
-                                    <p className="text-gray-700">{SITE_CONFIG.address}</p>
+                            <div>
+                                <h2 className="text-3xl font-sans font-bold text-brand-dark mb-8">Horaires & Réseaux</h2>
+                                <div className="space-y-6">
+                                    <div className="flex items-start gap-6">
+                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md">
+                                            <Clock size={24} className="text-brand-blue" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-bold text-brand-gray uppercase tracking-wider mb-1">Disponibilité</p>
+                                            <p className="text-lg text-gray-700 font-medium">Lundi - Vendredi : 08h00 - 18h00</p>
+                                            <p className="text-lg text-gray-700 font-medium">Samedi : 09h00 - 12h00</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <a href={SITE_CONFIG.social.facebook} target="_blank" className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md hover:bg-brand-dark hover:text-white transition-all">
+                                            <Facebook size={24} />
+                                        </a>
+                                        <a href={SITE_CONFIG.social.instagram} target="_blank" className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md hover:bg-brand-dark hover:text-white transition-all">
+                                            <Instagram size={24} />
+                                        </a>
+                                        <a href={SITE_CONFIG.social.linkedin} target="_blank" className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md hover:bg-brand-dark hover:text-white transition-all">
+                                            <Linkedin size={24} />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-        </>
+
+            <CTASection />
+        </div>
     );
 }
