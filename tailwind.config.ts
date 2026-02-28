@@ -9,32 +9,34 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                // Couleurs de marque principales
-                'brand-blue-dark': '#0D2A40',
-                'brand-blue': '#384B70',
-                'brand-blue-petrol': '#507687',
-                'brand-beige': '#FCFAEE',
-                'brand-red-cherry': '#B8001F',
+                // Brand Extraction Palette
+                'brand-primary': '#384B70',
                 'brand-red-rose': '#C94A6B',
+                'brand-red-cherry': '#B8001F',
+                'brand-dark-blue': '#0D2A40',
+                'brand-purple': '#623255',
+                'brand-burgundy': '#841F40',
+                'brand-gray': '#6B7280',
+                'brand-light-gray': '#E5E7EB',
+                'brand-pale-pink': '#F5DDE1',
+                'brand-bg-soft': '#FBF2F4',
                 
-                // Alias sémantiques (recommandés pour une meilleure lisibilité)
+                // Semantic aliases
                 'primary': '#384B70',
-                'secondary': '#507687',
-                'accent': '#B8001F',
-                'accent-light': '#C94A6B',
-                'beige': '#FCFAEE',
-                'background': '#FCFAEE',
-                'text-primary': '#0D2A40',
-                'text-secondary': '#384B70',
+                'secondary': '#6B7280',
+                'background': '#FFFFFF',
+                'foreground': '#0D2A40',
+            },
+            borderRadius: {
+                'agency-xs': '4px',
+                'agency-sm': '12px',
+                'agency-md': '16px',
+                'agency-lg': '24px',
+                'full': '9999px',
             },
             fontFamily: {
-                // Polices principales
                 'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
                 'serif': ['var(--font-bitter)', 'Georgia', 'serif'],
-                
-                // Alias sémantiques
-                'body': ['var(--font-inter)', 'system-ui', 'sans-serif'],
-                'heading': ['var(--font-bitter)', 'Georgia', 'serif'],
                 'display': ['var(--font-bitter)', 'Georgia', 'serif'],
             },
             container: {
