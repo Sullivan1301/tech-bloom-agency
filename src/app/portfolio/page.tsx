@@ -1,12 +1,13 @@
 import Portfolio from "@/components/sections/portfolio/Portfolio";
+import PageWrapper from "@/components/layout/PageWrapper";
 
 export default function PortfolioPage() {
     return (
-        <div className="bg-brand-light min-h-screen">
-            <main>
+        <PageWrapper>
+            <main className="bg-brand-light min-h-screen">
                 <Portfolio />
             </main>
-        </div>
+        </PageWrapper>
     );
 }
 
