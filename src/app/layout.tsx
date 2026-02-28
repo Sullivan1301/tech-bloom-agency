@@ -2,14 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Bitter, Inter } from "next/font/google";
-
-const bitter = Bitter({
-    subsets: ["latin"],
-    weight: ["400", "600", "700"],
-    variable: "--font-bitter",
-    display: "swap",
-});
+import { Inter, Bitter } from "next/font/google";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -18,10 +11,17 @@ const inter = Inter({
     display: "swap",
 });
 
+const bitter = Bitter({
+    subsets: ["latin"],
+    weight: ["600", "700"],
+    variable: "--font-bitter",
+    display: "swap",
+});
+
 export const metadata: Metadata = {
     title: "Tech Bloom Agency – Agence digitale premium",
     description:
-        "Agence digitale pour PME et entrepreneurs. Sites web, branding, marketing et solutions IA pour accélérer votre croissance.",
+        "Concevoir des produits digitaux performants. Agence experte en UX/UI, développement Next.js et stratégie SEO.",
     icons: {
         icon: "/favicon.ico",
     },
@@ -29,12 +29,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="fr" className={`${bitter.variable} ${inter.variable}`}>
-            <body className="bg-beige text-brand-blue min-h-screen antialiased">
+        <html lang="fr" className={`${inter.variable} ${bitter.variable}`}>
+            <body className="bg-white text-brand-dark min-h-screen antialiased font-sans">
                 <Header />
-                {children}
+                <main>{children}</main>
                 <Footer />
             </body>
         </html>
     );
 }
+
