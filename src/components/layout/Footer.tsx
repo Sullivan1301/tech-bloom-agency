@@ -1,111 +1,99 @@
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-brand-blue-dark text-white">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                    <div>
-                        <div className="flex items-center space-x-3 mb-4">
-                            <div className="w-10 h-10 bg-gradient-to-br from-brand-blue-petrol to-brand-red-rose rounded-xl flex items-center justify-center">
-                                <span className="text-white text-xl font-bold">TB</span>
-                            </div>
-                            <span className="font-heading font-semibold text-lg">{SITE_CONFIG.name}</span>
+        <footer className="w-full">
+            {/* High-contrast Pre-footer CTA */}
+            <div className="bg-brand-primary py-24 md:py-32 overflow-hidden relative">
+                <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px] opacity-5 -z-0" />
+                <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+                        <div className="space-y-8 max-w-2xl">
+                            <span className="text-xs font-bold tracking-[0.3em] uppercase text-brand-red-rose">
+                                Prêt à écolre ?
+                            </span>
+                            <h2 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-[0.95] tracking-tight">
+                                Débutons votre <br />
+                                <span className="text-brand-pale-pink">prochain projet.</span>
+                            </h2>
                         </div>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                            {SITE_CONFIG.taglineFr}
-                        </p>
-                        <div className="flex space-x-4">
-                            <a
-                                href={SITE_CONFIG.social.facebook}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-brand-red-cherry transition-colors"
-                                aria-label="Facebook"
-                            >
-                                <Facebook size={20} />
-                            </a>
-                            <a
-                                href={SITE_CONFIG.social.instagram}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-brand-red-cherry transition-colors"
-                                aria-label="Instagram"
-                            >
-                                <Instagram size={20} />
-                            </a>
-                            <a
-                                href={SITE_CONFIG.social.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-brand-red-cherry transition-colors"
-                                aria-label="LinkedIn"
-                            >
-                                <Linkedin size={20} />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 className="font-heading font-semibold text-lg mb-4">Navigation</h3>
-                        <ul className="space-y-3">
-                            {NAV_LINKS.map((link) => (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-gray-300 hover:text-brand-red-cherry transition-colors text-sm"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className="font-heading font-semibold text-lg mb-4">Services</h3>
-                        <ul className="space-y-3 text-sm text-gray-300">
-                            <li>Création de sites web</li>
-                            <li>Branding & Identité</li>
-                            <li>Marketing digital</li>
-                            <li>Community management</li>
-                            <li>Maintenance & Support</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className="font-heading font-semibold text-lg mb-4">Contact</h3>
-                        <ul className="space-y-3 text-sm text-gray-300">
-                            <li className="flex items-start space-x-2">
-                                <MapPin size={18} className="mt-0.5 flex-shrink-0" />
-                                <span>{SITE_CONFIG.address}</span>
-                            </li>
-                            <li className="flex items-center space-x-2">
-                                <Phone size={18} className="flex-shrink-0" />
-                                <a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-brand-red-cherry transition-colors">
-                                    {SITE_CONFIG.phone}
-                                </a>
-                            </li>
-                            <li className="flex items-center space-x-2">
-                                <Mail size={18} className="flex-shrink-0" />
-                                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-brand-red-cherry transition-colors">
-                                    {SITE_CONFIG.email}
-                                </a>
-                            </li>
-                        </ul>
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center group text-white border-b-2 border-brand-red-rose pb-2 text-xl font-serif font-bold hover:text-brand-pale-pink transition-colors"
+                        >
+                            <span>Contactez-nous</span>
+                            <ArrowRight size={24} className="ml-4 group-hover:translate-x-2 transition-transform" />
+                        </Link>
                     </div>
                 </div>
+            </div>
 
-                <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-gray-400">
-                    <p>© {currentYear} {SITE_CONFIG.name}. Tous droits réservés.</p>
-                    <div className="flex space-x-6">
-                        <Link href="/mentions-legales" className="hover:text-brand-red-cherry transition-colors">
-                            Mentions légales
-                        </Link>
+            {/* Main Footer */}
+            <div className="bg-brand-bg-soft text-brand-gray border-t border-brand-light-gray">
+                <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-20">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+                        <div className="space-y-8 col-span-1 md:col-span-1">
+                             <Link href="/" className="flex items-center space-x-2">
+                                <div className="w-8 h-8 bg-brand-primary rounded-agency-xs flex items-center justify-center">
+                                    <span className="text-white text-[10px] font-bold">TBA</span>
+                                </div>
+                                <span className="font-serif font-bold text-brand-primary tracking-tight">
+                                    {SITE_CONFIG.name}
+                                </span>
+                            </Link>
+                            <p className="text-xs leading-relaxed max-w-xs font-medium uppercase tracking-wider">
+                                Agence digitale haute-performance. <br />
+                                Stratégie, Conception & Développement.
+                            </p>
+                        </div>
+
+                        <div className="space-y-6">
+                            <h3 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.2em]">Navigation</h3>
+                            <ul className="space-y-4">
+                                {NAV_LINKS.map((link) => (
+                                    <li key={link.href}>
+                                        <Link href={link.href} className="text-xs font-bold uppercase tracking-widest hover:text-brand-red-rose transition-colors">
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="space-y-6">
+                            <h3 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.2em]">Expertises</h3>
+                            <ul className="space-y-4 text-xs font-bold uppercase tracking-widest">
+                                <li>Stratégie Digitale</li>
+                                <li>Conception UX/UI</li>
+                                <li>Développement Sur-mesure</li>
+                                <li>SEO & Performance</li>
+                            </ul>
+                        </div>
+
+                        <div className="space-y-6">
+                            <h3 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.2em]">Contact</h3>
+                            <ul className="space-y-4 text-xs font-bold uppercase tracking-widest">
+                                <li className="hover:text-brand-red-rose transition-colors cursor-pointer">{SITE_CONFIG.email}</li>
+                                <li className="hover:text-brand-red-rose transition-colors cursor-pointer">{SITE_CONFIG.phone}</li>
+                                <li className="opacity-60">{SITE_CONFIG.address}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Bottom line */}
+                    <div className="pt-12 border-t border-brand-light-gray flex flex-col md:flex-row justify-between items-center gap-6">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.1em] opacity-60">
+                            © {currentYear} {SITE_CONFIG.name}.
+                        </p>
+                        <div className="flex items-center space-x-8 text-[10px] font-bold uppercase tracking-[0.1em]">
+                            <Link href="/mentions-legales" className="hover:text-brand-primary transition-colors">Confidentialité</Link>
+                            <Link href="/mentions-legales" className="hover:text-brand-primary transition-colors">Mentions légales</Link>
+                            <span className="opacity-40">Madagascar</span>
+                        </div>
                     </div>
                 </div>
             </div>
