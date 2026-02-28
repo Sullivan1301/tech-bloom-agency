@@ -1,29 +1,50 @@
 "use client";
-import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, Facebook, Instagram, Linkedin, Loader2 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import CTASection from "@/components/sections/shared/CTASection";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { useState } from "react";
+
+const contactSchema = z.object({
+    name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
+    email: z.string().email("Veuillez entrer une adresse email valide"),
+    phone: z.string().min(10, "Veuillez entrer un numéro de téléphone valide").optional().or(z.literal('')),
+    service: z.enum(["Web", "Branding", "Marketing", "Community", "IA"]),
+    message: z.string().min(10, "Le message doit contenir au moins 10 caractères"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function Contact() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        service: "Web",
-        message: "",
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm<ContactFormData>({
+        resolver: zodResolver(contactSchema),
+        defaultValues: {
+            service: "Web",
+        }
     });
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        const mailtoUrl = `mailto:${SITE_CONFIG.email}?subject=Contact Tech Bloom Agency - ${formData.service}&body=${encodeURIComponent(
-            `Nom: ${formData.name}\nEmail: ${formData.email}\nTéléphone: ${formData.phone}\nEntreprise: ${formData.company}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
-        )}`;
-        window.location.href = mailtoUrl;
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+    const onSubmit = async (data: ContactFormData) => {
+        setIsSubmitting(true);
+        try {
+            const mailtoUrl = `mailto:${SITE_CONFIG.email}?subject=Contact Tech Bloom Agency - ${data.service}&body=${encodeURIComponent(
+                `Nom: ${data.name}\nEmail: ${data.email}\nTéléphone: ${data.phone || 'Non renseigné'}\nService: ${data.service}\n\nMessage:\n${data.message}`
+            )}`;
+            window.location.href = mailtoUrl;
+            reset();
+        } catch (error) {
+            console.error("Erreur lors de l'envoi :", error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -48,25 +69,44 @@ export default function Contact() {
                         {/* Section Formulaire de Contact */}
                         <div className="bg-white p-8 lg:p-12 rounded-agency shadow-xl border border-gray-100">
                             <h2 className="text-3xl font-sans font-bold text-brand-dark mb-8">Envoyez-nous un message</h2>
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Nom complet</label>
-                                        <input name="name" required onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all" placeholder="Jean Dupont" />
+                                        <input 
+                                            {...register("name")}
+                                            className={`w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-brand-primary transition-all ${errors.name ? 'ring-2 ring-red-500' : ''}`} 
+                                            placeholder="Jean Dupont" 
+                                        />
+                                        {errors.name && <p className="text-red-500 text-xs mt-1 font-medium">{errors.name.message}</p>}
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Email</label>
-                                        <input name="email" type="email" required onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all" placeholder="jean@exemple.com" />
+                                        <input 
+                                            {...register("email")}
+                                            type="email" 
+                                            className={`w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-brand-primary transition-all ${errors.email ? 'ring-2 ring-red-500' : ''}`} 
+                                            placeholder="jean@exemple.com" 
+                                        />
+                                        {errors.email && <p className="text-red-500 text-xs mt-1 font-medium">{errors.email.message}</p>}
                                     </div>
                                 </div>
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Téléphone</label>
-                                        <input name="phone" onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all" placeholder="+261 -- -- --- --" />
+                                        <input 
+                                            {...register("phone")}
+                                            className={`w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-brand-primary transition-all ${errors.phone ? 'ring-2 ring-red-500' : ''}`} 
+                                            placeholder="+261 -- -- --- --" 
+                                        />
+                                        {errors.phone && <p className="text-red-500 text-xs mt-1 font-medium">{errors.phone.message}</p>}
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Service souhaité</label>
-                                        <select name="service" onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all">
+                                        <select 
+                                            {...register("service")}
+                                            className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-brand-primary transition-all"
+                                        >
                                             <option value="Web">Création de site web</option>
                                             <option value="Branding">Branding & Design</option>
                                             <option value="Marketing">Marketing Digital</option>
@@ -77,10 +117,20 @@ export default function Contact() {
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-brand-gray uppercase tracking-wider">Message</label>
-                                    <textarea name="message" required rows={5} onChange={handleChange} className="w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-accent transition-all resize-none" placeholder="Décrivez votre projet en quelques mots..." />
+                                    <textarea 
+                                        {...register("message")}
+                                        rows={5} 
+                                        className={`w-full bg-brand-light border-none rounded-agency p-4 focus:ring-2 focus:ring-brand-primary transition-all resize-none ${errors.message ? 'ring-2 ring-red-500' : ''}`} 
+                                        placeholder="Décrivez votre projet en quelques mots..." 
+                                    />
+                                    {errors.message && <p className="text-red-500 text-xs mt-1 font-medium">{errors.message.message}</p>}
                                 </div>
-                                <button type="submit" className="w-full bg-brand-blue text-white py-5 rounded-agency font-sans font-bold text-lg hover:shadow-2xl hover:opacity-90 transition-all flex items-center justify-center gap-3">
-                                    <Send size={20} />
+                                <button 
+                                    type="submit" 
+                                    disabled={isSubmitting}
+                                    className="w-full bg-brand-dark-blue text-white py-5 rounded-agency font-sans font-bold text-lg hover:shadow-2xl hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-3"
+                                >
+                                    {isSubmitting ? <Loader2 className="animate-spin" /> : <Send size={20} />}
                                     Démarrer la collaboration
                                 </button>
                             </form>
@@ -92,25 +142,25 @@ export default function Contact() {
                                 <h2 className="text-3xl font-sans font-bold text-brand-dark mb-8">Coordonnées</h2>
                                 <div className="space-y-6">
                                     <div className="flex items-start gap-6 group">
-                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-all">
+                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md group-hover:bg-brand-primary group-hover:text-white transition-all">
                                             <Mail size={24} />
                                         </div>
                                         <div>
                                             <p className="text-sm font-bold text-brand-gray uppercase tracking-wider mb-1">Email</p>
-                                            <a href={`mailto:${SITE_CONFIG.email}`} className="text-xl font-sans font-bold text-brand-dark hover:text-brand-blue transition-colors">{SITE_CONFIG.email}</a>
+                                            <a href={`mailto:${SITE_CONFIG.email}`} className="text-xl font-sans font-bold text-brand-dark hover:text-brand-primary transition-colors">{SITE_CONFIG.email}</a>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-6 group">
-                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-all">
+                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md group-hover:bg-brand-primary group-hover:text-white transition-all">
                                             <Phone size={24} />
                                         </div>
                                         <div>
                                             <p className="text-sm font-bold text-brand-gray uppercase tracking-wider mb-1">Téléphone</p>
-                                            <a href={`tel:${SITE_CONFIG.phone}`} className="text-xl font-sans font-bold text-brand-dark hover:text-brand-blue transition-colors">{SITE_CONFIG.phone}</a>
+                                            <a href={`tel:${SITE_CONFIG.phone}`} className="text-xl font-sans font-bold text-brand-dark hover:text-brand-primary transition-colors">{SITE_CONFIG.phone}</a>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-6 group">
-                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-all">
+                                        <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md group-hover:bg-brand-primary group-hover:text-white transition-all">
                                             <MapPin size={24} />
                                         </div>
                                         <div>
@@ -126,7 +176,7 @@ export default function Contact() {
                                 <div className="space-y-6">
                                     <div className="flex items-start gap-6">
                                         <div className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md">
-                                            <Clock size={24} className="text-brand-blue" />
+                                            <Clock size={24} className="text-brand-primary" />
                                         </div>
                                         <div>
                                             <p className="text-sm font-bold text-brand-gray uppercase tracking-wider mb-1">Disponibilité</p>
@@ -135,13 +185,13 @@ export default function Contact() {
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
-                                        <a href={SITE_CONFIG.social.facebook} target="_blank" className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md hover:bg-brand-dark hover:text-white transition-all">
+                                        <a href={SITE_CONFIG.social.facebook} target="_blank" className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md hover:bg-brand-primary hover:text-white transition-all">
                                             <Facebook size={24} />
                                         </a>
-                                        <a href={SITE_CONFIG.social.instagram} target="_blank" className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md hover:bg-brand-dark hover:text-white transition-all">
+                                        <a href={SITE_CONFIG.social.instagram} target="_blank" className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md hover:bg-brand-primary hover:text-white transition-all">
                                             <Instagram size={24} />
                                         </a>
-                                        <a href={SITE_CONFIG.social.linkedin} target="_blank" className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md hover:bg-brand-dark hover:text-white transition-all">
+                                        <a href={SITE_CONFIG.social.linkedin} target="_blank" className="w-14 h-14 bg-white rounded-agency flex items-center justify-center shadow-md hover:bg-brand-primary hover:text-white transition-all">
                                             <Linkedin size={24} />
                                         </a>
                                     </div>
