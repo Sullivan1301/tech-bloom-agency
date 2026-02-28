@@ -129,11 +129,9 @@ export const STATS = [
 ];
 
 export const NAV_LINKS = [
-    { href: "/", label: "Accueil" },
-    { href: "/services", label: "Services" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/b2b", label: "B2B" },
     { href: "/a-propos", label: "À propos" },
-    { href: "/blog", label: "Blog" },
+    { href: "/#methode", label: "Méthode" },
+    { href: "/portfolio", label: "Projets" },
+    { href: "/#clients", label: "Clients" },
     { href: "/contact", label: "Contact" }
 ];
