@@ -1,31 +1,31 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-
 export default function B2BHero() {
     return (
-        <section className="py-20 px-6">
-            <div className="max-w-6xl mx-auto text-center">
-                <div className="inline-block bg-brand-blue/5 text-brand-blue px-6 py-2 rounded-full text-sm font-medium mb-6">
-                    Partenariat B2B
+        <section className="relative min-h-[70vh] bg-white flex flex-col items-center justify-center pt-40 pb-20 overflow-hidden text-brand-dark-blue border-b border-brand-light-gray">
+            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 -z-10" />
+
+            <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center space-y-12">
+                <div className="space-y-8">
+                    <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-brand-red-rose mb-4">
+                        Partenariat B2B • White Label & Sous-traitance
+                    </span>
+                    <h1 className="text-[clamp(2.5rem,8vw,5.5rem)] font-serif font-bold leading-[0.9] tracking-tight text-brand-primary mb-8">
+                        Déléguez en toute <br className="hidden md:block" />
+                        <span className="text-brand-dark-blue">confiance.</span>
+                    </h1>
                 </div>
-                
-                <h1 className="text-4xl md:text-6xl font-sans font-bold text-brand-dark mb-8 leading-tight">
-                    Agence web débordée ?<br />
-                    <span className="text-brand-blue">Déléguez sans compromettre la qualité</span>
-                </h1>
-                
-                <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+
+                <p className="text-lg lg:text-xl text-brand-gray max-w-3xl mx-auto font-medium leading-relaxed uppercase tracking-wide">
                     Augmentez votre capacité de production, respectez vos délais et maintenez 
                     vos marges grâce à notre expertise en white-label et développement sur mesure.
                 </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button className="bg-brand-blue text-white px-8 py-4 rounded-full font-sans font-medium hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 group">
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8">
+                    <button className="btn-primary group py-5 px-10 text-sm uppercase tracking-widest">
                         Découvrir nos solutions
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
-                    <button className="border-2 border-brand-dark text-brand-dark px-8 py-4 rounded-full font-sans font-medium hover:bg-brand-dark hover:text-white transition-all duration-300">
+                    <button className="group flex items-center text-brand-dark-blue font-bold text-sm uppercase tracking-widest hover:text-brand-red-rose transition-colors">
                         Voir nos réalisations
                     </button>
                 </div>

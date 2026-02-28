@@ -25,16 +25,16 @@ const PILLARS = [
 export default function Services() {
     return (
         <div className="bg-white">
-            <section className="pt-40 pb-24 border-b border-brand-light-gray">
+            <section className="pt-40 pb-24 border-b border-brand-light-gray bg-white">
                 <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
                     <span className="text-xs font-bold tracking-[0.2em] uppercase text-brand-red-rose mb-6 block">
                         Expertises
                     </span>
-                    <h1 className="text-5xl lg:text-8xl font-serif font-bold text-brand-primary leading-[0.9] tracking-tighter mb-12">
+                    <h1 className="text-[clamp(3rem,10vw,6rem)] font-serif font-bold text-brand-primary leading-[0.9] tracking-tighter mb-12">
                         Nos piliers <br />
                         <span className="text-brand-dark-blue opacity-50">d'excellence.</span>
                     </h1>
-                    <p className="text-xl text-brand-gray max-w-3xl font-medium leading-relaxed uppercase tracking-wide">
+                    <p className="text-lg lg:text-xl text-brand-gray max-w-3xl font-medium leading-relaxed uppercase tracking-wide">
                         De la vision à l'exécution technique, nous activons les leviers 
                         digitaux pour transformer vos idées en produits performants.
                     </p>
