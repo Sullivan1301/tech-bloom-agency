@@ -56,10 +56,10 @@ export default function B2BPortfolio() {
         <section className="py-20 px-6 bg-white">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                    <div className="inline-block bg-accent text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
+                    <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
                         NOS RÉALISATIONS
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bitter font-bold text-primary mb-6">
+                    <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
                         Des projets qui parlent d'eux-mêmes
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -72,16 +72,16 @@ export default function B2BPortfolio() {
                     {projects.map((project, index) => (
                         <div 
                             key={index}
-                            className="bg-beige rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+                            className="bg-brand-light rounded-agency border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300"
                         >
                             <div className="p-8">
                                 <div className="text-6xl mb-6 text-center">{project.image}</div>
                                 
                                 <div className="mb-6">
-                                    <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-3">
+                                    <span className="inline-block bg-brand-dark/10 text-brand-dark px-3 py-1 rounded-full text-sm font-medium mb-3">
                                         Pour {project.client}
                                     </span>
-                                    <h3 className="text-2xl font-bitter font-bold text-primary mt-3 mb-3">
+                                    <h3 className="text-2xl font-sans font-bold text-brand-dark mt-3 mb-3">
                                         {project.title}
                                     </h3>
                                     <p className="text-gray-600 leading-relaxed">
@@ -94,7 +94,7 @@ export default function B2BPortfolio() {
                                     <ul className="space-y-2">
                                         {project.results.map((result, idx) => (
                                             <li key={idx} className="flex items-start gap-3">
-                                                <span className="text-accent">✓</span>
+                                                <span className="text-brand-blue">✓</span>
                                                 <span className="text-gray-700">{result}</span>
                                             </li>
                                         ))}
@@ -120,8 +120,8 @@ export default function B2BPortfolio() {
                 </div>
 
                 <div className="text-center">
-                    <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 text-white">
-                        <h3 className="text-2xl font-bitter font-bold mb-4">
+                    <div className="bg-gradient-to-r from-primary to-accent rounded-agency p-8 text-white">
+                        <h3 className="text-2xl font-sans font-bold mb-4">
                             Prêt à démultiplier votre activité ?
                         </h3>
                         <p className="text-lg mb-6 opacity-90">

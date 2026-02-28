@@ -94,10 +94,10 @@ ${formData.message}
         <section className="py-20 px-6 bg-gradient-to-br from-primary/5 to-accent/5">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
-                    <div className="inline-block bg-accent text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
+                    <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
                         CONTACT
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bitter font-bold text-primary mb-6">
+                    <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
                         Discutons de votre projet
                     </h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -106,7 +106,7 @@ ${formData.message}
                     </p>
                 </div>
 
-                <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <div className="bg-white rounded-agency shadow-xl p-8 md:p-12">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
@@ -223,13 +223,13 @@ ${formData.message}
                                 {services.map((service) => (
                                     <label 
                                         key={service}
-                                        className="flex items-center gap-3 p-3 border border-gray-300 rounded-lg hover:bg-beige cursor-pointer transition-colors"
+                                        className="flex items-center gap-3 p-3 border border-gray-300 rounded-lg hover:bg-brand-light cursor-pointer transition-colors"
                                     >
                                         <input
                                             type="checkbox"
                                             checked={formData.servicesNeeded.includes(service)}
                                             onChange={() => handleServiceToggle(service)}
-                                            className="w-4 h-4 text-accent focus:ring-accent"
+                                            className="w-4 h-4 text-brand-blue focus:ring-accent"
                                         />
                                         <span className="text-gray-700">{service}</span>
                                     </label>

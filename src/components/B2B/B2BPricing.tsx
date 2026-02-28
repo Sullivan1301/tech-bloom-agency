@@ -57,10 +57,10 @@ export default function B2BPricing() {
         <section className="py-20 px-6 bg-gradient-to-br from-accent/5 to-white">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                    <div className="inline-block bg-accent text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
+                    <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
                         TARIFS TRANSPARENTS
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bitter font-bold text-primary mb-6">
+                    <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
                         Des prix clairs, sans surprise
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -74,24 +74,24 @@ export default function B2BPricing() {
                     {packages.map((pkg, index) => (
                         <div 
                             key={index}
-                            className={`relative bg-white rounded-2xl border-2 p-8 hover:shadow-xl transition-all duration-300 ${
+                            className={`relative bg-white rounded-agency border-2 p-8 hover:shadow-xl transition-all duration-300 ${
                                 pkg.bestValue 
-                                    ? 'border-accent shadow-lg scale-105' 
+                                    ? 'border-brand-blue shadow-lg scale-105' 
                                     : 'border-gray-200'
                             }`}
                         >
                             {pkg.bestValue && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-6 py-1 rounded-full text-sm font-bold">
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-blue text-white px-6 py-1 rounded-full text-sm font-bold">
                                     LE PLUS POPULAIRE
                                 </div>
                             )}
                             
                             <div className="text-center mb-8">
-                                <h3 className="text-2xl font-bitter font-bold text-primary mb-2">
+                                <h3 className="text-2xl font-sans font-bold text-brand-dark mb-2">
                                     {pkg.name}
                                 </h3>
                                 <div className="mb-2">
-                                    <span className="text-4xl font-bold text-accent">{pkg.price}</span>
+                                    <span className="text-4xl font-bold text-brand-blue">{pkg.price}</span>
                                     {pkg.price !== "Sur mesure" && (
                                         <span className="text-gray-500 ml-2">{pkg.description}</span>
                                     )}
@@ -104,7 +104,7 @@ export default function B2BPricing() {
                             <ul className="space-y-4 mb-8">
                                 {pkg.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
-                                        <span className="text-accent mt-1 flex-shrink-0">✓</span>
+                                        <span className="text-brand-blue mt-1 flex-shrink-0">✓</span>
                                         <span className="text-gray-700">{feature}</span>
                                     </li>
                                 ))}
@@ -112,8 +112,8 @@ export default function B2BPricing() {
                             
                             <button className={`w-full py-3 rounded-full font-medium transition-all duration-300 ${
                                 pkg.bestValue
-                                    ? 'bg-accent text-white hover:opacity-90'
-                                    : 'border-2 border-primary text-primary hover:bg-primary hover:text-white'
+                                    ? 'bg-brand-blue text-white hover:opacity-90'
+                                    : 'border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white'
                             }`}>
                                 Demander un devis
                             </button>
@@ -122,23 +122,23 @@ export default function B2BPricing() {
                 </div>
 
                 {/* Services additionnels */}
-                <div className="bg-white rounded-2xl p-8 border border-gray-200">
-                    <h3 className="text-2xl font-bitter font-bold text-primary mb-6 text-center">
+                <div className="bg-white rounded-agency p-8 border border-gray-200">
+                    <h3 className="text-2xl font-sans font-bold text-brand-dark mb-6 text-center">
                         Services complémentaires
                     </h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {additionalServices.map((service, index) => (
-                            <div key={index} className="text-center p-4 bg-beige rounded-xl">
+                            <div key={index} className="text-center p-4 bg-brand-light rounded-agency">
                                 <h4 className="font-bold text-gray-800 mb-2">{service.name}</h4>
-                                <p className="text-accent font-bold">{service.price}</p>
+                                <p className="text-brand-blue font-bold">{service.price}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 <div className="mt-12 text-center">
-                    <div className="bg-primary/5 rounded-2xl p-8 border border-primary/10">
-                        <h3 className="text-xl font-bitter font-bold text-primary mb-4">
+                    <div className="bg-brand-dark/5 rounded-agency p-8 border border-brand-dark/10">
+                        <h3 className="text-xl font-sans font-bold text-brand-dark mb-4">
                             Volume = Réduction
                         </h3>
                         <p className="text-gray-600 mb-4">
@@ -146,15 +146,15 @@ export default function B2BPricing() {
                         </p>
                         <div className="grid md:grid-cols-3 gap-4 text-sm">
                             <div>
-                                <span className="font-bold text-accent">5+ projets/mois</span>
+                                <span className="font-bold text-brand-blue">5+ projets/mois</span>
                                 <span className="text-gray-600 ml-2">-10%</span>
                             </div>
                             <div>
-                                <span className="font-bold text-accent">10+ projets/mois</span>
+                                <span className="font-bold text-brand-blue">10+ projets/mois</span>
                                 <span className="text-gray-600 ml-2">-20%</span>
                             </div>
                             <div>
-                                <span className="font-bold text-accent">20+ projets/mois</span>
+                                <span className="font-bold text-brand-blue">20+ projets/mois</span>
                                 <span className="text-gray-600 ml-2">-30%</span>
                             </div>
                         </div>

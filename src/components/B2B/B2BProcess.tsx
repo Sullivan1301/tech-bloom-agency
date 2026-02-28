@@ -38,7 +38,7 @@ export default function B2BProcess() {
         <section className="py-20 px-6 bg-white">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bitter font-bold text-primary mb-6">
+                    <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
                         Notre process de collaboration
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -57,15 +57,15 @@ export default function B2BProcess() {
                                 className={`relative flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                             >
                                 {/* Numéro */}
-                                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-accent text-white flex items-center justify-center text-xl font-bold z-10">
+                                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center text-xl font-bold z-10">
                                     {step.number}
                                 </div>
                                 
                                 {/* Contenu */}
                                 <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
-                                    <div className="bg-beige p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition-all duration-300">
+                                    <div className="bg-brand-light p-8 rounded-agency border border-gray-200 hover:shadow-lg transition-all duration-300">
                                         <div className="text-4xl mb-4">{step.icon}</div>
-                                        <h3 className="text-2xl font-bitter font-bold text-primary mb-4">
+                                        <h3 className="text-2xl font-sans font-bold text-brand-dark mb-4">
                                             {step.title}
                                         </h3>
                                         <p className="text-gray-600 leading-relaxed">
@@ -79,8 +79,8 @@ export default function B2BProcess() {
                 </div>
 
                 <div className="mt-16 text-center">
-                    <div className="bg-primary/5 rounded-2xl p-8 border border-primary/10">
-                        <h3 className="text-2xl font-bitter font-bold text-primary mb-4">
+                    <div className="bg-brand-dark/5 rounded-agency p-8 border border-brand-dark/10">
+                        <h3 className="text-2xl font-sans font-bold text-brand-dark mb-4">
                             Notre engagement
                         </h3>
                         <div className="grid md:grid-cols-3 gap-6 mt-6">
