@@ -1,24 +1,24 @@
-import { Search, Palette, Code, Check } from "lucide-react";
+import { Search, Palette, Code, Check, Briefcase, Share2, Layers } from "lucide-react";
 import CTASection from "@/components/sections/shared/CTASection";
 
 const PILLARS = [
     {
-        title: "Stratégie Digitale",
-        description: "Nous définissons votre positionnement, analysons votre marché et concevons la roadmap de votre succès numérique.",
-        icon: Search,
-        features: ["Audit & Conseil", "Social Media Strategy", "SEO & Visibilité", "Data & Analytics"]
+        title: "Entrepreneurs & PME",
+        description: "Accompagnement complet de A à Z : stratégie, identité de marque et site web performant pour lancer ou propulser votre activité.",
+        icon: Briefcase,
+        features: ["Site vitrine & E-commerce", "Branding & Logo", "SEO & Visibilité locale", "Stratégie Social Media"]
     },
     {
-        title: "Conception UX/UI",
-        description: "Nous créons des interfaces intuitives et esthétiques, centrées sur l'utilisateur pour maximiser l'engagement.",
-        icon: Palette,
-        features: ["User Research", "Wireframing", "Design System", "Micro-interactions"]
+        title: "Collaboration B2B",
+        description: "Partenariat technique pour agences et entreprises étrangères. Déléguez votre production sans sacrifier la qualité.",
+        icon: Share2,
+        features: ["Développement Marque Blanche", "Extension d'équipe agile", "Code clean & documenté", "Confidentialité (NDA)"]
     },
     {
-        title: "Développement",
-        description: "Nous développons des solutions techniques robustes et évolutives avec les meilleures technologies actuelles.",
-        icon: Code,
-        features: ["Next.js & React", "E-commerce", "APIs & Headless CMS", "Performance Web"]
+        title: "Produits Digitaux",
+        description: "Conception et développement d'applications web et mobiles sur-mesure pour résoudre vos défis business complexes.",
+        icon: Layers,
+        features: ["Next.js & React Apps", "SaaS & Dashboards", "Systèmes sur-mesure", "Audit & Performance Web"]
     }
 ];
 

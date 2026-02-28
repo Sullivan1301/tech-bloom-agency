@@ -29,9 +29,9 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="text-lg lg:text-xl text-brand-gray max-w-2xl mx-auto font-medium leading-relaxed uppercase tracking-wide"
+                    className="text-lg lg:text-xl text-brand-gray max-w-3xl mx-auto font-medium leading-relaxed uppercase tracking-wide"
                 >
-                    Résolveurs de problèmes, créateurs d'expériences. Tech Bloom Agency conçoit des solutions digitales sur-mesure pour propulser votre croissance.
+                    Partenaire digital des entrepreneurs et bras droit technique des agences. Nous concevons des solutions sur-mesure pour propulser votre croissance, en direct ou en sous-traitance.
                 </motion.p>
 
                 <motion.div 
