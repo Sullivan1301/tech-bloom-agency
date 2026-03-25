@@ -31,7 +31,6 @@ export default function AnimatedCounter({
     }
 
     const startTime = performance.now();
-    const suffix = value.toString().replace(/[0-9.]/g, "");
 
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;

@@ -1,8 +1,9 @@
-import { SITE_CONFIG } from "@/lib/constants";
+"use client"
+
 
 const TECH_STACK = [
-    "Symfony", "Drupal", "WordPress", "Prestashop", "Laravel", 
-    "Node JS", "React", "Next.js", "Ionic", "Figma", 
+     "WordPress", "Supabase", "IA",
+    "Node JS", "React", "Next.js", "Figma",
     "Tailwind CSS", "TypeScript", "PostgreSQL", "Docker"
 ];
 

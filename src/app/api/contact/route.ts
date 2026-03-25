@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           error: "Validation failed",
-          details: validationResult.error.errors 
+          details: validationResult.error.issues 
         },
         { status: 400 }
       );
@@ -128,7 +128,6 @@ export async function POST(request: NextRequest) {
         throw new Error(`Webhook responded with ${webhookResponse.status}`);
       }
 
-      const webhookResult = await webhookResponse.json();
       console.log("✅ Contact form submitted to n8n:", data.email);
 
     } catch (webhookError) {
