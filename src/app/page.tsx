@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/home/Hero";
+import StatsSection from "@/components/sections/home/StatsSection";
 import HomeServices from "@/components/sections/home/HomeServices";
 import HowItWorks from "@/components/sections/home/HowItWorks";
 import PortfolioPreview from "@/components/sections/home/PortfolioPreview";
@@ -7,17 +8,116 @@ import ToolsSection from "@/components/sections/home/ToolsSection";
 import B2BPreview from "@/components/sections/home/B2BPreview";
 import PageWrapper from "@/components/layout/PageWrapper";
 import { Reveal } from "@/components/ui/Reveal";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tech Bloom Agency — Agence Digitale Madagascar | Sites Web, Branding, Marketing",
+  description: "Agence digitale à Toamasina, Madagascar. Création de sites web, branding, community management et marketing digital pour PME et entrepreneurs.",
+  keywords: [
+    "agence digitale Madagascar",
+    "création site web Toamasina",
+    "community manager Madagascar",
+    "marketing digital Madagascar",
+    "branding Madagascar",
+    "agence web Madagascar",
+  ],
+  openGraph: {
+    title: "Tech Bloom Agency — Agence Digitale Madagascar",
+    description: "Création web, branding, marketing digital à Madagascar.",
+    url: "/",
+    siteName: "Tech Bloom Agency",
+    images: [{ url: "/og/og-home.jpg", width: 1200, height: 630, alt: "Tech Bloom Agency" }],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tech Bloom Agency — Agence Digitale Madagascar",
+    description: "Création web, branding, marketing digital à Madagascar.",
+    images: ["/og/og-home.jpg"],
+  },
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
+};
+
+// Schema.org JSON-LD
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Tech Bloom Agency",
+  "alternateName": "TBA",
+  "description": "Agence digitale à Madagascar : création de sites web, branding, marketing digital et community management.",
+  "url": "https://tech-bloom-agency.vercel.app",
+  "logo": "https://tech-bloom-agency.vercel.app/images/logo-tba.png",
+  "image": "https://tech-bloom-agency.vercel.app/og/og-home.jpg",
+  "telephone": "+261341060802",
+  "email": "sullivanjoro3@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Sullivan Joro Rakotoniaina",
+    "jobTitle": "Fondateur et Directeur"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toamasina",
+    "addressCountry": "MG"
+  },
+  "areaServed": ["Madagascar","France","Belgique","Suisse","Afrique francophone"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 08:00-18:00",
+  "sameAs": [
+    "https://facebook.com/techbloomagency",
+    "https://linkedin.com/company/tech-bloom-agency"
+  ]
+};
+
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tech Bloom Agency",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "3",
+    "bestRating": "5"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Longin — Runrobe" },
+      "reviewBody": "L'efficacité du travail fourni par Tech Bloom Agency est satisfaisante.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Erica — Girl's Touch" },
+      "reviewBody": "C'était d'une facilité et fluidité optimalement parfait.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }
+  ]
+};
 
 export default function Page() {
-    return (
-        <PageWrapper>
-            <Hero />
-            <Reveal><HomeServices /></Reveal>
-            <Reveal><HowItWorks /></Reveal>
-            <Reveal><PortfolioPreview /></Reveal>
-            <Reveal><B2BPreview /></Reveal>
-            <Reveal><Testimonials /></Reveal>
-            <Reveal><ToolsSection /></Reveal>
-        </PageWrapper>
-    );
+  return (
+    <PageWrapper>
+      {/* JSON-LD Scripts */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
+      />
+      
+      <Hero />
+      <StatsSection />
+      <Reveal><HomeServices /></Reveal>
+      <Reveal><HowItWorks /></Reveal>
+      <Reveal><PortfolioPreview /></Reveal>
+      <Reveal><B2BPreview /></Reveal>
+      <Reveal><Testimonials /></Reveal>
+      <Reveal><ToolsSection /></Reveal>
+    </PageWrapper>
+  );
 }
