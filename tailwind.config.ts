@@ -9,7 +9,17 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                // Brand Extraction Palette
+                // Palette TBA officielle
+                'navy': '#0D2A40',
+                'blue': '#384B70',
+                'teal': '#507687',
+                'red': '#B8001F',
+                'red-hover': '#960019',
+                'beige': '#FCFAEE',
+                'gray': '#6B7280',
+                'white': '#FFFFFF',
+                
+                // Legacy support (backward compatibility)
                 'brand-primary': '#384B70',
                 'brand-red-rose': '#C94A6B',
                 'brand-red-cherry': '#B8001F',
@@ -20,14 +30,11 @@ const config: Config = {
                 'brand-light-gray': '#E5E7EB',
                 'brand-pale-pink': '#F5DDE1',
                 'brand-bg-soft': '#FBF2F4',
-                
-                // Semantic aliases
-                'primary': '#384B70',
-                'secondary': '#6B7280',
-                'background': '#FFFFFF',
-                'foreground': '#0D2A40',
             },
             borderRadius: {
+                'sm': 'var(--radius-sm)',
+                'md': 'var(--radius-md)',
+                'lg': 'var(--radius-lg)',
                 'agency-xs': '4px',
                 'agency-sm': '12px',
                 'agency-md': '16px',
@@ -35,9 +42,11 @@ const config: Config = {
                 'full': '9999px',
             },
             fontFamily: {
-                'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
-                'serif': ['var(--font-bitter)', 'Georgia', 'serif'],
-                'display': ['var(--font-bitter)', 'Georgia', 'serif'],
+                'heading': ['var(--font-heading)', 'Georgia', 'serif'],
+                'body': ['var(--font-body)', 'system-ui', 'sans-serif'],
+                'sans': ['var(--font-body)', 'system-ui', 'sans-serif'],
+                'serif': ['var(--font-heading)', 'Georgia', 'serif'],
+                'display': ['var(--font-heading)', 'Georgia', 'serif'],
             },
             container: {
                 center: true,

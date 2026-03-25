@@ -2,22 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Palette TBA officielle */
+  --color-navy: #0D2A40;
+  --color-blue: #384B70;
+  --color-teal: #507687;
+  --color-red: #B8001F;
+  --color-red-hover: #960019;
+  --color-beige: #FCFAEE;
+  --color-gray: #6B7280;
+  --color-white: #FFFFFF;
+
+  /* Typographie */
+  --font-heading: "Bitter", Georgia, serif;
+  --font-body: "Montserrat", system-ui, sans-serif;
+
+  /* Espacements */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 96px;
+
+  /* Bordures & transitions */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #FFFFFF;
-    color: #0D2A40;
+    background-color: var(--color-white);
+    color: var(--color-navy);
   }
 
   body {
-    @apply font-sans;
+    @apply font-body;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold;
+    @apply font-heading font-bold;
     line-height: 1.1;
   }
 
@@ -32,24 +61,40 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-brand-primary text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-brand-red-cherry hover:shadow-lg active:scale-95;
+    @apply inline-flex items-center justify-center bg-[var(--color-red)] text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-[var(--color-red-hover)] hover:shadow-lg active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-[var(--color-blue)] text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-[var(--color-navy)] hover:shadow-lg active:scale-95;
   }
   
   .btn-outline {
-    @apply inline-flex items-center justify-center border-2 border-brand-primary text-brand-primary px-8 py-4 rounded-full font-semibold transition-all hover:bg-brand-primary hover:text-white active:scale-95;
+    @apply inline-flex items-center justify-center border-2 border-[var(--color-blue)] text-[var(--color-blue)] px-8 py-4 rounded-full font-semibold transition-all hover:bg-[var(--color-blue)] hover:text-white active:scale-95;
   }
   
   .card-agency {
-    @apply bg-white border border-brand-light-gray rounded-agency-md p-8 shadow-sm transition-all hover:shadow-xl hover:border-brand-primary/20;
+    @apply bg-white border border-[var(--color-gray)]/20 rounded-[var(--radius-md)] p-8 shadow-sm transition-all hover:shadow-xl hover:border-[var(--color-teal)]/30 hover:scale-[1.02];
   }
 }
 
 @layer utilities {
   .text-brand-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-red-rose;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-red)];
   }
   
   .section-padding {
     @apply py-20 md:py-32;
+  }
+  
+  .bg-beige {
+    background-color: var(--color-beige);
+  }
+  
+  .text-navy {
+    color: var(--color-navy);
+  }
+  
+  .text-teal {
+    color: var(--color-teal);
   }
 }

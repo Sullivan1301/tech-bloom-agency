@@ -1,22 +1,25 @@
-import { STATS } from "@/lib/constants";
+"use client";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import { stats } from "@/data/stats";
+import { Section } from "@/components/ui/Section";
 
 export default function StatsSection() {
-    return (
-        <section className="py-16 bg-brand-dark text-white">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <div className="grid md:grid-cols-3 gap-8 text-center">
-                    {STATS.map((stat, index) => (
-                        <div key={index} className="space-y-2">
-                            <p className="text-4xl lg:text-5xl font-sans font-bold text-brand-blue">
-                                {stat.value}
-                            </p>
-                            <p className="text-lg text-gray-300">
-                                {stat.label}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <Section padding="lg" className="bg-navy">
+      <div className="grid md:grid-cols-3 gap-12 text-center">
+        {stats.map((stat, index) => (
+          <div key={index} className="space-y-4">
+            <AnimatedCounter 
+              value={`${stat.value}${stat.suffix}`} 
+              duration={2}
+              className="text-5xl md:text-7xl font-heading font-bold text-red"
+            />
+            <p className="text-lg text-white/80 font-body uppercase tracking-widest">
+              {stat.label}
+            </p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
 }
