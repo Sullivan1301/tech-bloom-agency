@@ -58,7 +58,6 @@
 - [`src/components/sections/contact/CalendlyEmbed.tsx`](file:///home/sullivan/Tech%20Bloom%20Agency/tech-bloom-agency/src/components/sections/contact/CalendlyEmbed.tsx) — Inline embed
 - [`src/lib/calendly.ts`](file:///home/sullivan/Tech%20Bloom%20Agency/tech-bloom-agency/src/lib/calendly.ts) — Popup utility
 
-**Documentation**: [`docs/INTEGRATIONS_APIS.md`](file:///home/sullivan/Tech%20Bloom%20Agency/tech-bloom-agency/docs/INTEGRATIONS_APIS.md) (815 lignes)
 
 ---
 

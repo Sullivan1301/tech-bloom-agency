@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { services } from "@/data/services";
-import { motion } from "framer-motion";
 
 export default function StickyNav() {
   const [activeId, setActiveId] = useState("");
@@ -24,7 +23,7 @@ export default function StickyNav() {
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section && window.scrollY >= section.offsetTop - 150) {
-          setActiveId(service.id);
+          setActiveId(services[i].id);
           break;
         }
       }

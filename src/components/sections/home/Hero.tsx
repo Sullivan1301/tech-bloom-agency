@@ -108,7 +108,7 @@ export default function Hero() {
 
           {/* CTA secondaire - Outline blanc - Scroll anchor */}
           <Link
-            href="#portfolio"
+              href="#portfolio"
             className="group inline-flex items-center px-10 py-5 border-2 border-white text-white rounded-full font-semibold text-sm uppercase tracking-widest hover:bg-white hover:text-navy transition-all duration-300"
           >
             <span>Voir nos projets</span>
