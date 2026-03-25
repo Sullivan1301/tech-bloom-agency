@@ -33,7 +33,7 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "three": "^0.183.1",
-    "three-mesh-bvh": "^0.8.0",
+    "three-mesh-bvh": "0.8.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
