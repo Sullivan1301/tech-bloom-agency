@@ -1,52 +1,74 @@
 import { Project } from "@/types";
 
-export const projects: Project[] = [
+export interface DetailedProject extends Project {
+    sector: string;
+    summary: string;
+    context: string;
+    approach: string;
+    solutions: string[];
+    results: string[];
+    testimonial?: {
+        quote: string;
+        author: string;
+    };
+}
+
+export const projects: DetailedProject[] = [
     {
         id: "1",
-        title: "Site e-commerce textile",
+        title: "E-commerce Mode & Textile",
+        sector: "Mode & Retail",
+        summary: "Refonte complète d'une boutique en ligne pour une marque de prêt-à-porter.",
         description: "Boutique en ligne moderne avec système de paiement intégré et gestion des stocks.",
         category: "E-commerce",
         image: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=800",
-        tags: ["Next.js", "E-commerce", "Design"],
+        tags: ["Next.js", "Shopify", "UI/UX"],
+        link: "/portfolio/ecommerce-textile",
+        context: "La marque souhaitait moderniser son image et augmenter son taux de conversion mobile.",
+        approach: "Analyse du parcours utilisateur et mise en place d'un design 'mobile-first' épuré.",
+        solutions: ["Développement Next.js", "Intégration Stripe", "Optimisation SEO"],
+        results: ["+45% de conversion", "Temps de chargement divisé par 3"],
+        testimonial: {
+            quote: "Une équipe à l'écoute qui a su transformer notre vision en une plateforme performante.",
+            author: "Julie, Fondatrice de Mode-Eco"
+        }
     },
     {
         id: "2",
-        title: "Application de gestion",
+        title: "App de Gestion PME",
+        sector: "Services B2B",
+        summary: "Automatisation des processus internes pour une entreprise de logistique.",
         description: "Outil de gestion interne pour PME avec tableau de bord analytique.",
         category: "Application web",
         image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800",
-        tags: ["React", "Dashboard", "Analytics"],
+        tags: ["React", "Node.js", "PostgreSQL"],
+        link: "/portfolio/app-gestion",
+        context: "L'entreprise gérait ses stocks sur Excel, ce qui entraînait de nombreuses erreurs.",
+        approach: "Audit des processus et développement d'une solution SaaS sur-mesure.",
+        solutions: ["Dashboard Temps Réel", "Système d'Alertes", "API Rest"],
+        results: ["Gain de temps de 15h/semaine", "Erreurs de stock réduites de 90%"],
+        testimonial: {
+            quote: "L'outil a révolutionné notre quotidien. On ne pourrait plus s'en passer.",
+            author: "Marc, Gérant Logis-Tech"
+        }
     },
     {
         id: "3",
-        title: "Refonte identité visuelle",
+        title: "Identité Visuelle Tech",
+        sector: "Technologie",
+        summary: "Création d'une image de marque forte pour une startup en cybersécurité.",
         description: "Création complète de l'identité de marque d'une startup tech.",
         category: "Branding",
         image: "https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=800",
-        tags: ["Branding", "Logo", "Charte graphique"],
-    },
-    {
-        id: "4",
-        title: "Site vitrine restaurant",
-        description: "Site élégant avec système de réservation en ligne et menu interactif.",
-        category: "Site vitrine",
-        image: "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800",
-        tags: ["WordPress", "Réservation", "Design"],
-    },
-    {
-        id: "5",
-        title: "Campagne marketing digital",
-        description: "Stratégie SEO et publicité en ligne pour une entreprise locale.",
-        category: "Marketing",
-        image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
-        tags: ["SEO", "Google Ads", "Analytics"],
-    },
-    {
-        id: "6",
-        title: "Application mobile",
-        description: "App de services à la demande avec géolocalisation et paiement mobile.",
-        category: "Application mobile",
-        image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800",
-        tags: ["React Native", "Mobile", "API"],
+        tags: ["Branding", "Logo", "Design System"],
+        link: "/portfolio/branding-startup",
+        context: "Besoin de transmettre confiance et innovation pour une levée de fonds.",
+        approach: "Recherche sur la psychologie des couleurs et création d'un logo iconique.",
+        solutions: ["Logo & Charte", "Supports Pitchdeck", "Design Web"],
+        results: ["Levée de fonds réussie (2M€)", "Cohérence de marque sur tous les supports"],
+        testimonial: {
+            quote: "Notre nouvelle identité nous a permis de nous démarquer immédiatement sur le marché.",
+            author: "Sarah, CTO de Cyber-Guard"
+        }
     }
 ];

@@ -1,5 +1,6 @@
 export const SITE_CONFIG = {
     name: "Tech Bloom Agency",
+    url: "https://techbloomagency.com",
     taglineFr: "De la stratégie à l'éclosion digitale",
     taglineEn: "From Strategy to Digital Growth",
     description: "Agence digitale basée à Madagascar. Spécialisée dans la création de sites web, le branding, le marketing digital et l'accompagnement tech personnalisé.",
@@ -129,10 +130,9 @@ export const STATS = [
 ];
 
 export const NAV_LINKS = [
-    { href: "/", label: "Accueil" },
-    { href: "/services", label: "Services" },
-    { href: "/portfolio", label: "Portfolio" },
     { href: "/a-propos", label: "À propos" },
-    { href: "/blog", label: "Blog" },
+    { href: "/services", label: "Services" },
+    { href: "/portfolio", label: "Projets" },
+    { href: "/b2b", label: "Partenaires" },
     { href: "/contact", label: "Contact" }
 ];

@@ -3,97 +3,98 @@
 @tailwind utilities;
 
 :root {
- 
-  --brand-blue-dark: #0D2A40;
-  --brand-blue: #384B70;
-  --brand-blue-petrol: #507687;
-  --brand-beige: #FCFAEE;
-  --brand-red-cherry: #B8001F;
-  --brand-red-rose: #C94A6B;
+  /* Palette TBA officielle */
+  --color-navy: #0D2A40;
+  --color-blue: #384B70;
+  --color-teal: #507687;
+  --color-red: #B8001F;
+  --color-red-hover: #960019;
+  --color-beige: #FCFAEE;
+  --color-gray: #6B7280;
+  --color-white: #FFFFFF;
 
-  --spacing-container: 1280px;
-  --spacing-section: 5rem;
-  --spacing-section-lg: 7.5rem;
+  /* Typographie */
+  --font-heading: "Bitter", Georgia, serif;
+  --font-body: "Montserrat", system-ui, sans-serif;
 
- 
-  --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Espacements */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 96px;
+
+  /* Bordures & transitions */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-white);
+    color: var(--color-navy);
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  body {
+    @apply font-body;
+    overflow-x: hidden;
+  }
 
-body {
-  background-color: var(--brand-beige);
-  color: var(--brand-blue-dark);
-  font-family: var(--font-inter, system-ui, sans-serif);
-  line-height: 1.6;
-}
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+    line-height: 1.1;
+  }
 
-h1, h2 {
-  font-family: var(--font-bitter, Georgia, serif);
-  line-height: 1.15;
-}
+  h1 {
+    @apply text-5xl md:text-7xl tracking-tight;
+  }
 
-h3, h4, h5, h6 {
-  font-family: var(--font-inter, system-ui, sans-serif);
-  font-weight: 700;
-}
-
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
-
-a:hover {
-  color: var(--brand-red-cherry);
-}
-
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-svg {
-  flex-shrink: 0; /* Fix pour icônes Lucide */
-}
-
-img[loading="lazy"] {
-  object-fit: cover; /* Fix Next.js Image */
-}
-
-.container {
-  width: 100%;
-  max-width: var(--spacing-container);
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-
-@media (min-width: 640px) {
-  .container {
-    padding-inline: 1.5rem;
+  h2 {
+    @apply text-3xl md:text-5xl;
   }
 }
 
-@media (min-width: 1024px) {
-  .container {
-    padding-inline: 2rem;
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-[var(--color-red)] text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-[var(--color-red-hover)] hover:shadow-lg active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-[var(--color-blue)] text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-[var(--color-navy)] hover:shadow-lg active:scale-95;
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center border-2 border-[var(--color-blue)] text-[var(--color-blue)] px-8 py-4 rounded-full font-semibold transition-all hover:bg-[var(--color-blue)] hover:text-white active:scale-95;
+  }
+  
+  .card-agency {
+    @apply bg-white border border-[var(--color-gray)]/20 rounded-[var(--radius-md)] p-8 shadow-sm transition-all hover:shadow-xl hover:border-[var(--color-teal)]/30 hover:scale-[1.02];
   }
 }
 
-section {
-  padding-block: var(--spacing-section);
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  section {
-    padding-block: var(--spacing-section-lg);
+@layer utilities {
+  .text-brand-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-red)];
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+  
+  .bg-beige {
+    background-color: var(--color-beige);
+  }
+  
+  .text-navy {
+    color: var(--color-navy);
+  }
+  
+  .text-teal {
+    color: var(--color-teal);
   }
 }
