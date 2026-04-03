@@ -8,8 +8,6 @@ interface PageHeroProps {
   title: string;
   subtitle?: string;
   description?: string;
-  gradientFrom?: string;
-  gradientTo?: string;
 }
 
 export default function PageHero({
@@ -17,8 +15,6 @@ export default function PageHero({
   title,
   subtitle,
   description,
-  gradientFrom = "from-blue",
-  gradientTo = "to-teal",
 }: PageHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
