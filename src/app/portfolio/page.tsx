@@ -1,6 +1,6 @@
 import PortfolioGrid from "@/components/sections/portfolio/PortfolioGrid";
 import PageWrapper from "@/components/layout/PageWrapper";
-import { Section } from "@/components/ui/Section";
+import PageHero from "@/components/ui/PageHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,26 +34,17 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <PageWrapper>
-      {/* Hero Section */}
-      <section className="pt-40 pb-24 border-b border-gray/20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-red mb-6 block">
-            Portfolio
-          </span>
-          <h1 className="text-[clamp(3rem,10vw,6rem)] font-heading font-bold text-blue leading-[0.9] tracking-tighter mb-12">
-            Nos Réalisations
-          </h1>
-          <p className="text-lg lg:text-xl text-gray max-w-4xl mx-auto font-medium leading-relaxed">
-            Découvrez comment Tech Bloom Agency transforme les visions de ses clients en 
-            succès digitaux concrets : sites web, branding, marketing et optimisation.
-          </p>
-        </div>
-      </section>
+      {/* Luxury Hero */}
+      <PageHero
+        badge="Portfolio"
+        title="Nos Réalisations"
+        description="Découvrez comment Tech Bloom Agency transforme les visions de ses clients en succès digitaux concrets : sites web, branding, marketing et optimisation."
+      />
 
       {/* Portfolio Grid avec Filtres */}
-      <Section padding="lg" className="bg-beige">
+      <section className="py-32 px-6 lg:px-12 bg-beige">
         <PortfolioGrid />
-      </Section>
+      </section>
     </PageWrapper>
   );
 }
