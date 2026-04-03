@@ -1,4 +1,4 @@
-import { ContactForm } from "@/components/sections/contact/ContactForm";
+import { ContactFormWrapper } from "@/components/sections/contact/ContactFormWrapper";
 import { CalendlyEmbed } from "@/components/sections/contact/CalendlyEmbed";
 import PageWrapper from "@/components/layout/PageWrapper";
 import { Section } from "@/components/ui/Section";
@@ -43,7 +43,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Colonne Gauche : Formulaire */}
           <div>
-            <ContactForm />
+            <ContactFormWrapper />
           </div>
 
           {/* Colonne Droite : Infos + Calendly */}
