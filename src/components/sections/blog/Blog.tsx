@@ -3,26 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import CTASection from "@/components/sections/shared/CTASection";
+import PageHero from "@/components/ui/PageHero";
 
 export default function Blog() {
     return (
-        <div className="bg-brand-light">
-            {/* Section En-tête de Liste de Blogs en Vedette */}
-            <section className="pt-32 pb-20 bg-gradient-to-br from-brand-light to-white border-b border-gray-100">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                    <h1 className="text-5xl lg:text-7xl font-sans font-bold text-brand-dark mb-8 leading-tight">
-                        Le Blog Tech Bloom
-                    </h1>
-                    <p className="text-xl lg:text-2xl text-brand-gray max-w-4xl mx-auto leading-relaxed">
-                        Conseils d'experts, tendances et guides pratiques pour accompagner la croissance des 
-                        PME et entrepreneurs. Explorez l'univers du digital, du branding, du community management et du marketing.
-                    </p>
-                </div>
-            </section>
+        <div>
+            {/* Luxury Hero */}
+            <PageHero
+                badge="Blog"
+                title="Le Blog Tech Bloom"
+                description="Conseils d'experts, tendances et guides pratiques pour accompagner la croissance des PME et entrepreneurs."
+            />
 
             {/* Section Liste de Blogs */}
-            <section className="py-24">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <section className="py-24 px-6 lg:px-12 bg-beige">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                         {blogPosts.map((post) => (
                             <article 

@@ -13,7 +13,7 @@ import PageWrapper from "@/components/layout/PageWrapper";
 export default function B2BPage() {
     return (
         <PageWrapper>
-            <main className="bg-brand-light min-h-screen">
+            <main className="min-h-screen">
                 <B2BHero />
                 <B2BChallenges />
                 <B2BSolution />

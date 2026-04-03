@@ -3,7 +3,7 @@ import StickyNav from "@/components/ui/StickyNav";
 import ServiceCard from "@/components/sections/services/ServiceCard";
 import ServicesFAQ from "@/components/sections/services/ServicesFAQ";
 import PageWrapper from "@/components/layout/PageWrapper";
-import { Section } from "@/components/ui/Section";
+import PageHero from "@/components/ui/PageHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -77,34 +77,25 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      {/* Hero Section */}
-      <section className="pt-40 pb-24 border-b border-gray/20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-red mb-6 block">
-            Expertises
-          </span>
-          <h1 className="text-[clamp(3rem,10vw,6rem)] font-heading font-bold text-blue leading-[0.9] tracking-tighter mb-12">
-            Nos services <br />
-            <span className="text-navy opacity-50">digitaux.</span>
-          </h1>
-          <p className="text-lg lg:text-xl text-gray max-w-3xl font-medium leading-relaxed">
-            De la conception à la maintenance, nous activons tous les leviers 
-            digitaux pour transformer vos idées en produits performants.
-          </p>
-        </div>
-      </section>
+      {/* Luxury Hero */}
+      <PageHero
+        badge="Expertises"
+        title="Nos services"
+        subtitle="digitaux."
+        description="De la conception à la maintenance, nous activons tous les leviers digitaux pour transformer vos idées en produits performants."
+      />
 
       {/* Sticky Navigation Pills */}
       <StickyNav />
 
       {/* Services Grid */}
-      <Section padding="lg" className="bg-beige">
+      <section className="py-32 px-6 lg:px-12 bg-beige">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
-      </Section>
+      </section>
 
       {/* FAQ Section */}
       <ServicesFAQ />
