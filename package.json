@@ -7,7 +7,7 @@
     "dev": "next dev --no-turbo",
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap || true",
     "start": "next start",
     "lint": "next lint"
   },
