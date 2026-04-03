@@ -20,10 +20,6 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-interface FormDataWithHoneypot extends ContactFormData {
-  company?: string;
-}
-
 export function ContactForm() {
   const searchParams = useSearchParams();
   const preselectedService = searchParams.get("service");

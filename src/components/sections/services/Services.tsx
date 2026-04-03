@@ -1,4 +1,4 @@
-import { Search, Palette, Code, Check, Briefcase, Share2, Layers } from "lucide-react";
+import { Briefcase, Share2, Layers } from "lucide-react";
 import CTASection from "@/components/sections/shared/CTASection";
 
 const PILLARS = [
