@@ -1,7 +1,6 @@
 import Hero from "@/components/sections/home/Hero";
 import StatsSection from "@/components/sections/home/StatsSection";
 import HomeServices from "@/components/sections/home/HomeServices";
-import HowItWorks from "@/components/sections/home/HowItWorks";
 import PortfolioPreview from "@/components/sections/home/PortfolioPreview";
 import Testimonials from "@/components/sections/home/Testimonials";
 import ToolsSection from "@/components/sections/home/ToolsSection";
@@ -12,10 +11,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Tech Bloom Agency — Agence Digitale Madagascar | Sites Web, Branding, Marketing",
-  description: "Agence digitale à Toamasina, Madagascar. Création de sites web, branding, community management et marketing digital pour PME et entrepreneurs.",
+  description: "Agence digitale à Madagascar. Création de sites web, branding, community management et marketing digital pour PME et entrepreneurs.",
   keywords: [
     "agence digitale Madagascar",
-    "création site web Toamasina",
+    "création site web ",
     "community manager Madagascar",
     "marketing digital Madagascar",
     "branding Madagascar",
@@ -77,7 +76,7 @@ const aggregateRatingSchema = {
   "name": "Tech Bloom Agency",
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
+    "ratingValue": "4.6",
     "reviewCount": "3",
     "bestRating": "5"
   },
@@ -109,14 +108,26 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
       />
-      
+
+      {/* Luxury Hero with 3D animations and parallax */}
       <Hero />
+
+      {/* Animated stats with counters */}
       <StatsSection />
-      <Reveal><HomeServices /></Reveal>
-      <Reveal><HowItWorks /></Reveal>
+
+      {/* Services with luxury card effects */}
+      <HomeServices />
+      
+      {/* Portfolio preview */}
       <Reveal><PortfolioPreview /></Reveal>
-      <Reveal><B2BPreview /></Reveal>
+      
+      {/* B2B Preview - Luxury version */}
+      <B2BPreview />
+
+      {/* Testimonials */}
       <Reveal><Testimonials /></Reveal>
+
+      {/* Tools/Stack */}
       <Reveal><ToolsSection /></Reveal>
     </PageWrapper>
   );

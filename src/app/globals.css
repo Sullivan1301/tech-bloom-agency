@@ -81,20 +81,70 @@
   .text-brand-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-red)];
   }
-  
+
   .section-padding {
     @apply py-20 md:py-32;
   }
-  
+
   .bg-beige {
     background-color: var(--color-beige);
   }
-  
+
   .text-navy {
     color: var(--color-navy);
   }
-  
+
   .text-teal {
     color: var(--color-teal);
   }
+
+  /* Luxury effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Gradient text animation */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Text glow effect */
+  .text-glow {
+    text-shadow: 0 0 40px rgba(80, 118, 135, 0.3);
+  }
+
+  /* Smooth scrollbar */
+  .scrollbar-luxe::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-luxe::-webkit-scrollbar-track {
+    background: var(--color-navy);
+  }
+
+  .scrollbar-luxe::-webkit-scrollbar-thumb {
+    background: var(--color-teal);
+    border-radius: 4px;
+  }
+
+  .scrollbar-luxe::-webkit-scrollbar-thumb:hover {
+    background: var(--color-red);
+  }
+}
+
+/* Luxury text rendering */
+h1, h2, h3 {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
 }

@@ -1,7 +1,7 @@
 import { ContactFormWrapper } from "@/components/sections/contact/ContactFormWrapper";
 import { CalendlyEmbed } from "@/components/sections/contact/CalendlyEmbed";
 import PageWrapper from "@/components/layout/PageWrapper";
-import { Section } from "@/components/ui/Section";
+import PageHero from "@/components/ui/PageHero";
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import type { Metadata } from "next";
@@ -21,25 +21,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <PageWrapper>
-      {/* Hero Section */}
-      <section className="pt-40 pb-24 border-b border-gray/20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-red mb-6 block">
-            Contact
-          </span>
-          <h1 className="text-[clamp(3rem,10vw,6rem)] font-heading font-bold text-blue leading-[0.9] tracking-tighter mb-12">
-            Parlons de votre <br />
-            <span className="text-navy opacity-50">projet.</span>
-          </h1>
-          <p className="text-lg lg:text-xl text-gray max-w-4xl mx-auto font-medium leading-relaxed">
-            Faites le premier pas vers une présence digitale premium. 
-            Que vous soyez une PME ou un entrepreneur, nous sommes là pour transformer vos idées en réalité.
-          </p>
-        </div>
-      </section>
+      {/* Luxury Hero */}
+      <PageHero
+        badge="Contact"
+        title="Parlons de votre"
+        subtitle="projet."
+        description="Faites le premier pas vers une présence digitale premium. Que vous soyez une PME ou un entrepreneur, nous sommes là pour transformer vos idées en réalité."
+      />
 
       {/* Section Principale - 2 Colonnes */}
-      <Section padding="lg" className="bg-beige">
+      <section className="py-32 px-6 lg:px-12 bg-beige">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Colonne Gauche : Formulaire */}
           <div>
@@ -168,7 +159,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </Section>
+      </section>
     </PageWrapper>
   );
 }
